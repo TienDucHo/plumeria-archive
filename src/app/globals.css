@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --black: #080f0f;
-  --white: #fbfcff;
-  --celestial-blue: #058ed9;
-  --aetro-blue: #40bbda;
-  --saffron-yellow: #eabf53;
+  --black: 8, 15, 15;
+  --white: 251, 252, 255;
+  --celestial-blue: 5, 142, 217;
+  --aetro-blue: 64, 187, 218;
+  --saffron-yellow: 234, 191, 83;
 }
 
 /* 
@@ -16,6 +16,12 @@
   }
 } */
 
+/* @media screen and (max-width: 900px) {
+  :root {
+    font-size: 14px;
+  }
+} */
+
 body {
-  @apply bg-aetroBlue;
+  background-color: rgb(var(--white), 0.88);
 }
