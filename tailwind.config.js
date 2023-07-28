@@ -15,12 +15,16 @@ module.exports = {
       },
 
       colors: {
-        white: "var(--white)",
-        black: "var(--black)",
-        celestialBlue: "var(--celestial-blue)",
-        aetroBlue: "var(--aetro-blue)",
-        saffronYellow: "var(saffron-yellow)",
+        white: "rgb(var(--white))",
+        black: "rgb(var(--black))",
+        celestialBlue: "rgb(var(--celestial-blue))",
+        aetroBlue: "rgb(var(--aetro-blue))",
+        saffronYellow: "rgb(var(--saffron-yellow))",
       },
+    },
+
+    fontFamily: {
+      playfair: ["Playfair Display"],
     },
   },
   plugins: [],

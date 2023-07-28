@@ -1,7 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import NavBar from "@/components/NavBar";
+import { Source_Sans_3 } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Plumeria Archive",
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={sourceSans.className}>
+        <NavBar></NavBar>
+        {children}
+      </body>
     </html>
   );
 }
