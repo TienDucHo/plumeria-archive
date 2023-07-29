@@ -10,7 +10,7 @@ export default function NavBar() {
   const currentPath = usePathname();
 
   return (
-    <nav className="font-bold whitespace-nowrap grid grid-cols-2 mx-10 mt-8 items-center">
+    <nav className="font-bold whitespace-nowrap grid grid-cols-2 mx-10 mt-8 mb-24 items-center">
       <div className="font-playfair text-3xl text-left italic">
         <span className="text-celestialBlue">Plumeria </span>
         <span className="text-black">Archive</span>
