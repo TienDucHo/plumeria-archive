@@ -50,7 +50,7 @@ export default function NavBar() {
               Organizations
             </Link>
           </li>
-          <li id="aboutUs">
+          <li id="aboutus">
             <Link
               className={colorClass(currentPath, "/pages/aboutus")}
               href="/pages/aboutus"
