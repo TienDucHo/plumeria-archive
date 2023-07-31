@@ -15,8 +15,8 @@ export default function Event({
   time,
 }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-auto m-16 gap-y-3">
-      <h1 className="text-4xl font-playfair font-semibold">{title}</h1>
+    <div id="event-component">
+      <h1 className="text-5xl font-playfair font-semibold">{title}</h1>
       <div
         className="justify-self-end flex self-center"
         id="text-gradient"
@@ -52,7 +52,7 @@ export default function Event({
           <AiOutlineRight style={{ fill: "url(#icon-gradient)" }} />
         </div>
       </div>
-      <p className="text-xl opacity-70 self-center">{subTitle}</p>
+      <p className="col-start-1 text-xl opacity-70 self-center">{subTitle}</p>
 
       <div className="row-start-3">
         <Calendar
@@ -63,16 +63,28 @@ export default function Event({
           time={time}
         ></Calendar>
       </div>
-      <button className="row-start-4 bg-celestialBlue text-white text-xl font-semibold py-2 mr-4 max-w-2xl">
-        Register
-      </button>
-      <div className="col-start-2 row-span-3 justify-self-center relative w-full h-full">
+      <div className="row-start-4">
+        <button className="bg-celestialBlue text-white text-xl font-semibold py-2 mr-4 w-full">
+          Register
+        </button>
+      </div>
+      <div className="col-start-2 row-span-3 relative w-full h-full">
         <Image
-          className="object-cover pl-16"
+          className="object-cover"
           src="/pic1.jpg"
           alt="A club image"
           fill
         ></Image>
+        <div className="absolute top-0 left-0 w-full h-full">
+          {["w-1/4", "w-1/6", "w-0", "w-3/12", "w-1/6", "w-1/3"].map(
+            (elem, index) => (
+              <div
+                key={index}
+                className={`${elem} masked-box`}
+              ></div>
+            )
+          )}
+        </div>
       </div>
     </div>
   );

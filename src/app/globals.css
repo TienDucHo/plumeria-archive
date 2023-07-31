@@ -30,7 +30,8 @@
 
 body {
   @apply text-black;
-  background-color: rgb(var(--black), 0.1);
+  background: rgb(var(--white));
+  filter: grayscale(10%);
 }
 
 @layer utilities {
@@ -40,9 +41,22 @@ body {
       rgb(var(--celestial-blue)),
       rgb(var(--aetro-blue))
     );
-    /* Mask the color to the text, and remove the rest  */
     -webkit-background-clip: text;
-    /* Make the text fill color value transparent so the masked background color comes through */
     -webkit-text-fill-color: transparent;
+  }
+
+  #event-component {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: auto 1fr 2fr 1fr;
+    margin: 4rem 8rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 1rem;
+  }
+
+  .masked-box {
+    background: rgb(var(--white));
+    filter: grayscale(10%);
+    height: 16.67%;
   }
 }
