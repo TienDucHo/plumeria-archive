@@ -12,6 +12,7 @@ export default function Home() {
         clubName="Harmonica PTNK Club"
         location="1234 56 Ave Street"
         time="17:00"
+        sourcePicture="/pic1.jpg"
       ></Event>
     </main>
   );

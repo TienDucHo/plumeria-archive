@@ -11,6 +11,7 @@ export default function Event({
   month,
   location,
   time,
+  sourcePicture,
 }) {
   return (
     <div id="event-component">
@@ -70,7 +71,7 @@ export default function Event({
       <div className="col-start-2 row-span-3 relative w-full h-full">
         <Image
           className="object-cover"
-          src="/pic1.jpg"
+          src={sourcePicture}
           alt="A club image"
           fill
         ></Image>
