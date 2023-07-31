@@ -1,20 +1,24 @@
 import Calendar from "./Calendar";
 import Link from "next/link";
 import Image from "next/image";
+import { AiOutlineRight } from "react-icons/ai";
 
 export default function Event({ clubName, date, month, location, time }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-auto mx-16">
+    <div className="grid grid-cols-2 grid-rows-auto m-16 gap-y-3">
       <h1 className="text-4xl font-playfair font-semibold">
         Lorem ipsum dolor sit amet consectetur.
       </h1>
-      <Link
-        href=""
-        className="justify-self-end"
-      >
-        See more events
-      </Link>
-      <p className="opacity-70 self-center">
+      <div className="justify-self-end flex self-center">
+        <Link
+          href=""
+          className=""
+        >
+          See more events
+        </Link>
+        <AiOutlineRight className="flex justify-center self-center" />
+      </div>
+      <p className="text-xl opacity-70 self-center">
         Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate
         egestas eu.
       </p>
@@ -28,14 +32,14 @@ export default function Event({ clubName, date, month, location, time }) {
           time={time}
         ></Calendar>
       </div>
-      <button className="row-start-4 bg-celestialBlue text-white">
+      <button className="row-start-4 bg-celestialBlue text-white text-xl font-semibold py-2 mr-4 max-w-2xl">
         Register
       </button>
       <div className="col-start-2 row-span-3 justify-self-center relative w-full h-full">
         <Image
-          className=" object-cover "
+          className="object-cover pl-16"
           src="/pic1.jpg"
-          alt=""
+          alt="A club image"
           fill
         ></Image>
       </div>

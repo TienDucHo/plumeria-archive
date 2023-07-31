@@ -8,6 +8,11 @@
   --celestial-blue: 5, 142, 217;
   --aetro-blue: 64, 187, 218;
   --saffron-yellow: 234, 191, 83;
+  --gradient-blue-45: linear-gradient(
+    45deg,
+    rgb(var(--celestial-blue)),
+    rgb(var(--aetro-blue))
+  );
   font-size: 16px;
 }
 
@@ -25,5 +30,5 @@
 
 body {
   @apply text-black;
-  background-color: rgb(var(--white), 0.88);
+  background-color: rgb(var(--black), 0.1);
 }
