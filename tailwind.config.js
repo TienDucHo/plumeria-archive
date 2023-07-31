@@ -20,7 +20,6 @@ module.exports = {
         celestialBlue: "rgb(var(--celestial-blue))",
         aetroBlue: "rgb(var(--aetro-blue))",
         saffronYellow: "rgb(var(--saffron-yellow))",
-        gradientBlue45: "var(--gradient-blue-45)",
       },
     },
 

@@ -1,5 +1,3 @@
-"use client";
-
 import Calendar from "./Calendar";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,34 +21,11 @@ export default function Event({
       >
         <Link
           href=""
-          className="text-gradientBlue45"
+          className=""
         >
           See more events
         </Link>
-        <svg
-          width="0"
-          height="0"
-        >
-          <linearGradient
-            id="icon-gradient"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop
-              stopColor="#058ed9"
-              offset="0%"
-            />
-            <stop
-              stopColor="#40bbda"
-              offset="100%"
-            />
-          </linearGradient>
-        </svg>
-        <div className="flex items-center">
-          <AiOutlineRight style={{ fill: "url(#icon-gradient)" }} />
-        </div>
+        <AiOutlineRight className="flex justify-center self-center" />
       </div>
       <p className="col-start-1 text-xl opacity-70 self-center">{subTitle}</p>
 
