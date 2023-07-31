@@ -32,3 +32,17 @@ body {
   @apply text-black;
   background-color: rgb(var(--black), 0.1);
 }
+
+@layer utilities {
+  #text-gradient {
+    background: linear-gradient(
+      45deg,
+      rgb(var(--celestial-blue)),
+      rgb(var(--aetro-blue))
+    );
+    /* Mask the color to the text, and remove the rest  */
+    -webkit-background-clip: text;
+    /* Make the text fill color value transparent so the masked background color comes through */
+    -webkit-text-fill-color: transparent;
+  }
+}
