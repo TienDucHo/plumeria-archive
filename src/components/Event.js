@@ -19,13 +19,33 @@ export default function Event({
         className="justify-self-end flex self-center"
         id="text-gradient"
       >
-        <Link
-          href=""
-          className=""
+        <Link href="/pages/events">See more events</Link>
+
+        <svg
+          width="0"
+          height="0"
         >
-          See more events
-        </Link>
-        <AiOutlineRight className="flex justify-center self-center" />
+          <linearGradient
+            id="blue-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop
+              stopColor="#058ED9"
+              offset="0%"
+            />
+            <stop
+              stopColor="#40BBDA"
+              offset="100%"
+            />
+          </linearGradient>
+        </svg>
+        <AiOutlineRight
+          className="flex justify-center self-center"
+          style={{ fill: "url(#blue-gradient)" }}
+        />
       </div>
       <p className="col-start-1 text-xl opacity-70 self-center">{subTitle}</p>
 
