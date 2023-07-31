@@ -4,14 +4,19 @@ import Calendar from "./Calendar";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineRight } from "react-icons/ai";
-import { IconContext } from "react-icons";
 
-export default function Event({ clubName, date, month, location, time }) {
+export default function Event({
+  title,
+  subTitle,
+  clubName,
+  date,
+  month,
+  location,
+  time,
+}) {
   return (
     <div className="grid grid-cols-2 grid-rows-auto m-16 gap-y-3">
-      <h1 className="text-4xl font-playfair font-semibold">
-        Lorem ipsum dolor sit amet consectetur.
-      </h1>
+      <h1 className="text-4xl font-playfair font-semibold">{title}</h1>
       <div
         className="justify-self-end flex self-center"
         id="text-gradient"
@@ -47,10 +52,7 @@ export default function Event({ clubName, date, month, location, time }) {
           <AiOutlineRight style={{ fill: "url(#icon-gradient)" }} />
         </div>
       </div>
-      <p className="text-xl opacity-70 self-center">
-        Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate
-        egestas eu.
-      </p>
+      <p className="text-xl opacity-70 self-center">{subTitle}</p>
 
       <div className="row-start-3">
         <Calendar
