@@ -1,4 +1,4 @@
-import Carousel from "@/components/Carousel";
+import Carousel from "@/components/MyCarousel";
 
 export default function Home() {
   let events = [

@@ -16,7 +16,7 @@ export default function Calendar({ clubName, month, date, time, location }) {
         id="location-time-display"
         className="font-semibold"
       >
-        <h1 className="text-3xl text-celestialBlue">{clubName}</h1>
+        <h1 className="text-3xl text-celestialBlue text-left">{clubName}</h1>
         <p className="flex items-center gap-x-2">
           <MdLocationPin></MdLocationPin>
           {location}

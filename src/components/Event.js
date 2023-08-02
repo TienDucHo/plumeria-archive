@@ -15,7 +15,9 @@ export default function Event({
 }) {
   return (
     <div id="event-component">
-      <h1 className="text-5xl font-playfair font-semibold">{title}</h1>
+      <h1 className="text-5xl font-playfair font-semibold text-left">
+        {title}
+      </h1>
       <div
         className="justify-self-end flex self-center"
         id="text-gradient"
@@ -52,7 +54,9 @@ export default function Event({
           />
         </Link>
       </div>
-      <p className="col-start-1 text-xl opacity-70 self-center">{subTitle}</p>
+      <p className="col-start-1 text-xl opacity-70 self-center text-left">
+        {subTitle}
+      </p>
 
       <div className="row-start-3">
         <Calendar
@@ -63,8 +67,8 @@ export default function Event({
           time={time}
         ></Calendar>
       </div>
-      <div className="row-start-4">
-        <button className="bg-celestialBlue text-white text-xl font-semibold py-2 mr-4 w-full">
+      <div className="row-start-4 self-center">
+        <button className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full">
           Register
         </button>
       </div>

@@ -49,19 +49,27 @@ body {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
     grid-template-rows: auto 1fr 2fr 1fr;
-    margin: 4rem 8rem;
+    margin: 0 8rem;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
+  }
+
+  #indicator-container {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    margin: 1rem 8rem;
+    grid-column-gap: 4rem;
+  }
+
+  .carousel-indicator {
+    min-height: 0.5rem;
+    opacity: 70%;
+    transition-delay: 0.75s;
   }
 
   .masked-box {
     background: rgb(var(--white));
     filter: grayscale(10%);
     height: 16.67%;
-  }
-
-  .carousel-indicator {
-    background: rgb(var(--black));
-    weight: 2rem;
   }
 }
