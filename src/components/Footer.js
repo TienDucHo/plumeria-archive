@@ -23,7 +23,7 @@ export default function Footer() {
         MEO Studio
       </h1>
 
-      <p className="row-start-3 col-start-1 col-span-2 text-center mx-96 opacity-50">
+      <p className="row-start-3 col-start-1 col-span-2 text-center mx-8 sm:mx-24 md:mx-40 lg:mx-48 xl:mx-96 opacity-50">
         Lorem ipsum dolor sit amet consectetur. Vitae vestibulum turpis sapien
         venenatis vitae adipiscing. Mauris odio sit malesuada donec elit
         gravida. Amet blandit proin augue eu morbi faucibus viverra nibh
