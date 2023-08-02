@@ -59,4 +59,9 @@ body {
     filter: grayscale(10%);
     height: 16.67%;
   }
+
+  .carousel-indicator {
+    background: rgb(var(--black));
+    weight: 2rem;
+  }
 }

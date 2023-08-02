@@ -7,7 +7,7 @@ export default function Calendar({ clubName, month, date, time, location }) {
         id="month-date-calendar"
         className="flex text-center"
       >
-        <div className="border-2 border-celestialBlue p-8">
+        <div className="border-2 border-celestialBlue p-8 w-32 h-32">
           <p className="text-4xl font-bold italic text-celestialBlue">{date}</p>
           <p className="opacity-70 font-bold italic">{month}</p>
         </div>
