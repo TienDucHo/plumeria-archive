@@ -27,8 +27,15 @@
     font-size: 14px;
   }
 
-  body {
-    margin: 0 1rem;
+  @layer utilities {
+    #event-component {
+      display: grid;
+      grid-template-columns: 0.5fr 0.5fr;
+      grid-template-rows: auto 1fr 2fr 1fr;
+      margin: 2rem 4rem 1rem 4rem;
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
   }
 }
 
@@ -53,7 +60,7 @@ body {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
     grid-template-rows: auto 1fr 2fr 1fr;
-    margin: 2rem 8rem 1rem 8rem;
+    margin: 2rem 4rem 1rem 4rem;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
   }
@@ -61,7 +68,7 @@ body {
   #indicator-container {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 0 8rem 12rem 8rem;
+    margin: 0 4rem 12rem 4rem;
     grid-column-gap: 4rem;
   }
 
@@ -70,11 +77,13 @@ body {
   }
 
   #latest-news {
-    margin: 2rem 8rem;
+    margin: 2rem 4rem;
   }
 
   #news-card {
-    margin: 2rem 8rem;
+    margin: 2rem 4rem;
+    height: 20rem;
+    width: 24rem;
   }
 
   .carousel-indicator {

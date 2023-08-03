@@ -18,7 +18,7 @@ const getConfigurableProps = () => ({
   transitionTime: ("transitionTime", 1000),
 });
 
-export default function MyCarousel({ items }) {
+export default function EventCarousel({ items }) {
   let [currentIndex, setCurrentIndex] = useState(0);
   let indicatorNum = items.slice(items.length - 3, items.length + 1);
 

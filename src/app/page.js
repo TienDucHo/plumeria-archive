@@ -1,5 +1,5 @@
-import Carousel from "@/components/MyCarousel";
-import NewsCard from "@/components/NewsCard";
+import EventCarousel from "@/components/EventCarousel";
+import NewsCarousel from "@/components/NewsCarousel";
 
 export default function Home() {
   let events = [
@@ -61,23 +61,16 @@ export default function Home() {
     },
   ];
 
-  let testNews = {
-    writer: "TPT",
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    subTitle:
-      "Lorem ipsum dolor sit amet consectetur. Ut viverra faucibus lobortis turpis nullam dignissim in arcu magna.",
-  };
-
   return (
     <main>
-      <Carousel items={events}></Carousel>
+      <EventCarousel items={events}></EventCarousel>
       <h1
         id="latest-news"
         className="font-playfair text-4xl font-semibold text-left"
       >
         Latest News
       </h1>
-      <NewsCard items={testNews}></NewsCard>
+      <NewsCarousel items={news}></NewsCarousel>
     </main>
   );
 }
