@@ -51,6 +51,7 @@ body {
     grid-template-rows: auto 1fr 2fr 1fr;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
+    padding: 1rem;
   }
 
   #indicator-container {
@@ -59,6 +60,7 @@ body {
     margin-top: 1rem;
     margin-bottom: 14rem;
     grid-column-gap: 4rem;
+    padding: 0 1rem;
   }
 
   #news-card {
