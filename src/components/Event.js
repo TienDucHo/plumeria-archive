@@ -25,7 +25,7 @@ export default function Event({
       >
         <Link
           href="/pages/events"
-          className="flex justify-center items-center"
+          className="flex justify-center items-center gap-x-0.5"
         >
           See more events
           <GradientRightArrow></GradientRightArrow>

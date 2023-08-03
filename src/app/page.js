@@ -89,7 +89,7 @@ export default function Home() {
         </h1>
         <Link
           href="/pages/events"
-          className="self-center flex justify-end items-center"
+          className="self-center flex justify-end items-center gap-x-0.5"
           id="text-gradient"
         >
           See more
