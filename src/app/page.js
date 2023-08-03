@@ -1,7 +1,7 @@
 import EventCarousel from "@/components/EventCarousel";
 import NewsCard from "@/components/NewsCard";
 import Link from "next/link";
-import GradientRightArrow from "@/components/GradientEffectIcon";
+import GradientRightArrow from "@/utils/GradientEffectIcon";
 import { AiOutlineRight } from "react-icons/ai";
 
 export default function Home() {

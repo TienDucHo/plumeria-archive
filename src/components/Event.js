@@ -1,7 +1,7 @@
 import Calendar from "./Calendar";
 import Link from "next/link";
 import Image from "next/image";
-import GradientRightArrow from "./GradientEffectIcon";
+import GradientRightArrow from "../utils/GradientEffectIcon";
 import { AiOutlineRight } from "react-icons/ai";
 
 export default function Event({
