@@ -26,17 +26,6 @@
   :root {
     font-size: 14px;
   }
-
-  @layer utilities {
-    #event-component {
-      display: grid;
-      grid-template-columns: 0.5fr 0.5fr;
-      grid-template-rows: auto 1fr 2fr 1fr;
-      margin: 2rem 4rem 1rem 4rem;
-      grid-column-gap: 1rem;
-      grid-row-gap: 1rem;
-    }
-  }
 }
 
 body {
@@ -60,7 +49,6 @@ body {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
     grid-template-rows: auto 1fr 2fr 1fr;
-    margin: 2rem 4rem 1rem 4rem;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
   }
@@ -68,22 +56,13 @@ body {
   #indicator-container {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 0 4rem 12rem 4rem;
+    margin-top: 1rem;
+    margin-bottom: 14rem;
     grid-column-gap: 4rem;
   }
 
-  #event-carousel {
-    margin: 10rem 20rem;
-  }
-
-  #latest-news {
-    margin: 2rem 4rem;
-  }
-
   #news-card {
-    margin: 2rem 4rem;
     height: 20rem;
-    width: 24rem;
   }
 
   .carousel-indicator {
@@ -97,5 +76,16 @@ body {
     background: rgb(var(--white));
     filter: grayscale(10%);
     height: 16.67%;
+  }
+
+  .masked-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--white), 0),
+      rgb(var(--black))
+    );
   }
 }
