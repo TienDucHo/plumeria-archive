@@ -1,5 +1,8 @@
 import EventCarousel from "@/components/EventCarousel";
 import NewsCard from "@/components/NewsCard";
+import Link from "next/link";
+import GradientRightArrow from "@/components/GradientEffectIcon";
+import { AiOutlineRight } from "react-icons/ai";
 
 export default function Home() {
   let events = [
@@ -73,12 +76,26 @@ export default function Home() {
   return (
     <main className="px-16 my-16">
       <EventCarousel items={events}></EventCarousel>
-      <h1
-        id="latest-news"
-        className="font-playfair text-4xl font-semibold text-left mb-8"
-      >
-        Latest News
-      </h1>
+      <div className="grid grid-cols-2">
+        <h1
+          id="latest-news"
+          className="font-playfair text-4xl font-semibold text-left mb-8"
+        >
+          Latest News
+        </h1>
+        <Link
+          href="/pages/events"
+          className="self-center flex justify-end items-center"
+          id="text-gradient"
+        >
+          See more
+          <GradientRightArrow></GradientRightArrow>
+          <AiOutlineRight
+            className="cursor-pointer"
+            style={{ fill: "url(#blue-gradient)" }}
+          />
+        </Link>
+      </div>
       <div className="grid grid-cols-3 self-center gap-x-14">
         {news.map((elem, index) => {
           return (
