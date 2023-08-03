@@ -29,6 +29,7 @@ export default function MyCarousel({ items }) {
         onChange={(currentIndex) => {
           setCurrentIndex(currentIndex);
         }}
+        selectedItem={currentIndex}
       >
         {indicatorNum.map((elem, index) => {
           return (
@@ -58,6 +59,7 @@ export default function MyCarousel({ items }) {
                     ? "bg-saffronYellow carousel-indicator"
                     : "bg-black carousel-indicator"
                 }
+                onClick={() => setCurrentIndex(index)}
               ></div>
             );
           })}

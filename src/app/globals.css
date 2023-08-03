@@ -56,7 +56,7 @@ body {
 
   #indicator-container {
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 1fr;
     margin: 1rem 8rem;
     grid-column-gap: 4rem;
   }
@@ -65,6 +65,7 @@ body {
     min-height: 0.5rem;
     opacity: 70%;
     transition-delay: 0.75s;
+    cursor: pointer;
   }
 
   .masked-box {
