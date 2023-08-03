@@ -20,7 +20,7 @@ const getConfigurableProps = () => ({
 
 export default function EventCarousel({ items }) {
   let [currentIndex, setCurrentIndex] = useState(0);
-  let indicatorNum = items.slice(items.length - 3, items.length + 1);
+  let latestEvents = items.slice(items.length - 3, items.length + 1);
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default function EventCarousel({ items }) {
         }}
         selectedItem={currentIndex}
       >
-        {indicatorNum.map((elem, index) => {
+        {latestEvents.map((elem, index) => {
           return (
             <Event
               key={index}
@@ -50,7 +50,7 @@ export default function EventCarousel({ items }) {
 
       <div id="indicator-container">
         <div className=" grid grid-cols-3 gap-x-6">
-          {indicatorNum.map((_elem, index) => {
+          {latestEvents.map((_elem, index) => {
             return (
               <div
                 key={index}

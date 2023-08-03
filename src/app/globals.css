@@ -65,6 +65,11 @@ body {
 
   #news-card {
     height: 20rem;
+    transition: 0.2s ease-in;
+  }
+
+  #news-card:hover {
+    transform: scale(1.02);
   }
 
   .carousel-indicator {

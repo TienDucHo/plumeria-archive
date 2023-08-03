@@ -73,9 +73,13 @@ export default function Home() {
     },
   ];
 
+  let latestNews = news.slice(news.length - 3, news.length + 1);
   return (
     <main className="px-16 my-16">
+      {/* Event Section */}
       <EventCarousel items={events}></EventCarousel>
+
+      {/* News Section */}
       <div className="grid grid-cols-2">
         <h1
           id="latest-news"
@@ -97,7 +101,7 @@ export default function Home() {
         </Link>
       </div>
       <div className="grid grid-cols-3 self-center gap-x-14">
-        {news.map((elem, index) => {
+        {latestNews.map((elem, index) => {
           return (
             <NewsCard
               key={index}
