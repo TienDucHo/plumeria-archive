@@ -2,7 +2,7 @@ import { MdLocationPin } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
 export default function Calendar({ clubName, month, date, time, location }) {
   return (
-    <div className="flex gap-x-3">
+    <div className="flex gap-x-3 whitespace-nowrap">
       <div
         id="month-date-calendar"
         className="flex text-center"
