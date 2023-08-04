@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import GradientRightArrow from "../utils/GradientEffectIcon";
 import { AiOutlineRight } from "react-icons/ai";
-
 export default function Event({
   title,
   subTitle,
@@ -49,7 +48,10 @@ export default function Event({
         ></Calendar>
       </div>
       <div className="row-start-4 self-center">
-        <button className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full">
+        <button
+          id="event-register-button"
+          className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full"
+        >
           Register
         </button>
       </div>

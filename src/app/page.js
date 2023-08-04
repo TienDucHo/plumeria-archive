@@ -9,7 +9,7 @@ export default function Home() {
   const organization = [
     {
       orgName: "Harmonica",
-      orgPic: "/pic2.jpg",
+      orgPic: "/pic3.jpg",
     },
   ];
 
@@ -122,10 +122,21 @@ export default function Home() {
       </div>
 
       {/* Organization Section */}
-      <OrganizationDisplay
-        orgName={organization[0].orgName}
-        orgPic={organization[0].orgPic}
-      ></OrganizationDisplay>
+      <div className="relative mt-56">
+        <div className="absolute top-0 w-1/2 right-0">
+          <h1 className="font-playfair text-4xl font-semibold text-left">
+            Choose Your Organization
+          </h1>
+          <p className="opacity-70">
+            With over 20 organizations, there are endless possibilities for you
+            to find the best environment to grow and become yourself.
+          </p>
+        </div>
+        <OrganizationDisplay
+          orgName={organization[0].orgName}
+          orgPic={organization[0].orgPic}
+        ></OrganizationDisplay>
+      </div>
     </main>
   );
 }

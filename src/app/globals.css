@@ -68,7 +68,15 @@ body {
     grid-template-rows: 2fr;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
-    margin: 14rem 0;
+    margin: 2rem 0;
+  }
+
+  #event-register-button {
+    transition: 0.2s ease-in;
+  }
+
+  #event-register-button:hover {
+    transform: scale(1.02);
   }
 
   .carousel-indicator {

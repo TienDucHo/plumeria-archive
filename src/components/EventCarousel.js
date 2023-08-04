@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Event from "./Event";
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const getConfigurableProps = () => ({
   showArrows: ("showArrows", false),
@@ -23,48 +24,49 @@ export default function EventCarousel({ items }) {
   let latestEvents = items.slice(items.length - 3, items.length + 1);
 
   return (
-    <div>
-      <Carousel
-        {...getConfigurableProps()}
-        onChange={(currentIndex) => {
-          setCurrentIndex(currentIndex);
-        }}
-        selectedItem={currentIndex}
-      >
-        {latestEvents.map((elem, index) => {
-          return (
-            <Event
-              key={index}
-              title={elem.title}
-              subTitle={elem.subTitle}
-              date={elem.date}
-              month={elem.month}
-              clubName={elem.clubName}
-              location={elem.location}
-              time={elem.time}
-              sourcePicture={elem.sourcePicture}
-            ></Event>
-          );
-        })}
-      </Carousel>
-
-      <div id="indicator-container">
-        <div className=" grid grid-cols-3 gap-x-6">
-          {latestEvents.map((_elem, index) => {
+    <Fade>
+      <div>
+        <Carousel
+          {...getConfigurableProps()}
+          onChange={(currentIndex) => {
+            setCurrentIndex(currentIndex);
+          }}
+          selectedItem={currentIndex}
+        >
+          {latestEvents.map((elem, index) => {
             return (
-              <div
+              <Event
                 key={index}
-                className={
-                  currentIndex === index
-                    ? "bg-saffronYellow carousel-indicator"
-                    : "bg-black carousel-indicator"
-                }
-                onClick={() => setCurrentIndex(index)}
-              ></div>
+                title={elem.title}
+                subTitle={elem.subTitle}
+                date={elem.date}
+                month={elem.month}
+                clubName={elem.clubName}
+                location={elem.location}
+                time={elem.time}
+                sourcePicture={elem.sourcePicture}
+              ></Event>
             );
           })}
+        </Carousel>
+        <div id="indicator-container">
+          <div className=" grid grid-cols-3 gap-x-6">
+            {latestEvents.map((_elem, index) => {
+              return (
+                <div
+                  key={index}
+                  className={
+                    currentIndex === index
+                      ? "bg-saffronYellow carousel-indicator"
+                      : "bg-black carousel-indicator"
+                  }
+                  onClick={() => setCurrentIndex(index)}
+                ></div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 }
