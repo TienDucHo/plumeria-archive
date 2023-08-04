@@ -8,6 +8,11 @@
   --celestial-blue: 5, 142, 217;
   --aetro-blue: 64, 187, 218;
   --saffron-yellow: 234, 191, 83;
+  --gradient-blue-45: linear-gradient(
+    45deg,
+    rgb(var(--celestial-blue)),
+    rgb(var(--aetro-blue))
+  );
   font-size: 16px;
 }
 
@@ -25,5 +30,47 @@
 
 body {
   @apply text-black;
-  background-color: rgb(var(--white), 0.88);
+  background: rgb(var(--white));
+  filter: grayscale(10%);
+}
+
+@layer utilities {
+  #text-gradient {
+    background: linear-gradient(
+      45deg,
+      rgb(var(--celestial-blue)),
+      rgb(var(--aetro-blue))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #event-component {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: auto 1fr 2fr 1fr;
+    margin: 0 8rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 1rem;
+  }
+
+  #indicator-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem 8rem;
+    grid-column-gap: 4rem;
+  }
+
+  .carousel-indicator {
+    min-height: 0.5rem;
+    opacity: 70%;
+    transition-delay: 0.75s;
+    cursor: pointer;
+  }
+
+  .masked-box {
+    background: rgb(var(--white));
+    filter: grayscale(10%);
+    height: 16.67%;
+  }
 }
