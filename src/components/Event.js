@@ -60,7 +60,7 @@ export default function Event({
           alt="A club image"
           fill
         ></Image>
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start">
           {["w-1/4", "w-1/6", "w-0", "w-3/12", "w-1/6", "w-1/3"].map(
             (elem, index) => (
               <div

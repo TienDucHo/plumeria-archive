@@ -34,17 +34,7 @@ body {
   filter: grayscale(10%);
 }
 
-@layer utilities {
-  #text-gradient {
-    background: linear-gradient(
-      45deg,
-      rgb(var(--celestial-blue)),
-      rgb(var(--aetro-blue))
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+@layer components {
   #event-component {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
@@ -72,11 +62,32 @@ body {
     transform: scale(1.02);
   }
 
+  #org-display-component {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 2fr;
+    grid-column-gap: 4rem;
+    grid-row-gap: 1rem;
+    margin: 14rem 0;
+  }
+
   .carousel-indicator {
     min-height: 0.5rem;
     opacity: 70%;
     transition-delay: 0.75s;
     cursor: pointer;
+  }
+}
+
+@layer utilities {
+  #text-gradient {
+    background: linear-gradient(
+      45deg,
+      rgb(var(--celestial-blue)),
+      rgb(var(--aetro-blue))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .masked-box {

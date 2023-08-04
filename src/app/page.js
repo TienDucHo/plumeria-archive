@@ -1,10 +1,18 @@
 import EventCarousel from "@/components/EventCarousel";
 import NewsCard from "@/components/NewsCard";
+import OrganizationDisplay from "@/components/OrganizationDisplay";
 import Link from "next/link";
 import GradientRightArrow from "@/utils/GradientEffectIcon";
 import { AiOutlineRight } from "react-icons/ai";
 
 export default function Home() {
+  const organization = [
+    {
+      orgName: "Harmonica",
+      orgPic: "/pic2.jpg",
+    },
+  ];
+
   let events = [
     {
       title: "Lorem ipsum dolor sit amet consectetur.",
@@ -81,10 +89,7 @@ export default function Home() {
 
       {/* News Section */}
       <div className="grid grid-cols-2">
-        <h1
-          id="latest-news"
-          className="font-playfair text-4xl font-semibold text-left mb-8"
-        >
+        <h1 className="font-playfair text-4xl font-semibold text-left mb-8">
           Latest News
         </h1>
         <Link
@@ -115,6 +120,12 @@ export default function Home() {
           );
         })}
       </div>
+
+      {/* Organization Section */}
+      <OrganizationDisplay
+        orgName={organization[0].orgName}
+        orgPic={organization[0].orgPic}
+      ></OrganizationDisplay>
     </main>
   );
 }
