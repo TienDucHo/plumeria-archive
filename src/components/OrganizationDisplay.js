@@ -25,7 +25,7 @@ export default function OrganizationDisplay({ orgName, orgPic }) {
       <div className="table">
         <p
           id="text-gradient"
-          className="text-3xl font-semibold table-cell align-middle pb-12"
+          className="text-3xl font-semibold table-cell align-middle pb-12 pl-7"
         >
           {orgName}
         </p>

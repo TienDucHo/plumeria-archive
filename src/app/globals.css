@@ -68,7 +68,7 @@ body {
     grid-template-rows: 2fr;
     grid-column-gap: 4rem;
     grid-row-gap: 1rem;
-    margin: 2rem 0;
+    margin: 2rem 0 8rem 0;
   }
 
   #event-register-button {

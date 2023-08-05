@@ -3,12 +3,21 @@ import NewsCard from "@/components/NewsCard";
 import OrganizationDisplay from "@/components/OrganizationDisplay";
 import FadedLink from "@/utils/FadedLink";
 import FadedText from "@/utils/FadedText";
+import Link from "next/link";
 
 export default function Home() {
-  const organization = [
+  const organizations = [
     {
       orgName: "Harmonica",
       orgPic: "/pic3.jpg",
+    },
+    {
+      orgName: "TPT",
+      orgPic: "/pic1.jpg",
+    },
+    {
+      orgName: "Just Media",
+      orgPic: "/pic2.jpg",
     },
   ];
 
@@ -116,20 +125,45 @@ export default function Home() {
       </div>
 
       {/* Organization Section */}
+
       <div className="relative mt-56">
-        <div className="absolute top-0 w-1/2 right-0">
+        <div className="absolute w-1/2 top-0 right-0 pl-16">
           <h1 className="font-playfair text-4xl font-semibold text-left">
             Choose Your Organization
           </h1>
-          <p className="opacity-70">
-            With over 20 organizations, there are endless possibilities for you
-            to find the best environment to grow and become yourself.
-          </p>
+          <div className="absolute top-40">
+            <p className="opacity-70 w-2/3 text-lg mb-8">
+              With over 20 organizations, there are endless possibilities for
+              you to find the best environment to grow and become yourself.
+            </p>
+            <div className="grid grid-cols-2 w-3/4">
+              <Link
+                className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
+                href="/pages/organizations"
+              >
+                Find your Organization
+              </Link>
+              <div className="justify-self-center self-center pl-8">
+                <div className="flex items-center">
+                  <FadedLink
+                    link="/pages/organizations"
+                    content="View all"
+                  ></FadedLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute top-72 right-50"></div>
         </div>
-        <OrganizationDisplay
-          orgName={organization[0].orgName}
-          orgPic={organization[0].orgPic}
-        ></OrganizationDisplay>
+        {organizations.map((elem, index) => {
+          return (
+            <OrganizationDisplay
+              key={index}
+              orgName={elem.orgName}
+              orgPic={elem.orgPic}
+            ></OrganizationDisplay>
+          );
+        })}
       </div>
     </main>
   );
