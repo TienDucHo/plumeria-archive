@@ -1,3 +1,4 @@
+"use client";
 import Calendar from "./Calendar";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,6 +52,9 @@ export default function Event({
         <button
           id="event-register-button"
           className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full"
+          onClick={() => {
+            alert("Yeah bro");
+          }}
         >
           Register
         </button>

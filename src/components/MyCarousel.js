@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { useRouter } from "next/navigation";
 
 const getConfigurableProps = () => ({
   showArrows: ("showArrows", false),
@@ -21,6 +22,7 @@ const getConfigurableProps = () => ({
 export default function MyCarousel({ items, indicator, fade = false }) {
   let [currentIndex, setCurrentIndex] = useState(0);
   let numItems = [0, 0, 0];
+  const router = useRouter();
 
   return (
     <Fade triggerOnce>
@@ -32,6 +34,11 @@ export default function MyCarousel({ items, indicator, fade = false }) {
             setCurrentIndex(currentIndex);
           }}
           selectedItem={currentIndex}
+          onSwipeStart={(event) => {
+            if (event.target.id === "event-register-button") {
+              router.push("/pages/events");
+            }
+          }}
         >
           {items}
         </Carousel>

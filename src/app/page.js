@@ -153,9 +153,10 @@ export default function Home() {
       <section id="home-organizations-section">
         <div className="relative">
           <div className="absolute w-1/2 top-0 right-0 pl-16">
-            <h1 className="font-playfair text-4xl font-semibold text-left">
-              Choose Your Organization
-            </h1>
+            <FadedText
+              text="Choose Your Organization"
+              styling="font-playfair text-4xl font-semibold text-left"
+            ></FadedText>
             <div className="absolute top-40">
               <p className="opacity-70 w-2/3 text-lg mb-8">
                 With over 20 organizations, there are endless possibilities for
