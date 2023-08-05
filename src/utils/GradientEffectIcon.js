@@ -1,4 +1,4 @@
-export default function GradientRightArrow() {
+export default function GradientEffectIcon() {
   return (
     <div>
       <svg

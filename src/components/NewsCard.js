@@ -16,7 +16,10 @@ export default function NewsCard({
   const timeAgo = moment(createdAt).fromNow();
 
   return (
-    <Fade direction="up">
+    <Fade
+      direction="up"
+      triggerOnce
+    >
       <div
         id="news-card"
         className="relative text-white"

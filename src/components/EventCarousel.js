@@ -24,7 +24,7 @@ export default function EventCarousel({ items }) {
   let latestEvents = items.slice(items.length - 3, items.length + 1);
 
   return (
-    <Fade>
+    <Fade triggerOnce>
       <div>
         <Carousel
           {...getConfigurableProps()}

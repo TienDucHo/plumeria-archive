@@ -1,9 +1,8 @@
 import EventCarousel from "@/components/EventCarousel";
 import NewsCard from "@/components/NewsCard";
 import OrganizationDisplay from "@/components/OrganizationDisplay";
-import Link from "next/link";
-import GradientRightArrow from "@/utils/GradientEffectIcon";
-import { AiOutlineRight } from "react-icons/ai";
+import FadedLink from "@/utils/FadedLink";
+import FadedText from "@/utils/FadedText";
 
 export default function Home() {
   const organization = [
@@ -89,21 +88,16 @@ export default function Home() {
 
       {/* News Section */}
       <div className="grid grid-cols-2">
-        <h1 className="font-playfair text-4xl font-semibold text-left mb-8">
-          Latest News
-        </h1>
-        <Link
-          href="/pages/events"
-          className="self-center flex justify-end items-center gap-x-0.5"
-          id="text-gradient"
-        >
-          See more
-          <GradientRightArrow></GradientRightArrow>
-          <AiOutlineRight
-            className="cursor-pointer"
-            style={{ fill: "url(#blue-gradient)" }}
-          />
-        </Link>
+        <FadedText
+          text="Latest News"
+          styling="font-playfair text-4xl font-semibold text-left mb-8"
+        ></FadedText>
+        <div className="self-center flex justify-end items-center gap-x-0.5">
+          <FadedLink
+            link="/pages/events"
+            content="See more"
+          ></FadedLink>
+        </div>
       </div>
       <div className="grid grid-cols-3 self-center gap-x-14">
         {latestNews.map((elem, index) => {
