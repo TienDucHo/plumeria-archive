@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function OrganizationDisplay({ orgName, orgPic }) {
+export default function OrgDisplay({ orgName, orgPic }) {
   return (
     <div id="org-display-component">
       <div className="relative h-80">

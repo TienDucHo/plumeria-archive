@@ -1,6 +1,6 @@
 import EventCarousel from "@/components/EventCarousel";
 import NewsCard from "@/components/NewsCard";
-import OrganizationDisplay from "@/components/OrganizationDisplay";
+import OrgDisplay from "@/components/OrgDisplay";
 import FadedLink from "@/utils/FadedLink";
 import FadedText from "@/utils/FadedText";
 import Link from "next/link";
@@ -91,80 +91,85 @@ export default function Home() {
 
   let latestNews = news.slice(news.length - 3, news.length + 1);
   return (
-    <main className="px-16 my-16">
+    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64">
       {/* Event Section */}
-      <EventCarousel items={events}></EventCarousel>
+      <section id="home-event-section">
+        <EventCarousel items={events}></EventCarousel>
+      </section>
 
       {/* News Section */}
-      <div className="grid grid-cols-2">
-        <FadedText
-          text="Latest News"
-          styling="font-playfair text-4xl font-semibold text-left mb-8"
-        ></FadedText>
-        <div className="self-center flex justify-end items-center gap-x-0.5">
-          <FadedLink
-            link="/pages/events"
-            content="See more"
-          ></FadedLink>
+      <section id="home-news-section">
+        <div className="grid grid-cols-2">
+          <FadedText
+            text="Latest News"
+            styling="font-playfair text-4xl font-semibold text-left mb-8"
+          ></FadedText>
+          <div className="self-center flex justify-end items-center gap-x-0.5">
+            <FadedLink
+              link="/pages/events"
+              content="See more"
+            ></FadedLink>
+          </div>
         </div>
-      </div>
-      <div className="grid grid-cols-3 self-center gap-x-14">
-        {latestNews.map((elem, index) => {
-          return (
-            <NewsCard
-              key={index}
-              writer={elem.writer}
-              title={elem.title}
-              subTitle={elem.subTitle}
-              imageSource={elem.imageSource}
-              createdAt={elem.createdAt}
-              newsLink={elem.newsLink}
-            ></NewsCard>
-          );
-        })}
-      </div>
+        <div className="grid grid-cols-3 self-center gap-x-14">
+          {latestNews.map((elem, index) => {
+            return (
+              <NewsCard
+                key={index}
+                writer={elem.writer}
+                title={elem.title}
+                subTitle={elem.subTitle}
+                imageSource={elem.imageSource}
+                createdAt={elem.createdAt}
+                newsLink={elem.newsLink}
+              ></NewsCard>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Organization Section */}
-
-      <div className="relative mt-56">
-        <div className="absolute w-1/2 top-0 right-0 pl-16">
-          <h1 className="font-playfair text-4xl font-semibold text-left">
-            Choose Your Organization
-          </h1>
-          <div className="absolute top-40">
-            <p className="opacity-70 w-2/3 text-lg mb-8">
-              With over 20 organizations, there are endless possibilities for
-              you to find the best environment to grow and become yourself.
-            </p>
-            <div className="grid grid-cols-2 w-3/4">
-              <Link
-                className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
-                href="/pages/organizations"
-              >
-                Find your Organization
-              </Link>
-              <div className="justify-self-center self-center pl-8">
-                <div className="flex items-center">
-                  <FadedLink
-                    link="/pages/organizations"
-                    content="View all"
-                  ></FadedLink>
+      <section id="home-organizations-section">
+        <div className="relative">
+          <div className="absolute w-1/2 top-0 right-0 pl-16">
+            <h1 className="font-playfair text-4xl font-semibold text-left">
+              Choose Your Organization
+            </h1>
+            <div className="absolute top-40">
+              <p className="opacity-70 w-2/3 text-lg mb-8">
+                With over 20 organizations, there are endless possibilities for
+                you to find the best environment to grow and become yourself.
+              </p>
+              <div className="grid grid-cols-2 w-3/4">
+                <Link
+                  className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
+                  href="/pages/organizations"
+                >
+                  Find your Organization
+                </Link>
+                <div className="justify-self-center self-center pl-8">
+                  <div className="flex items-center">
+                    <FadedLink
+                      link="/pages/organizations"
+                      content="View all"
+                    ></FadedLink>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="absolute top-72 right-50"></div>
           </div>
-          <div className="absolute top-72 right-50"></div>
+          {organizations.map((elem, index) => {
+            return (
+              <OrgDisplay
+                key={index}
+                orgName={elem.orgName}
+                orgPic={elem.orgPic}
+              ></OrgDisplay>
+            );
+          })}
         </div>
-        {organizations.map((elem, index) => {
-          return (
-            <OrganizationDisplay
-              key={index}
-              orgName={elem.orgName}
-              orgPic={elem.orgPic}
-            ></OrganizationDisplay>
-          );
-        })}
-      </div>
+      </section>
     </main>
   );
 }
