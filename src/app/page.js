@@ -1,6 +1,7 @@
-import EventCarousel from "@/components/EventCarousel";
+import MyCarousel from "@/components/MyCarousel";
 import NewsCard from "@/components/NewsCard";
 import OrgDisplay from "@/components/OrgDisplay";
+import Event from "@/components/Event";
 import FadedLink from "@/utils/FadedLink";
 import FadedText from "@/utils/FadedText";
 import Link from "next/link";
@@ -90,11 +91,31 @@ export default function Home() {
   ];
 
   let latestNews = news.slice(news.length - 3, news.length + 1);
+  let latestEvents = events.slice(events.length - 3, events.length + 1);
+
   return (
-    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64">
+    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64 my-28">
       {/* Event Section */}
       <section id="home-event-section">
-        <EventCarousel items={events}></EventCarousel>
+        <MyCarousel
+          indicator={true}
+          fade={false}
+          items={latestEvents.map((elem, index) => {
+            return (
+              <Event
+                key={index}
+                title={elem.title}
+                subTitle={elem.subTitle}
+                date={elem.date}
+                month={elem.month}
+                clubName={elem.clubName}
+                location={elem.location}
+                time={elem.time}
+                sourcePicture={elem.sourcePicture}
+              ></Event>
+            );
+          })}
+        ></MyCarousel>
       </section>
 
       {/* News Section */}
@@ -159,15 +180,19 @@ export default function Home() {
             </div>
             <div className="absolute top-72 right-50"></div>
           </div>
-          {organizations.map((elem, index) => {
-            return (
-              <OrgDisplay
-                key={index}
-                orgName={elem.orgName}
-                orgPic={elem.orgPic}
-              ></OrgDisplay>
-            );
-          })}
+          <MyCarousel
+            indicator={false}
+            fade={true}
+            items={organizations.map((elem, index) => {
+              return (
+                <OrgDisplay
+                  key={index}
+                  orgName={elem.orgName}
+                  orgPic={elem.orgPic}
+                ></OrgDisplay>
+              );
+            })}
+          ></MyCarousel>
         </div>
       </section>
     </main>

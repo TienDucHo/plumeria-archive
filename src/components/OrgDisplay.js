@@ -22,14 +22,12 @@ export default function OrgDisplay({ orgName, orgPic }) {
         </div>
       </div>
 
-      <div className="table">
-        <p
-          id="text-gradient"
-          className="text-3xl font-semibold table-cell align-middle pb-12 pl-7"
-        >
-          {orgName}
-        </p>
-      </div>
+      <p
+        id="text-gradient"
+        className="text-3xl font-semibold self-center pb-16 justify-self-start pl-7"
+      >
+        {orgName}
+      </p>
     </div>
   );
 }
