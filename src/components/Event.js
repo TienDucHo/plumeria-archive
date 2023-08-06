@@ -22,6 +22,7 @@ export default function Event({
           link="/pages/events"
           content="See more events"
           icon={true}
+          customId="text-gradient"
         ></FadedLink>
       </div>
       <p className="col-start-1 text-xl opacity-70 self-center text-left">
@@ -45,7 +46,7 @@ export default function Event({
           Register
         </button>
       </div>
-      <div className="col-start-2 row-span-3 relative w-full h-full">
+      <div className="col-start-2 row-span-3 relative w-full h-80">
         <Image
           className="object-cover"
           src={sourcePicture}

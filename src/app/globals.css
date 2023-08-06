@@ -31,7 +31,6 @@
 body {
   @apply text-black;
   background: rgb(var(--white));
-  filter: grayscale(10%);
 }
 
 @layer components {
@@ -77,7 +76,8 @@ body {
 
   #event-register-button:hover,
   #find-org-button:hover {
-    transform: scale(1.02);
+    background: rgb(var(--saffron-yellow), 0.8);
+    color: rgb(var(--black), 0.8);
   }
 
   .carousel-indicator {
@@ -101,7 +101,6 @@ body {
 
   .masked-box {
     background: rgb(var(--white));
-    filter: grayscale(10%);
     height: 16.67%;
   }
 

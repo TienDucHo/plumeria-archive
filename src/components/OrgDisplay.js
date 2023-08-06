@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function OrgDisplay({ orgName, orgPic }) {
   return (
     <div id="org-display-component">
-      <div className="relative h-80">
+      <div className="relative h-96">
         <Image
           className="object-cover"
           src={orgPic}

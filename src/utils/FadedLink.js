@@ -7,6 +7,7 @@ import Link from "next/link";
 export default function FadedLink({
   link,
   linkStyling,
+  customId,
   content,
   icon = false,
 }) {
@@ -14,7 +15,7 @@ export default function FadedLink({
     <Fade triggerOnce>
       <Link
         href={link}
-        id={icon === true ? "text-gradient" : ""}
+        id={customId}
         className={linkStyling}
       >
         {content}

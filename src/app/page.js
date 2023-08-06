@@ -3,7 +3,6 @@ import NewsCard from "@/components/NewsCard";
 import OrgDisplay from "@/components/OrgDisplay";
 import Event from "@/components/Event";
 import FadedLink from "@/utils/FadedLink";
-import Link from "next/link";
 import FadedText from "@/utils/FadedText";
 
 export default function Home() {
@@ -44,7 +43,7 @@ export default function Home() {
       clubName: "TPT",
       location: "1234 56 Ave Street",
       time: "17:00",
-      sourcePicture: "/pic1.jpg",
+      sourcePicture: "/pic2.jpg",
     },
 
     {
@@ -56,7 +55,7 @@ export default function Home() {
       clubName: "Just Media",
       location: "1234 56 Ave Street",
       time: "20:00",
-      sourcePicture: "/pic1.jpg",
+      sourcePicture: "/pic3.jpg",
     },
   ];
 
@@ -94,7 +93,7 @@ export default function Home() {
   let latestEvents = events.slice(events.length - 3, events.length + 1);
 
   return (
-    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64 my-28">
+    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-56 mt-16 mb-52">
       {/* Event Section */}
       <section id="home-event-section">
         <MyCarousel
@@ -131,6 +130,7 @@ export default function Home() {
               link="/pages/events"
               content="See more"
               icon={true}
+              customId="text-gradient"
             ></FadedLink>
           </div>
         </div>
@@ -173,32 +173,31 @@ export default function Home() {
               text="Choose Your Organization"
               styling="font-playfair text-4xl font-semibold text-left"
             ></FadedText>
-            <div className="absolute top-40">
+            <div className="absolute top-48">
               <FadedText
                 text="With over 20 organizations, there are endless possibilities for
                 you to find the best environment to grow and become yourself."
                 styling="opacity-70 w-2/3 text-lg mb-8"
               ></FadedText>
               <div className="grid grid-cols-2 w-3/4">
-                <Link
-                  id="find-org-button"
-                  href="/pages/organizations"
-                  className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
-                >
-                  Find your Organizations
-                </Link>
+                <FadedLink
+                  customId="find-org-button"
+                  content="Find your Organizations"
+                  link="/pages/organizations"
+                  linkStyling="bg-celestialBlue text-white text-xl font-semibold px-4 py-2 text-center"
+                ></FadedLink>
                 <div className="justify-self-center self-center pl-8">
                   <div className="flex items-center">
                     <FadedLink
                       link="/pages/organizations"
                       content="View all"
                       icon={true}
+                      customId="text-gradient"
                     ></FadedLink>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="absolute top-72 right-50"></div>
           </div>
         </div>
       </section>
