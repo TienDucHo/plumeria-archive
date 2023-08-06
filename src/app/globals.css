@@ -70,11 +70,13 @@ body {
     margin: 0 1rem;
   }
 
-  #event-register-button {
+  #event-register-button,
+  #find-org-button {
     transition: 0.2s ease-in;
   }
 
-  #event-register-button:hover {
+  #event-register-button:hover,
+  #find-org-button:hover {
     transform: scale(1.02);
   }
 

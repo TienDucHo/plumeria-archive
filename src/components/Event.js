@@ -1,6 +1,7 @@
 "use client";
 import Calendar from "./Calendar";
 import Image from "next/image";
+import FadedLink from "@/utils/FadedLink";
 export default function Event({
   title,
   subTitle,
@@ -16,6 +17,13 @@ export default function Event({
       <h1 className="text-5xl font-playfair font-semibold text-left">
         {title}
       </h1>
+      <div className="flex items-center justify-end">
+        <FadedLink
+          link="/pages/events"
+          content="See more events"
+          icon={true}
+        ></FadedLink>
+      </div>
       <p className="col-start-1 text-xl opacity-70 self-center text-left">
         {subTitle}
       </p>
@@ -33,9 +41,6 @@ export default function Event({
         <button
           id="event-register-button"
           className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full"
-          onClick={() => {
-            alert("Yeah bro");
-          }}
         >
           Register
         </button>

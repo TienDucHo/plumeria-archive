@@ -3,8 +3,8 @@ import NewsCard from "@/components/NewsCard";
 import OrgDisplay from "@/components/OrgDisplay";
 import Event from "@/components/Event";
 import FadedLink from "@/utils/FadedLink";
-import FadedText from "@/utils/FadedText";
 import Link from "next/link";
+import FadedText from "@/utils/FadedText";
 
 export default function Home() {
   const organizations = [
@@ -96,13 +96,11 @@ export default function Home() {
   return (
     <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64 my-28">
       {/* Event Section */}
-      <section
-        id="home-event-section"
-        className="relative"
-      >
+      <section id="home-event-section">
         <MyCarousel
           indicator={true}
           fade={false}
+          stopOnHover={true}
           items={latestEvents.map((elem, index) => {
             return (
               <Event
@@ -119,15 +117,6 @@ export default function Home() {
             );
           })}
         ></MyCarousel>
-        <div className="absolute top-10 right-0">
-          <div className="flex items-center">
-            <FadedLink
-              link="/pages/events"
-              content="See more events"
-              icon={true}
-            ></FadedLink>
-          </div>
-        </div>
       </section>
 
       {/* News Section */}
@@ -165,6 +154,20 @@ export default function Home() {
       {/* Organization Section */}
       <section id="home-organizations-section">
         <div className="relative">
+          <MyCarousel
+            indicator={false}
+            fade={true}
+            stopOnHover={false}
+            items={organizations.map((elem, index) => {
+              return (
+                <OrgDisplay
+                  key={index}
+                  orgName={elem.orgName}
+                  orgPic={elem.orgPic}
+                ></OrgDisplay>
+              );
+            })}
+          ></MyCarousel>
           <div className="absolute w-1/2 top-0 right-0 pl-16">
             <FadedText
               text="Choose Your Organization"
@@ -177,11 +180,13 @@ export default function Home() {
                 styling="opacity-70 w-2/3 text-lg mb-8"
               ></FadedText>
               <div className="grid grid-cols-2 w-3/4">
-                <FadedLink
-                  link="/pages/organizations"
-                  content="Find your organization"
-                  linkStyling="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
-                ></FadedLink>
+                <Link
+                  id="find-org-button"
+                  href="/pages/organizations"
+                  className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
+                >
+                  Find your Organizations
+                </Link>
                 <div className="justify-self-center self-center pl-8">
                   <div className="flex items-center">
                     <FadedLink
@@ -195,19 +200,6 @@ export default function Home() {
             </div>
             <div className="absolute top-72 right-50"></div>
           </div>
-          <MyCarousel
-            indicator={false}
-            fade={true}
-            items={organizations.map((elem, index) => {
-              return (
-                <OrgDisplay
-                  key={index}
-                  orgName={elem.orgName}
-                  orgPic={elem.orgPic}
-                ></OrgDisplay>
-              );
-            })}
-          ></MyCarousel>
         </div>
       </section>
     </main>
