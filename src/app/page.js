@@ -96,7 +96,10 @@ export default function Home() {
   return (
     <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-64 my-28">
       {/* Event Section */}
-      <section id="home-event-section">
+      <section
+        id="home-event-section"
+        className="relative"
+      >
         <MyCarousel
           indicator={true}
           fade={false}
@@ -116,6 +119,15 @@ export default function Home() {
             );
           })}
         ></MyCarousel>
+        <div className="absolute top-10 right-0">
+          <div className="flex items-center">
+            <FadedLink
+              link="/pages/events"
+              content="See more events"
+              icon={true}
+            ></FadedLink>
+          </div>
+        </div>
       </section>
 
       {/* News Section */}
@@ -129,6 +141,7 @@ export default function Home() {
             <FadedLink
               link="/pages/events"
               content="See more"
+              icon={true}
             ></FadedLink>
           </div>
         </div>
@@ -158,22 +171,23 @@ export default function Home() {
               styling="font-playfair text-4xl font-semibold text-left"
             ></FadedText>
             <div className="absolute top-40">
-              <p className="opacity-70 w-2/3 text-lg mb-8">
-                With over 20 organizations, there are endless possibilities for
-                you to find the best environment to grow and become yourself.
-              </p>
+              <FadedText
+                text="With over 20 organizations, there are endless possibilities for
+                you to find the best environment to grow and become yourself."
+                styling="opacity-70 w-2/3 text-lg mb-8"
+              ></FadedText>
               <div className="grid grid-cols-2 w-3/4">
-                <Link
-                  className="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
-                  href="/pages/organizations"
-                >
-                  Find your Organization
-                </Link>
+                <FadedLink
+                  link="/pages/organizations"
+                  content="Find your organization"
+                  linkStyling="bg-black text-white text-xl font-semibold px-4 py-2 text-center"
+                ></FadedLink>
                 <div className="justify-self-center self-center pl-8">
                   <div className="flex items-center">
                     <FadedLink
                       link="/pages/organizations"
                       content="View all"
+                      icon={true}
                     ></FadedLink>
                   </div>
                 </div>

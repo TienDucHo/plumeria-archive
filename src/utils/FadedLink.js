@@ -4,17 +4,22 @@ import GradientEffectIcon from "@/utils/GradientEffectIcon";
 import { AiOutlineRight } from "react-icons/ai";
 import Link from "next/link";
 
-export default function FadedLink({ link, linkStyling, content, icon }) {
+export default function FadedLink({
+  link,
+  linkStyling,
+  content,
+  icon = false,
+}) {
   return (
     <Fade triggerOnce>
       <Link
         href={link}
-        id="text-gradient"
+        id={icon === true ? "text-gradient" : ""}
         className={linkStyling}
       >
         {content}
       </Link>
-      {{ icon } ? (
+      {icon === true ? (
         <div>
           <GradientEffectIcon></GradientEffectIcon>
           <AiOutlineRight

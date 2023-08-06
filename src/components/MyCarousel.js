@@ -12,7 +12,6 @@ const getConfigurableProps = () => ({
   infiniteLoop: ("infiniteLoop", true),
   autoPlay: ("autoPlay", true),
   stopOnHover: ("stopOnHover", true),
-  swipeable: ("swipeable", true),
   emulateTouch: ("emulateTouch", true),
   autoFocus: ("autoFocus", false),
   showThumbs: ("showThumbs", false),
@@ -30,6 +29,7 @@ export default function MyCarousel({ items, indicator, fade = false }) {
         <Carousel
           {...getConfigurableProps()}
           animationHandler={fade === true ? "fade" : ""}
+          swipeable={fade === true ? false : true}
           onChange={(currentIndex) => {
             setCurrentIndex(currentIndex);
           }}
