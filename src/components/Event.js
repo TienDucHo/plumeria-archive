@@ -1,9 +1,7 @@
+"use client";
 import Calendar from "./Calendar";
-import Link from "next/link";
 import Image from "next/image";
-import GradientRightArrow from "../utils/GradientEffectIcon";
-import { AiOutlineRight } from "react-icons/ai";
-
+import FadedLink from "@/utils/FadedLink";
 export default function Event({
   title,
   subTitle,
@@ -19,21 +17,13 @@ export default function Event({
       <h1 className="text-5xl font-playfair font-semibold text-left">
         {title}
       </h1>
-      <div
-        className="justify-self-end flex self-center"
-        id="text-gradient"
-      >
-        <Link
-          href="/pages/events"
-          className="flex justify-center items-center gap-x-0.5"
-        >
-          See more events
-          <GradientRightArrow></GradientRightArrow>
-          <AiOutlineRight
-            className="cursor-pointer"
-            style={{ fill: "url(#blue-gradient)" }}
-          />
-        </Link>
+      <div className="flex items-center justify-end">
+        <FadedLink
+          link="/pages/events"
+          content="See more events"
+          icon={true}
+          customId="text-gradient"
+        ></FadedLink>
       </div>
       <p className="col-start-1 text-xl opacity-70 self-center text-left">
         {subTitle}
@@ -49,18 +39,21 @@ export default function Event({
         ></Calendar>
       </div>
       <div className="row-start-4 self-center">
-        <button className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full">
+        <button
+          id="event-register-button"
+          className="bg-celestialBlue text-white text-xl font-semibold py-2 w-full"
+        >
           Register
         </button>
       </div>
-      <div className="col-start-2 row-span-3 relative w-full h-full">
+      <div className="col-start-2 row-span-3 relative w-full h-80">
         <Image
           className="object-cover"
           src={sourcePicture}
           alt="A club image"
           fill
         ></Image>
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start">
           {["w-1/4", "w-1/6", "w-0", "w-3/12", "w-1/6", "w-1/3"].map(
             (elem, index) => (
               <div
