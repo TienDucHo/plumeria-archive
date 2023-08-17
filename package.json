@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@googleapis/docs": "^2.0.2",
     "autoprefixer": "10.4.14",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "googleapis": "^125.0.0",
     "moment": "^2.29.4",
     "next": "^13.4.12",
     "postcss": "8.4.27",
@@ -21,5 +24,8 @@
     "react-icons": "^4.10.1",
     "react-responsive-carousel": "^3.2.23",
     "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "encoding": "^0.1.13"
   }
 }
