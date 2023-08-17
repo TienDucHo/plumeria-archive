@@ -1,8 +1,5 @@
 import "./globals.css";
-import NavBar from "@/components/NavBar";
 import { Source_Sans_3 } from "next/font/google";
-import Footer from "@/components/Footer";
-
 const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,11 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={sourceSans.className}>
-        <NavBar></NavBar>
-        {children}
-        <Footer></Footer>
-      </body>
+      <body className={sourceSans.className}></body>
     </html>
   );
 }

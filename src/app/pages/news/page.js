@@ -1,3 +1,5 @@
-export default function News() {
+const News = () => {
   return <div>news</div>;
-}
+};
+
+export default News;
