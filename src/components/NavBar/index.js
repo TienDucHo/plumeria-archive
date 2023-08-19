@@ -45,7 +45,7 @@ const NavBar = () => {
 
       {/* logo */}
       <Link
-        className="font-playfair italic whitespace-nowrap  text-2xl lg:text-3xl px-4 pt-4"
+        className="font-playfair italic whitespace-nowrap text-2xl lg:text-3xl px-4 mt-8"
         href="/"
       >
         <span className="text-celestialBlue">Plumeria </span>
@@ -53,21 +53,33 @@ const NavBar = () => {
       </Link>
 
       {/* Navigation bar styling for desktop */}
-      <div className="items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm mr-8">
+      <div className=" mr-8 mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm">
         {myNavList}
       </div>
 
       {/* Navigation bar styling for mobile */}
       <div
-        id="mobile-nav-bar"
-        className="relative w-[16rem] pt-4 pr-4 h-[100vh] bg-white md:hidden"
+        className={twMerge(
+          "relative w-[16rem] pr-4 h-[100vh] md:hidden",
+          displayMenu ? "bg-white" : ""
+        )}
       >
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-8">
           <button onClick={() => setDisplayMenu(!displayMenu)}>
             {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
           </button>
         </div>
-        <div className="flex flex-col mt-16 pl-4 gap-y-6">{myNavList}</div>
+        <div
+          id="slidebar"
+          className={twMerge(
+            "flex flex-col  mt-16 pl-4 gap-y-6 transition-all duration-750 fixed",
+            displayMenu
+              ? "translate-x-0 opacity-100"
+              : "opacity-0 translate-x-full"
+          )}
+        >
+          {myNavList}
+        </div>
       </div>
     </div>
   );
