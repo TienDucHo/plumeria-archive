@@ -24,7 +24,11 @@ const NavBar = () => {
 
     return (
       <Link
-        className={isActive == false ? "text-black" : "text-celestialBlue"}
+        className={
+          isActive == false
+            ? "text-black nav-link"
+            : "text-celestialBlue nav-link"
+        }
         key={index}
         href={Object.keys(elem)[0]}
       >
@@ -35,6 +39,18 @@ const NavBar = () => {
 
   return (
     <div className="flex flex-row justify-between font-semibold">
+      {/* logo */}
+      <Link
+        className={twMerge(
+          "font-playfair italic whitespace-nowrap text-2xl lg:text-3xl px-4 mt-8",
+          displayMenu ? "z-0" : "z-10"
+        )}
+        href="/"
+      >
+        <span className="text-celestialBlue">Plumeria </span>
+        <span>Archive</span>
+      </Link>
+
       {/* filter */}
       <div
         className={twMerge(
@@ -42,15 +58,6 @@ const NavBar = () => {
           displayMenu ? "opacity-40" : "opacity-0"
         )}
       ></div>
-
-      {/* logo */}
-      <Link
-        className="font-playfair italic whitespace-nowrap text-2xl lg:text-3xl px-4 mt-8"
-        href="/"
-      >
-        <span className="text-celestialBlue">Plumeria </span>
-        <span>Archive</span>
-      </Link>
 
       {/* Navigation bar styling for desktop */}
       <div className=" mr-8 mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm">

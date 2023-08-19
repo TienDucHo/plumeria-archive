@@ -24,3 +24,33 @@
   :root {
   }
 } */
+
+@layer components {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(var(--celestial-blue));
+    background-image: linear-gradient(
+      to right,
+      rgb(var(--celestial-blue)),
+      rgb(var(--aetro-blue))
+    );
+    transition: width 0.25s ease-out;
+  }
+
+  .nav-link:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.2rem;
+  }
+}
