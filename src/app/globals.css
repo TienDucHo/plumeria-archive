@@ -19,12 +19,6 @@
   box-sizing: border-box;
 }
 
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
-
 @layer components {
   .nav-link::before {
     content: "";
@@ -33,12 +27,7 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(var(--celestial-blue));
-    background-image: linear-gradient(
-      to right,
-      rgb(var(--celestial-blue)),
-      rgb(var(--aetro-blue))
-    );
+    background-image: var(--gradient-blue-45);
     transition: width 0.25s ease-out;
   }
 
