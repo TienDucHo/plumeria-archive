@@ -86,7 +86,7 @@ const NavBar = ({ children }) => {
             {myNavList}
           </div>
         </div>
-        <div className="absolute top-[8rem] left-0">{children}</div>
+        <div className="absolute top-[8rem] left-0 font-normal">{children}</div>
       </div>
     </div>
   );
