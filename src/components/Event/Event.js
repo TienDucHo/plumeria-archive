@@ -3,7 +3,7 @@ import Calendar from "./Calendar";
 
 const Event = ({ club, time, date, month, location }) => {
   return (
-    <div>
+    <div className="mx-4">
       <h1>Lorem ipsum dolor sit amet consectetur.</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate
