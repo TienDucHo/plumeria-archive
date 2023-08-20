@@ -43,7 +43,7 @@ const NavBar = ({ children }) => {
         {/* logo */}
         <Link
           className={twMerge(
-            "font-playfair italic whitespace-nowrap text-2xl lg:text-3xl px-4 mt-8",
+            "font-playfair italic whitespace-nowrap text-2xl lg:text-3xl pl-12 pr-4 mt-8",
             displayMenu ? "z-0" : "z-10"
           )}
           href="/"
@@ -59,14 +59,14 @@ const NavBar = ({ children }) => {
           )}
         ></div>
         {/* Navigation bar styling for desktop */}
-        <div className=" mr-8 mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm">
+        <div className=" pr-12 mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm">
           {myNavList}
         </div>
         {/* Navigation bar styling for mobile */}
         <div
           className={twMerge(
-            "relative w-[16rem] pr-4 h-[100vh] md:hidden",
-            displayMenu ? "bg-white z-10" : "z-0"
+            "relative w-[16rem] pr-12 h-[100vh] md:hidden bg-white",
+            displayMenu ? "z-10" : "z-0"
           )}
         >
           <div className="flex justify-end mt-8">

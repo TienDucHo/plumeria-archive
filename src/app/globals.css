@@ -13,6 +13,7 @@
     rgb(var(--celestial-blue)),
     rgb(var(--aetro-blue))
   );
+  background-color: rgb(var(--white));
   font-size: 16px;
   margin: 0;
   padding: 0;

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 // components
 import Button from "../Button/Button";
 
@@ -8,9 +10,29 @@ import Calendar from "./Calendar";
 
 const Event = ({ club, time, date, month, location }) => {
   return (
-    <div>
-      {/* left styling */}
-      <div className="flex flex-col mx-4 gap-y-2">
+    <div className="grid grid-cols-2 h-full gap-x-4 px-12">
+      {/* picture styling */}
+      <div className="relative col-start-2 row-start-1">
+        <Image
+          src="/pic1.jpg"
+          fill
+          alt="Event image"
+        ></Image>
+
+        <div className="absolute top-0 left-0 w-full h-full">
+          {["w-[16%]", "w-[8%]", "w-[16%]", "w-[0]", "w-[24%]", "w-[32%]"].map(
+            (elem, index) => (
+              <div
+                className={`bg-white h-1/6 ${elem}`}
+                key={index}
+              ></div>
+            )
+          )}
+        </div>
+      </div>
+
+      {/* text styling */}
+      <div className="flex flex-col mx-4 gap-y-2 col-start-1">
         <h1 className="font-playfair text-5xl font-semibold">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
@@ -33,9 +55,6 @@ const Event = ({ club, time, date, month, location }) => {
           Register
         </Button>
       </div>
-
-      {/* right styling */}
-      <div></div>
     </div>
   );
 };
