@@ -18,7 +18,7 @@ const Calendar = ({ club, time, date, month, location }) => {
   return (
     <div className="flex gap-x-4">
       {/* calendar */}
-      <div className="border-2 border-celestialBlue40 border-opacity-0 flex flex-col w-[9rem] items-center justify-center gap-y-1 py-9">
+      <div className="border-2 border-celestialBlue border-opacity-0 flex flex-col w-[9rem] items-center justify-center gap-y-1 py-9">
         <p className="text-celestialBlue font-bold text-4xl">{date}</p>
         <p className="italic font-bold opacity-70">{month}</p>
       </div>

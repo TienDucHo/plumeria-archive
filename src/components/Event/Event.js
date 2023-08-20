@@ -48,6 +48,7 @@ const Event = ({ club, time, date, month, location }) => {
           location={location}
         />
         <Button
+          className="register-button"
           onClick={() => {
             alert("Register clicked!");
           }}

@@ -44,3 +44,35 @@
     padding-bottom: 0.2rem;
   }
 }
+
+@layer utilities {
+  .register-button {
+    color: rgb(var(--celestial-blue));
+    background: none;
+    border: 2px solid rgb(var(--celestial-blue));
+    transition: color 0.4s linear;
+    position: relative;
+  }
+
+  .register-button:hover {
+    color: rgb(var(--white));
+  }
+
+  .register-button::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background: var(--gradient-blue-45);
+    z-index: -1;
+    transition: width 0.25s ease-out;
+  }
+
+  .register-button:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+}
