@@ -22,7 +22,7 @@ const Event = ({ club, time, date, month, location }) => {
         <Link
           onMouseEnter={() => setHoverLink(true)}
           onMouseLeave={() => setHoverLink(false)}
-          className="shiny-link flex items-center mb-2 text-celestialBlue"
+          className="shiny-link items-center mb-2 text-celestialBlue hidden md:flex"
           href="/pages/events"
         >
           See more events
@@ -44,7 +44,7 @@ const Event = ({ club, time, date, month, location }) => {
             fill
             alt="Event image"
           ></Image>
-          <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 left-0 w-full h-full hidden md:block">
             {[
               "w-[16%]",
               "w-[8%]",
@@ -64,10 +64,10 @@ const Event = ({ club, time, date, month, location }) => {
 
       {/* text styling */}
       <div className="flex flex-col mx-4 gap-y-2 col-start-1">
-        <h1 className="font-playfair text-5xl font-semibold">
+        <h1 className="font-playfair text-2xl font-semibold md:text-5xl">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
-        <p className="opacity-70 text-lg">
+        <p className="opacity-70 text-lg hidden md:block">
           Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate
           egestas eu.
         </p>
