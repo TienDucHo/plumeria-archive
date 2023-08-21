@@ -18,14 +18,14 @@ const Calendar = ({ club, time, date, month, location }) => {
   return (
     <div className="flex gap-x-4">
       {/* calendar */}
-      <div className="border-2 border-celestialBlue border-opacity-0 flex flex-col w-[9rem] items-center justify-center gap-y-1 py-9">
+      <div className="border-2 border-celestialBlue border-opacity-0 flex flex-col items-center justify-center gap-y-1 py-9 px-9">
         <p className="text-celestialBlue font-bold text-4xl">{date}</p>
         <p className="italic font-bold opacity-70">{month}</p>
       </div>
 
       {/* other info */}
       <div className="flex flex-col gap-y-1">
-        <p className="text-celestialBlue font-semibold text-2xl opacity-80">
+        <p className="text-celestialBlue font-semibold opacity-80 text-2xl">
           {club}
         </p>
         {iconInfo.map((elem, index) => {

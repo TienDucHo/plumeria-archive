@@ -4,7 +4,7 @@ const Button = ({ children, className, ...props }) => {
   return (
     <button
       className={twMerge(
-        "bg-celestialBlue text-white text-2xl font-semibold py-2",
+        "bg-celestialBlue text-white text-2xl font-semibold py-1 lg:py-2",
         className
       )}
       {...props}
