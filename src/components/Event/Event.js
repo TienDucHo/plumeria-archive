@@ -16,7 +16,7 @@ const Event = ({ club, time, date, month, location }) => {
   const [hoverLink, setHoverLink] = useState(false);
 
   return (
-    <div className="relative md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
+    <div className="relative flex flex-col justify-center md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
       <Image
         className="object-cover z-[-1]"
         src="/pic1.jpg"

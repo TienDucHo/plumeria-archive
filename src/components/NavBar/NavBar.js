@@ -63,7 +63,7 @@ const NavBar = ({ children }) => {
       </div>
       {/* Navigation bar styling for mobile */}
       <button
-        className="absolute top-8 right-0 pr-12 z-50"
+        className="absolute top-8 right-0 pr-12 z-50 md:hidden"
         onClick={() => setDisplayMenu(!displayMenu)}
       >
         {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
