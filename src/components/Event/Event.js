@@ -16,7 +16,13 @@ const Event = ({ club, time, date, month, location }) => {
   const [hoverLink, setHoverLink] = useState(false);
 
   return (
-    <div className="relative flex  justify-center md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
+    <div className="relative md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
+      <Image
+        className="object-cover z-[-1]"
+        src="/pic1.jpg"
+        fill
+        alt="Event image"
+      ></Image>
       <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[360px] lg:min-h-[400px]">
         {/* link styling */}
         <Link
@@ -37,7 +43,7 @@ const Event = ({ club, time, date, month, location }) => {
         </Link>
 
         {/* picture styling */}
-        <div className="md:relative md:w-full md:h-full md:min-h-[360px] lg:min-h-[400px]">
+        <div className="hidden md:relative md:w-full md:h-full md:min-h-[360px] lg:min-h-[400px]">
           <Image
             className="object-cover z-[-1]"
             src="/pic1.jpg"

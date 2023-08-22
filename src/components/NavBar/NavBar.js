@@ -38,7 +38,7 @@ const NavBar = ({ children }) => {
   });
 
   return (
-    <div className="flex flex-row justify-between font-semibold mb-16">
+    <div className="relative flex flex-row justify-between font-semibold mb-16">
       {/* logo */}
       <Link
         className={twMerge(
@@ -53,8 +53,8 @@ const NavBar = ({ children }) => {
       {/* filter */}
       <div
         className={twMerge(
-          "absolute left-0 top-0 w-[100%] h-[100vh] bg-black opacity-0 transition md:hidden",
-          displayMenu ? "opacity-40 z-10" : "opacity-0 z-0"
+          "absolute left-0 top-0 w-full h-[100vh] bg-black opacity-0 transition md:hidden",
+          displayMenu ? "opacity-40 z-[1]" : "opacity-0 z-[-1]"
         )}
       ></div>
       {/* Navigation bar styling for desktop */}
@@ -62,17 +62,18 @@ const NavBar = ({ children }) => {
         {myNavList}
       </div>
       {/* Navigation bar styling for mobile */}
+      <button
+        className="absolute top-8 right-0 pr-12 z-50"
+        onClick={() => setDisplayMenu(!displayMenu)}
+      >
+        {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
+      </button>
       <div
         className={twMerge(
-          "absolute top-0  right-0 w-[16rem] pr-12 h-[100vh] md:hidden bg-white",
-          displayMenu ? "z-10" : "z-0"
+          "absolute top-0 right-0 block w-[16rem] pr-12 h-[100vh] md:hidden bg-white",
+          displayMenu ? "block z-10" : "hidden"
         )}
       >
-        <div className="flex justify-end mt-8">
-          <button onClick={() => setDisplayMenu(!displayMenu)}>
-            {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
-          </button>
-        </div>
         <div
           id="slidebar"
           className={twMerge(

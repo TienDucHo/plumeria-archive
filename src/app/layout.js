@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${sourceSans.className} min-h-full`}>
+      <body className={`${sourceSans.className}`}>
         <NavBar />
         {children}
       </body>
