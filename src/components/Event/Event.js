@@ -16,8 +16,8 @@ const Event = ({ club, time, date, month, location }) => {
   const [hoverLink, setHoverLink] = useState(false);
 
   return (
-    <div className="grid grid-cols-2 gap-x-4 px-12">
-      <div className="md:min-h-[360px] lg:min-h-[400px]  col-start-2 row-start-1 flex flex-col items-end">
+    <div className="relative flex  justify-center md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
+      <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[360px] lg:min-h-[400px]">
         {/* link styling */}
         <Link
           onMouseEnter={() => setHoverLink(true)}
@@ -37,14 +37,14 @@ const Event = ({ club, time, date, month, location }) => {
         </Link>
 
         {/* picture styling */}
-        <div className="relative w-full h-full">
+        <div className="md:relative md:w-full md:h-full md:min-h-[360px] lg:min-h-[400px]">
           <Image
-            className="object-cover"
+            className="object-cover z-[-1]"
             src="/pic1.jpg"
             fill
             alt="Event image"
           ></Image>
-          <div className="absolute top-0 left-0 w-full h-full hidden md:block">
+          <div className="absolute top-0 left-0 w-full h-full hidden md:block ">
             {["w-[16%]", "w-[8%]", "w-[16%]", "w-[0]", "w-[24%]"].map(
               (elem, index) => (
                 <div
@@ -58,7 +58,7 @@ const Event = ({ club, time, date, month, location }) => {
       </div>
 
       {/* text styling */}
-      <div className="flex flex-col justify-between col-start-1 gap-y-2 md:min-h-[360px] lg:min-h-[400px]">
+      <div className="flex flex-col justify-between gap-y-2 md:col-start-1">
         <h1 className="font-playfair text-2xl font-semibold md:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
