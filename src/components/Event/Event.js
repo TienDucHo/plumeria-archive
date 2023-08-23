@@ -26,7 +26,7 @@ const Event = ({ club, time, date, month, location }) => {
         <Link
           onMouseEnter={() => setHoverLink(true)}
           onMouseLeave={() => setHoverLink(false)}
-          className="shiny-link absolute bottom-[45.5%] right-2 z-[11] text-aetroBlue text-sm flex items-center mb-2 md:static md:text-celestialBlue lg:text-base"
+          className="shiny-link absolute bottom-[46%] right-2 z-[11] text-aetroBlue text-sm flex items-center mb-2 md:static md:text-celestialBlue lg:text-base"
           href="/pages/events"
         >
           More events
