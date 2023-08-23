@@ -11,13 +11,17 @@ import GradientIcon from "../GradientIcon/GradientIcon";
 
 // local components
 import Calendar from "./Calendar";
+import { twMerge } from "tailwind-merge";
 
 const Event = ({ club, time, date, month, location }) => {
   const [hoverLink, setHoverLink] = useState(false);
 
   return (
-    <div className="relative flex flex-col justify-center mx-12 sm:mx-28 md:mx-0 md:px-12 md:grid md:grid-cols-2 md:gap-x-4">
-      <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[200px] lg:min-h-[310px]">
+    <div className="relative flex flex-col justify-center pt-32 mx-4 sm:mx-8 md:pt-0 md:grid md:grid-cols-2 md:gap-x-4 lg:mx-12">
+      <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
+        {/* filter */}
+        <div className="bg-black opacity-70 absolute top-50 left-0 w-full h-[55%] md:hidden"></div>
+
         {/* link styling */}
         <Link
           onMouseEnter={() => setHoverLink(true)}
@@ -37,7 +41,7 @@ const Event = ({ club, time, date, month, location }) => {
         </Link>
 
         {/* picture styling */}
-        <div className="md:relative md:w-full md:h-full md:min-h-[200px] lg:min-h-[310px]">
+        <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px]">
           <Image
             className="object-cover z-[-1]"
             src="/pic1.jpg"
@@ -58,8 +62,8 @@ const Event = ({ club, time, date, month, location }) => {
       </div>
 
       {/* text styling */}
-      <div className="flex flex-col  gap-y-2 md:col-start-1">
-        <h1 className="font-playfair text-2xl font-semibold md:text-3xl lg:text-5xl">
+      <div className="flex flex-col gap-y-2 md:col-start-1 z-10">
+        <h1 className="font-playfair font-semibold text-xl text-white mx-4 md:mx-0 md:text-black md:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
         <p className="opacity-70 text-lg hidden md:block md:text-base lg:text-lg">
@@ -67,6 +71,7 @@ const Event = ({ club, time, date, month, location }) => {
           egestas eu.
         </p>
         <Calendar
+          className="mx-4 mb-1 md:m-0"
           club={club}
           time={time}
           date={date}
@@ -75,6 +80,16 @@ const Event = ({ club, time, date, month, location }) => {
         />
         <Button
           id="register-button"
+          className="text-xl hidden md:text-2xl md:block"
+          onClick={() => {
+            alert("Register clicked!");
+          }}
+        >
+          Register
+        </Button>
+        <Button
+          id="register-button-1"
+          className="text-xl md:text-2xl md:hidden"
           onClick={() => {
             alert("Register clicked!");
           }}

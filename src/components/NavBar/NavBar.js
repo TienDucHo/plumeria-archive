@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { twMerge } from "tailwind-merge";
 
-const NavBar = ({ children }) => {
+const NavBar = () => {
   const currentPath = usePathname();
   const [displayMenu, setDisplayMenu] = useState(false);
 
@@ -25,9 +25,7 @@ const NavBar = ({ children }) => {
     return (
       <Link
         className={
-          isActive == false
-            ? "text-black nav-link"
-            : "text-celestialBlue nav-link"
+          isActive == false ? "text-black nav-link" : "gradient-text nav-link"
         }
         key={index}
         href={Object.keys(elem)[0]}
@@ -38,11 +36,11 @@ const NavBar = ({ children }) => {
   });
 
   return (
-    <div className="relative flex flex-row justify-between font-semibold mb-16">
+    <div className="relative flex flex-row justify-between font-semibold mb-12 md:mb-28">
       {/* logo */}
       <Link
         className={twMerge(
-          "font-playfair italic whitespace-nowrap text-2xl lg:text-3xl pl-12 pr-4 mt-8",
+          "font-playfair italic whitespace-nowrap text-2xl pr-4 mt-8 pl-4 sm:pl-8 lg:pl-12 lg:text-3xl",
           displayMenu ? "z-0" : "z-10"
         )}
         href="/"
@@ -63,7 +61,7 @@ const NavBar = ({ children }) => {
       </div>
       {/* Navigation bar styling for mobile */}
       <button
-        className="absolute top-8 right-0 pr-12 z-50 md:hidden"
+        className="absolute top-8 right-0 z-50 pr-4 sm:pr-8 md:hidden"
         onClick={() => setDisplayMenu(!displayMenu)}
       >
         {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -71,13 +69,13 @@ const NavBar = ({ children }) => {
       <div
         className={twMerge(
           "absolute top-0 right-0 block w-[16rem] pr-12 h-[100vh] md:hidden bg-white",
-          displayMenu ? "block z-10" : "hidden"
+          displayMenu ? "block z-40" : "hidden"
         )}
       >
         <div
           id="slidebar"
           className={twMerge(
-            "flex flex-col  mt-16 pl-4 gap-y-6 transition-all duration-750 fixed",
+            "flex flex-col mt-28 pl-4 gap-y-6 transition-all duration-750 fixed",
             displayMenu
               ? "translate-x-0 opacity-100"
               : "opacity-0 translate-x-full"

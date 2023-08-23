@@ -73,10 +73,15 @@
   #register-button:hover::before {
     left: 100%;
   }
+
+  #register-button-1 {
+    background: var(--gradient-blue-45);
+  }
 }
 
 @layer utilities {
-  .shiny-link:hover {
+  .shiny-link:hover,
+  .gradient-text {
     background: var(--gradient-blue-45);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
