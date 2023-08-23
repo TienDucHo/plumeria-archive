@@ -68,18 +68,13 @@ const NavBar = () => {
       </button>
       <div
         className={twMerge(
-          "absolute top-0 right-0 block w-[16rem] pr-12 h-[100vh] md:hidden bg-white",
-          displayMenu ? "block z-40" : "hidden"
+          "absolute top-0 right-0 block z-40 transition ease-linear duration-750 w-[16rem] pr-12 h-[100vh] bg-white  md:hidden",
+          displayMenu ? "translate-x-0" : "translate-x-full fixed"
         )}
       >
         <div
           id="slidebar"
-          className={twMerge(
-            "flex flex-col mt-28 pl-4 gap-y-6 transition-all duration-750 fixed",
-            displayMenu
-              ? "translate-x-0 opacity-100"
-              : "opacity-0 translate-x-full"
-          )}
+          className="flex flex-col mt-28 pl-4 gap-y-6"
         >
           {myNavList}
         </div>
