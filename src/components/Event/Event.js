@@ -26,10 +26,10 @@ const Event = ({ club, time, date, month, location }) => {
         <Link
           onMouseEnter={() => setHoverLink(true)}
           onMouseLeave={() => setHoverLink(false)}
-          className="shiny-link items-center mb-2 text-celestialBlue hidden md:flex md:text-sm lg:text-base"
+          className="shiny-link absolute bottom-[45.5%] right-2 z-[11] text-aetroBlue text-sm flex items-center mb-2 md:static md:text-celestialBlue lg:text-base"
           href="/pages/events"
         >
-          See more events
+          More events
           {hoverLink ? (
             <GradientIcon
               icon={MdArrowForwardIos}
@@ -41,14 +41,14 @@ const Event = ({ club, time, date, month, location }) => {
         </Link>
 
         {/* picture styling */}
-        <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px]">
+        <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px] lg:max-w-4xl">
           <Image
             className="object-cover z-[-1]"
             src="/pic1.jpg"
             fill
             alt="Event image"
           ></Image>
-          <div className="absolute top-0 left-0 w-full h-full hidden md:block ">
+          <div className="absolute top-0 left-0 w-full h-full hidden md:block">
             {["w-[16%]", "w-[8%]", "w-[16%]", "w-[0]", "w-[24%]"].map(
               (elem, index) => (
                 <div
@@ -62,7 +62,7 @@ const Event = ({ club, time, date, month, location }) => {
       </div>
 
       {/* text styling */}
-      <div className="flex flex-col gap-y-2 md:col-start-1 z-10">
+      <div className="flex flex-col gap-y-2 z-10 md:col-start-1 lg:max-w-4xl">
         <h1 className="font-playfair font-semibold text-xl text-white mx-4 md:mx-0 md:text-black md:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
@@ -89,7 +89,7 @@ const Event = ({ club, time, date, month, location }) => {
         </Button>
         <Button
           id="register-button-1"
-          className="text-xl md:text-2xl md:hidden"
+          className="text-xl py-2 md:hidden"
           onClick={() => {
             alert("Register clicked!");
           }}

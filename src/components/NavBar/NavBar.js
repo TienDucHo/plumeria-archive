@@ -52,7 +52,7 @@ const NavBar = () => {
       <div
         className={twMerge(
           "absolute left-0 top-0 w-full h-[100vh] bg-black opacity-0 transition md:hidden",
-          displayMenu ? "opacity-40 z-[1]" : "opacity-0 z-[-1]"
+          displayMenu ? "opacity-40 z-40" : "opacity-0 z-[-1]"
         )}
       ></div>
       {/* Navigation bar styling for desktop */}

@@ -19,11 +19,11 @@ const Calendar = ({ club, time, date, month, location, className }) => {
   return (
     <div className={twMerge("flex gap-x-4", className)}>
       {/* calendar */}
-      <div className="border-2 border-celestialBlue70 border-opacity-0 flex flex-col items-center justify-center gap-y-1 p-5 lg:p-9">
-        <p className="text-aetroBlue font-bold text-3xl md:text-celestialBlue lg:text-4xl">
+      <div className="border-2 border-celestialBlue70 border-opacity-0 flex flex-col items-center justify-center gap-y-1 p-4 md:p-5 lg:p-9">
+        <p className="text-aetroBlue font-bold text-2xl md:text-celestialBlue md:text-3xl lg:text-4xl">
           {date}
         </p>
-        <p className="italic font-bold text-white opacity-100 text-sm md:opacity-70 md:text-black">
+        <p className="italic font-bold text-white opacity-100 text-xs md:text-sm md:opacity-70 md:text-black">
           {month}
         </p>
       </div>
