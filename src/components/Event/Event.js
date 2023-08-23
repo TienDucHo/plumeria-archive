@@ -63,7 +63,7 @@ const Event = ({ club, time, date, month, location }) => {
 
       {/* text styling */}
       <div className="flex flex-col gap-y-2 z-10 md:col-start-1 lg:max-w-4xl">
-        <h1 className="font-playfair font-semibold text-xl text-white mx-4 md:mx-0 md:text-black md:text-3xl lg:text-5xl">
+        <h1 className="font-playfair font-semibold text-xl text-white mt-2 mx-4 md:mt-0 md:mx-0 md:text-black md:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
         <p className="opacity-70 text-lg hidden md:block md:text-base lg:text-lg">
