@@ -5,6 +5,9 @@ import MyCarousel from "@/components/MyCarousel/MyCarousel";
 const Page = () => {
   const eventsInfo = [
     {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
       club: "Harmonica PTNK Club",
       time: "17:00",
       date: "25",
@@ -13,6 +16,9 @@ const Page = () => {
       imgSource: "/pic1.jpg",
     },
     {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
       club: "TPT",
       time: "20:00",
       date: "20",
@@ -21,6 +27,9 @@ const Page = () => {
       imgSource: "/pic2.jpg",
     },
     {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
       club: "FZone",
       time: "14:00",
       date: "16",

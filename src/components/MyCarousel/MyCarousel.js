@@ -54,6 +54,8 @@ const MyCarousel = ({ items }) => {
           return (
             <Event
               key={index}
+              title={elem.title}
+              subTitle={elem.subTitle}
               club={elem.club}
               time={elem.time}
               date={elem.date}
