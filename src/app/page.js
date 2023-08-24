@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // components
 import MyCarousel from "@/components/MyCarousel/MyCarousel";
 
@@ -32,7 +34,31 @@ const Page = () => {
   return (
     <div>
       <section id="events-section">
-        <MyCarousel items={eventsInfo}></MyCarousel>
+        <div
+          id="hero-image-container"
+          className="relative"
+        >
+          <Image
+            id="hero-image"
+            className="object-cover z-[-1]"
+            src="/plumeria_background.webp"
+            fill
+            alt="Plumeria Archive Hero Section Image"
+          ></Image>
+          <div
+            id="hero-section-text"
+            className="py-32 text-center flex flex-col gap-y-8"
+          >
+            <span className="text-white font-playfair text-6xl font-bold italic">
+              Plumeria <span className="text-saffronYellow">Archive</span>
+            </span>
+
+            <span className="text-4xl text-white opacity-80">
+              Dive into the endless archive of possibilities
+            </span>
+          </div>
+        </div>
+        {/* <MyCarousel items={eventsInfo}></MyCarousel> */}
       </section>
     </div>
   );
