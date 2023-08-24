@@ -4,7 +4,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { getOriginalIndexLookupTableByClones } from "react-multi-carousel/lib/utils/clones";
+import {
+  getOriginalIndexLookupTableByClones,
+  getOriginalCounterPart,
+} from "react-multi-carousel/lib/utils/clones";
 
 // components
 import Event from "../Event/Event";
@@ -26,7 +29,7 @@ const responsive = {
 
 const MyCarousel = ({ items, isEvent }) => {
   let carouselRef = null;
-  const [slide, setSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(0);
 
   return (
     <div>
@@ -37,13 +40,13 @@ const MyCarousel = ({ items, isEvent }) => {
         autoPlay={true}
         autoPlaySpeed={4600}
         arrows={false}
-        beforeChange={(nextSlide) => {
+        beforeChange={(nextSlide, { currentSlide }) => {
           if (carouselRef) {
             let cloneTable = getOriginalIndexLookupTableByClones(
               carouselRef.state.slidesToShow,
               React.Children.toArray(carouselRef.props.children)
             );
-            setSlide(cloneTable[nextSlide]);
+            setNextSlide(cloneTable[nextSlide]);
           }
         }}
       >
@@ -69,7 +72,7 @@ const MyCarousel = ({ items, isEvent }) => {
               <div
                 key={index}
                 className={
-                  slide === index
+                  nextSlide === index
                     ? twMerge(
                         "h-2 bg-saffronYellow opacity-90 cursor-pointer",
                         `w-1/${items.length}`
@@ -79,6 +82,16 @@ const MyCarousel = ({ items, isEvent }) => {
                         `w-1/${items.length}`
                       )
                 }
+                onClick={() => {
+                  if (carouselRef) {
+                    let afterClonedIndex = getOriginalCounterPart(
+                      index,
+                      carouselRef.state,
+                      React.Children.toArray(carouselRef.props.children)
+                    );
+                    carouselRef.goToSlide(afterClonedIndex);
+                  }
+                }}
               ></div>
             );
           })}

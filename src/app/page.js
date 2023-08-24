@@ -23,7 +23,7 @@ const Page = () => {
       club: "FZone",
       time: "14:00",
       date: "16",
-      month: "October",
+      month: "May",
       location: "125 Nguyen Chi Thanh",
       imgSource: "/pic3.jpg",
     },
