@@ -11,9 +11,8 @@ import GradientIcon from "../GradientIcon/GradientIcon";
 
 // local components
 import Calendar from "./Calendar";
-import { twMerge } from "tailwind-merge";
 
-const Event = ({ club, time, date, month, location }) => {
+const Event = ({ club, time, date, month, location, imgSource }) => {
   const [hoverLink, setHoverLink] = useState(false);
 
   return (
@@ -44,7 +43,7 @@ const Event = ({ club, time, date, month, location }) => {
         <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px] lg:max-w-4xl">
           <Image
             className="object-cover z-[-1]"
-            src="/pic1.jpg"
+            src={imgSource}
             fill
             alt="Event image"
           ></Image>
