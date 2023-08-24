@@ -71,7 +71,7 @@ const NavBar = () => {
       <div
         className={twMerge(
           "absolute top-0 right-0 block z-40 transition ease-linear duration-750 w-[16rem] pr-12 h-[100vh] bg-white  md:hidden",
-          displayMenu ? "translate-x-0" : "translate-x-full fixed"
+          displayMenu ? "translate-x-0 fixed" : "translate-x-full fixed"
         )}
       >
         <div

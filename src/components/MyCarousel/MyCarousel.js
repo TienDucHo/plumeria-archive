@@ -3,7 +3,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import {
   getOriginalIndexLookupTableByClones,
   getOriginalCounterPart,
@@ -27,8 +26,9 @@ const responsive = {
   },
 };
 
-const MyCarousel = ({ items, isEvent }) => {
+const MyCarousel = ({ items }) => {
   let carouselRef = null;
+  let indicatorWidth = `w-1/${items.length}`;
   const [nextSlide, setNextSlide] = useState(0);
 
   return (
@@ -40,7 +40,7 @@ const MyCarousel = ({ items, isEvent }) => {
         autoPlay={true}
         autoPlaySpeed={4600}
         arrows={false}
-        beforeChange={(nextSlide, { currentSlide }) => {
+        beforeChange={(nextSlide) => {
           if (carouselRef) {
             let cloneTable = getOriginalIndexLookupTableByClones(
               carouselRef.state.slidesToShow,
@@ -73,14 +73,8 @@ const MyCarousel = ({ items, isEvent }) => {
                 key={index}
                 className={
                   nextSlide === index
-                    ? twMerge(
-                        "h-2 bg-saffronYellow opacity-90 cursor-pointer",
-                        `w-1/${items.length}`
-                      )
-                    : twMerge(
-                        "h-2 bg-black opacity-90 cursor-pointer",
-                        `w-1/${items.length}`
-                      )
+                    ? `h-2 bg-saffronYellow opacity-90 cursor-pointer ${indicatorWidth}`
+                    : `h-2 bg-black opacity-90 cursor-pointer ${indicatorWidth}`
                 }
                 onClick={() => {
                   if (carouselRef) {

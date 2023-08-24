@@ -6,7 +6,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 
 // components
-import GradientIcon from "../GradientIcon/GradientIcon";
+import GradientIcon from "../../utils/GradientIcon/GradientIcon";
 
 // local components
 import Calendar from "./Calendar";

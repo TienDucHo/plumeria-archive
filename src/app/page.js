@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 // components
+import Hero from "@/components/Hero/Hero";
 import MyCarousel from "@/components/MyCarousel/MyCarousel";
 
 const Page = () => {
@@ -32,38 +31,17 @@ const Page = () => {
   ];
 
   return (
-    <div>
+    <div className="flex flex-col justify-between gap-y-8">
       <section id="hero-section">
         {/* hero section */}
-        <div
-          id="hero-image-container"
-          className="relative"
-        >
-          <Image
-            id="hero-image"
-            className="object-cover z-[-1]"
-            src="/plumeria_background.webp"
-            fill
-            alt="Plumeria Archive Hero Section Image"
-          ></Image>
-          <div
-            id="hero-section-text"
-            className="py-16 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
-          >
-            <span className="text-white font-playfair font-bold italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              Plumeria <span className="text-saffronYellow">Archive</span>
-            </span>
-
-            <span className="text-white opacity-80 text-lg sm:text-xl md:text-2xl lg:text-4xl">
-              Dive into the endless archive of possibilities
-            </span>
-          </div>
-        </div>
+        <Hero />
       </section>
-
-      <section id="events-section">
+      <section
+        id="events-section"
+        className="flex flex-col mb-20"
+      >
         {/* event carousel */}
-        {/* <MyCarousel items={eventsInfo}></MyCarousel> */}
+        <MyCarousel items={eventsInfo}></MyCarousel>
       </section>
     </div>
   );

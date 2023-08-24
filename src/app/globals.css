@@ -101,6 +101,7 @@
     position: relative;
     overflow: hidden;
   }
+
   #hero-image-container #hero-image {
     position: absolute;
     top: 0;
@@ -109,6 +110,13 @@
     width: 0%;
     opacity: 0;
     animation: fade-left 1s 1000ms ease-in-out forwards;
+  }
+
+  #scroll-button {
+    opacity: 0;
+    position: absolute;
+    animation: fade-in 1s 4s ease-in-out forwards,
+      scroll-effect 1s 5s ease-in-out infinite;
   }
 }
 
@@ -121,9 +129,22 @@
   }
 }
 
+/* effect */
 @keyframes scale {
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes scroll-effect {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 0.25rem;
+  }
+  100% {
+    margin-top: 0;
   }
 }
 
