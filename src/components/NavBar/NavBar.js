@@ -40,12 +40,14 @@ const NavBar = () => {
       {/* logo */}
       <Link
         className={twMerge(
-          "font-playfair italic whitespace-nowrap text-2xl pr-4 mt-8 pl-4 sm:pl-8 lg:pl-12 lg:text-3xl",
+          "group font-playfair italic whitespace-nowrap text-2xl pr-4 mt-8 pl-4 sm:pl-8 lg:pl-12 lg:text-3xl",
           displayMenu ? "z-0" : "z-10"
         )}
         href="/"
       >
-        <span className="text-celestialBlue">Plumeria </span>
+        <span className="text-celestialBlue group-hover:text-aetroBlue transition duration-300 ease-in-out">
+          Plumeria{" "}
+        </span>
         <span>Archive</span>
       </Link>
       {/* filter */}
