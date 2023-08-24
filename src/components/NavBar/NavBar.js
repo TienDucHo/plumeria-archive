@@ -48,7 +48,7 @@ const NavBar = () => {
         <span className="text-celestialBlue group-hover:text-aetroBlue transition duration-300 ease-in-out">
           Plumeria{" "}
         </span>
-        <span>Archive</span>
+        <span className="text-black">Archive</span>
       </Link>
       {/* filter */}
       <div

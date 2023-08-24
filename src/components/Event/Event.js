@@ -6,7 +6,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 
 // components
-import Button from "../Button/Button";
 import GradientIcon from "../GradientIcon/GradientIcon";
 
 // local components
@@ -77,24 +76,24 @@ const Event = ({ club, time, date, month, location, imgSource }) => {
           month={month}
           location={location}
         />
-        <Button
+        <button
           id="register-button"
-          className="text-xl hidden md:text-2xl md:block"
+          className="btn btn-primary rounded-none border-none text-white text-xl hidden md:text-2xl md:block"
           onClick={() => {
             alert("Register clicked!");
           }}
         >
           Register
-        </Button>
-        <Button
+        </button>
+        <button
           id="register-button-1"
-          className="text-xl py-2 md:hidden"
+          className="btn btn-primary rounded-none text-white border-none text-xl py-2 md:hidden"
           onClick={() => {
             alert("Register clicked!");
           }}
         >
           Register
-        </Button>
+        </button>
       </div>
     </div>
   );

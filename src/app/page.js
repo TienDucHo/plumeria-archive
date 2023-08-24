@@ -33,7 +33,8 @@ const Page = () => {
 
   return (
     <div>
-      <section id="events-section">
+      <section id="hero-section">
+        {/* hero section */}
         <div
           id="hero-image-container"
           className="relative"
@@ -47,17 +48,21 @@ const Page = () => {
           ></Image>
           <div
             id="hero-section-text"
-            className="py-32 text-center flex flex-col gap-y-8"
+            className="py-16 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
           >
-            <span className="text-white font-playfair text-6xl font-bold italic">
+            <span className="text-white font-playfair font-bold italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               Plumeria <span className="text-saffronYellow">Archive</span>
             </span>
 
-            <span className="text-4xl text-white opacity-80">
+            <span className="text-white opacity-80 text-lg sm:text-xl md:text-2xl lg:text-4xl">
               Dive into the endless archive of possibilities
             </span>
           </div>
         </div>
+      </section>
+
+      <section id="events-section">
+        {/* event carousel */}
         {/* <MyCarousel items={eventsInfo}></MyCarousel> */}
       </section>
     </div>

@@ -35,5 +35,30 @@ module.exports = {
       xl: "1280px",
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#058ED9",
+
+          secondary: "#EABF53",
+
+          accent: "#40BBDA",
+
+          neutral: "#080F0F",
+
+          "base-100": "#FBFCFF",
+
+          info: "#81b8df",
+
+          success: "#16988b",
+
+          warning: "#f2bc07",
+
+          error: "#ed4835",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };
