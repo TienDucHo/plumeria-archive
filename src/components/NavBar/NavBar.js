@@ -40,7 +40,7 @@ const NavBar = () => {
       {/* logo */}
       <Link
         className={twMerge(
-          "group font-playfair italic whitespace-nowrap text-2xl pr-4 mt-8 pl-4 sm:pl-8 lg:pl-12 lg:text-3xl",
+          "group font-playfair italic whitespace-nowrap text-2xl pr-4 mt-8 ml-4 sm:ml-8 lg:ml-12 lg:text-3xl",
           displayMenu ? "z-0" : "z-10"
         )}
         href="/"
@@ -58,12 +58,12 @@ const NavBar = () => {
         )}
       ></div>
       {/* Navigation bar styling for desktop */}
-      <div className=" pr-12 mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm">
+      <div className="mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm md:mr-8 lg:mr-12">
         {myNavList}
       </div>
       {/* Navigation bar styling for mobile */}
       <button
-        className="absolute top-8 right-0 z-50 pr-4 sm:pr-8 md:hidden"
+        className="absolute top-8 right-0 z-50 mr-4 sm:mr-8 md:hidden"
         onClick={() => setDisplayMenu(!displayMenu)}
       >
         {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}

@@ -22,7 +22,7 @@ const Hero = () => {
         ></Image>
         <div
           id="hero-section-text"
-          className="py-16 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
+          className="py-12 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
         >
           <span className="text-white font-playfair font-bold italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Plumeria <span className="text-saffronYellow">Archive</span>
@@ -33,7 +33,7 @@ const Hero = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center py-4 sm:py-16 md:py-26 lg:py-28">
+      <div className="flex flex-col items-center justify-center py-4 sm:py-16 md:py-20 lg:py-28">
         <GradientIcon
           id="scroll-button"
           className="cursor-pointer opacity-80 invisible md:visible md:text-2xl lg:text-5xl"

@@ -4,6 +4,9 @@ import MyCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
 import NewsCard from "@/components/NewsCard/NewsCard";
 
+// utils
+import GradientLink from "@/utils/GradientLink/GradientLink";
+
 const Page = () => {
   const eventsInfo = [
     {
@@ -41,6 +44,33 @@ const Page = () => {
     },
   ];
 
+  const newsInfo = [
+    {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "Harmonica PTNK Club",
+      time: "10 minutes ago",
+      imgSource: "/pic1.jpg",
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "MIB",
+      time: "1 hour ago",
+      imgSource: "/pic2.jpg",
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "Doi Van Nghe",
+      time: "3 days ago",
+      imgSource: "/pic3.jpg",
+    },
+  ];
+
   const cases = () => {
     switch (eventsInfo.length) {
       default:
@@ -64,7 +94,7 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between gap-y-8">
+    <div className="flex flex-col justify-between gap-y-8 mb-32">
       {/* hero section */}
       <section id="hero-section">
         <Hero />
@@ -80,7 +110,27 @@ const Page = () => {
 
       {/* news section */}
       <section>
-        <NewsCard />
+        <div className="flex items-end justify-between mx-4 mb-4 sm:mx-8 lg:mx-12">
+          <h1 className="text-3xl font-semibold font-playfair md:text-4xl md:text-left">
+            Latest News
+          </h1>
+          <GradientLink className="text-celestialBlue">More news</GradientLink>
+        </div>
+        <div className="grid grid-cols-1 gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 lg:grid-cols-3">
+          {newsInfo.map((elem, index) => {
+            return (
+              <NewsCard
+                key={index}
+                className="news-card"
+                title={elem.title}
+                subTitle={elem.subTitle}
+                club={elem.club}
+                time={elem.time}
+                imgSource={elem.imgSource}
+              />
+            );
+          })}
+        </div>
       </section>
     </div>
   );

@@ -118,6 +118,15 @@
     animation: fade-in 1s 4s ease-in-out forwards,
       scroll-effect 1s 5s ease-in-out infinite;
   }
+
+  .news-card {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .news-card:hover {
+    transform: translateY(0.75rem);
+  }
 }
 
 @layer utilities {

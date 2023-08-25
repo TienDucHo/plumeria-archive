@@ -1,17 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { MdArrowForwardIos } from "react-icons/md";
-import { useState } from "react";
-
-// components
-import GradientIcon from "../../utils/GradientIcon/GradientIcon";
-
 import { Fade } from "react-awesome-reveal";
 
 // local components
 import Calendar from "./Calendar";
+
+// utils
+import GradientLink from "@/utils/GradientLink/GradientLink";
 
 const Event = ({
   title,
@@ -23,31 +19,15 @@ const Event = ({
   location,
   imgSource,
 }) => {
-  const [hoverLink, setHoverLink] = useState(false);
-
   return (
-    <Fade>
+    <Fade triggerOnce>
       <div className="relative flex flex-col justify-center pt-32 mx-4 sm:mx-8 md:pt-0 md:grid md:grid-cols-2 md:gap-x-4 lg:mx-12">
         <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
           {/* filter */}
           <div className="bg-black opacity-70 absolute top-50 left-0 w-full h-[55%] md:hidden"></div>
-          {/* link styling */}
-          <Link
-            onMouseEnter={() => setHoverLink(true)}
-            onMouseLeave={() => setHoverLink(false)}
-            className="shiny-link absolute bottom-[46%] right-2 z-[11] text-aetroBlue text-sm flex items-center mb-2 md:static md:text-celestialBlue lg:text-base"
-            href="/pages/events"
-          >
+          <GradientLink className="text-aetroBlue text-sm absolute bottom-[48%] right-1 z-[11] mb-2 md:static md:text-celestialBlue lg:text-base">
             More events
-            {hoverLink ? (
-              <GradientIcon
-                icon={MdArrowForwardIos}
-                size={12}
-              />
-            ) : (
-              <MdArrowForwardIos size={12} />
-            )}
-          </Link>
+          </GradientLink>
           {/* picture styling */}
           <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px] lg:max-w-4xl">
             <Image
@@ -86,7 +66,7 @@ const Event = ({
           />
           <button
             id="register-button"
-            className="btn btn-primary rounded-none border-none text-white text-xl hidden md:text-2xl md:block"
+            className="btn btn-primary rounded-none border-none text-white text-xl capitalize hidden md:text-2xl md:block"
             onClick={() => {
               alert("Register clicked!");
             }}
