@@ -4,6 +4,7 @@ const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
 // components
 import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Plumeria Archive",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${sourceSans.className}`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

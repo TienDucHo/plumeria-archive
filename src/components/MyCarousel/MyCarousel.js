@@ -68,7 +68,7 @@ const MyCarousel = ({ items }) => {
       </Carousel>
 
       <div className="flex flex-col mx-4 sm:mx-8 md:grid md:grid-cols-2 md:gap-x-4">
-        <div className="flex mt-1 justify-center gap-x-2 md:col-start-1 md:ml-0 lg:ml-4">
+        <div className="flex mt-1 justify-center gap-x-2 md:col-start-1 md:ml-0 lg:ml-4 lg:max-w-4xl">
           {items.map((_elem, index) => {
             return (
               <div
