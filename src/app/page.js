@@ -1,7 +1,8 @@
 // components
 import Hero from "@/components/Hero/Hero";
-import MyCarousel from "@/components/MyCarousel/MyCarousel";
+import MyCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
+import NewsCard from "@/components/NewsCard/NewsCard";
 
 const Page = () => {
   const eventsInfo = [
@@ -64,16 +65,22 @@ const Page = () => {
 
   return (
     <div className="flex flex-col justify-between gap-y-8">
+      {/* hero section */}
       <section id="hero-section">
-        {/* hero section */}
         <Hero />
       </section>
+
+      {/* event section */}
       <section
         id="events-section"
         className="flex flex-col mb-20"
       >
-        {/* event carousel */}
         {cases()}
+      </section>
+
+      {/* news section */}
+      <section>
+        <NewsCard />
       </section>
     </div>
   );
