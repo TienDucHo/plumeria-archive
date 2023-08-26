@@ -44,17 +44,20 @@
     padding-bottom: 0.2rem;
   }
 
-  #register-button {
+  #register-button,
+  #choose-org-button {
     background: rgb(var(--celestial-blue));
     position: relative;
     overflow: hidden;
   }
 
-  #register-button:hover {
+  #register-button:hover,
+  #choose-org-button:hover {
     background: var(--gradient-blue-45);
   }
 
-  #register-button::before {
+  #register-button::before,
+  #choose-org-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -70,7 +73,8 @@
     transition: 1.2s;
   }
 
-  #register-button:hover::before {
+  #register-button:hover::before,
+  #choose-org-button:hover::before {
     left: 100%;
   }
 

@@ -1,4 +1,5 @@
 import { PiNewspaperClipping } from "react-icons/pi";
+import Link from "next/link";
 
 // components
 import Hero from "@/components/Hero/Hero";
@@ -173,8 +174,8 @@ const Page = () => {
         <div
           className={
             newsInfo.length > 0
-              ? `grid grid-cols-1 gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 lg:${
-                  "grid-cols-" + newsInfo.length
+              ? `grid grid-cols-1 gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 ${
+                  "lg:grid-cols-" + newsInfo.length
                 }`
               : "mx-4 mt-16 sm:mx-8 md:mt-12 lg:mx-12"
           }
