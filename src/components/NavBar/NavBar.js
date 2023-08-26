@@ -53,7 +53,7 @@ const NavBar = () => {
       {/* filter */}
       <div
         className={twMerge(
-          "absolute left-0 top-0 w-full h-[100vh] bg-black opacity-0 transition md:hidden",
+          "absolute left-0 top-0 w-full h-[100vh] bg-black opacity-0 transition ease-in-out md:hidden",
           displayMenu ? "opacity-40 z-40 fixed" : "opacity-0 z-[-1]"
         )}
       ></div>
@@ -63,7 +63,9 @@ const NavBar = () => {
       </div>
       {/* Navigation bar styling for mobile */}
       <button
-        className="flex top-8 right-0 z-50 mr-4 fixed sm:mr-8 md:hidden"
+        className={`top-8 right-0 z-50 mr-4 sm:mr-8 md:hidden ${
+          displayMenu ? "flex fixed" : "absolute"
+        }`}
         onClick={() => setDisplayMenu(!displayMenu)}
       >
         {displayMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
