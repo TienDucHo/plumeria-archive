@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 
 const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
   return (
     <Fade triggerOnce>
-      <div
+      <Link
+        href="/pages/news"
         className={twMerge(
           "relative flex flex-col min-w-[18rem] text-white px-4 pt-32 pb-4",
           className
@@ -33,7 +35,7 @@ const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
           </h1>
           <p className="opacity-70 text-sm">{subTitle}</p>
         </div>
-      </div>
+      </Link>
     </Fade>
   );
 };
