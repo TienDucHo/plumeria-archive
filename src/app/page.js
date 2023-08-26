@@ -1,9 +1,11 @@
+import { PiNewspaperClipping } from "react-icons/pi";
+
 // components
 import Hero from "@/components/Hero/Hero";
 import MyCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
 import NewsCard from "@/components/NewsCard/NewsCard";
-import { PiNewspaperClipping } from "react-icons/pi";
+import Organization from "@/components/Organization/Organization";
 
 // utils
 import GradientLink from "@/utils/GradientLink/GradientLink";
@@ -71,6 +73,12 @@ const Page = () => {
       time: "3 days ago",
       imgSource: "/pic3.jpg",
     },
+  ];
+
+  const orgInfo = [
+    { club: "Harmonica PTNK Club", imgSource: "/pic1.jPg" },
+    { club: "TPT", imgSource: "/pic2.jpg" },
+    { club: "Define Magic Club", imgSource: "/pic3.jpg" },
   ];
 
   const eventCasesHandler = () => {
@@ -155,7 +163,7 @@ const Page = () => {
       </section>
 
       {/* news section */}
-      <section>
+      <section id="news-section">
         <div className="flex items-end justify-between mx-4 mb-4 sm:mx-8 lg:mx-12">
           <h1 className="text-3xl font-semibold font-playfair md:text-4xl md:text-left">
             Latest News
@@ -173,6 +181,16 @@ const Page = () => {
         >
           {newsCasesHandler()}
         </div>
+      </section>
+
+      <section
+        id="org-section"
+        className="mt-44"
+      >
+        <Organization
+          club={orgInfo[0].club}
+          imgSource={orgInfo[0].imgSource}
+        />
       </section>
     </div>
   );
