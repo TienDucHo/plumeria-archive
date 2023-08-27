@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // components
 import Hero from "@/components/Hero/Hero";
-import MyCarousel from "@/components/MyCarousel/EventCarousel";
+import EventCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Organization from "@/components/Organization/Organization";
@@ -85,7 +85,7 @@ const Page = () => {
   const eventCasesHandler = () => {
     switch (eventsInfo.length) {
       default:
-        return <MyCarousel items={eventsInfo}></MyCarousel>;
+        return <EventCarousel items={eventsInfo}></EventCarousel>;
       case 0:
         return <div></div>;
       case 1:
