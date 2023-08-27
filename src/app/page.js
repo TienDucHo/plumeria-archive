@@ -174,9 +174,7 @@ const Page = () => {
         <div
           className={
             newsInfo.length > 0
-              ? `grid grid-cols-1 gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 ${
-                  "lg:grid-cols-" + newsInfo.length
-                }`
+              ? "flex flex-col gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 lg:flex-row"
               : "mx-4 mt-16 sm:mx-8 md:mt-12 lg:mx-12"
           }
         >

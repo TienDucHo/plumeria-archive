@@ -7,7 +7,10 @@ import Link from "next/link";
 
 const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
   return (
-    <Fade triggerOnce>
+    <Fade
+      triggerOnce
+      className="flex-grow w-full"
+    >
       <Link
         href="/pages/news"
         className={twMerge(
