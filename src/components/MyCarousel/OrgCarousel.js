@@ -45,7 +45,7 @@ const OrgCarousel = ({ items }) => {
         <h1 className="col-start-2 row-start-1 font-playfair font-semibold text-3xl lg:text-4xl">
           Choose your Organization
         </h1>
-        <p className="col-start-2 row-start-2 flex items-end row-span-2 text-base opacity-80 lg:text-xl">
+        <p className="col-start-2 row-start-2 flex items-center mt-12 row-span-2 text-base opacity-80 lg:text-xl">
           With over 20 organizations, there are endless possibilities for you to
           find the best environment to grow and become yourself.
         </p>
