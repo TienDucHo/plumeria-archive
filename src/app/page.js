@@ -1,15 +1,14 @@
 import { PiNewspaperClipping } from "react-icons/pi";
-import Link from "next/link";
 
 // components
 import Hero from "@/components/Hero/Hero";
 import EventCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
 import NewsCard from "@/components/NewsCard/NewsCard";
-import Organization from "@/components/Organization/Organization";
 
 // utils
 import GradientLink from "@/utils/GradientLink/GradientLink";
+import OrgCarousel from "@/components/MyCarousel/OrgCarousel";
 
 const Page = () => {
   // IMPORTANT: Newsest information should be added to the beginning of the array (unshift)
@@ -186,10 +185,7 @@ const Page = () => {
         id="org-section"
         className="mt-44"
       >
-        <Organization
-          club={orgInfo[0].club}
-          imgSource={orgInfo[0].imgSource}
-        />
+        <OrgCarousel items={orgInfo} />
       </section>
     </div>
   );

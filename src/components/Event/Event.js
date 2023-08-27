@@ -21,7 +21,7 @@ const Event = ({
 }) => {
   return (
     <Fade triggerOnce>
-      <div className="relative flex flex-col justify-center pt-32 mx-4 sm:mx-8 md:pt-0 md:grid md:grid-cols-2 md:gap-x-4 lg:mx-12">
+      <div className="relative flex flex-col justify-center pt-32 mx-4 sm:mx-8 md:pt-0 md:grid md:grid-cols-2 md:gap-x-8 lg:mx-12">
         <div className="md:flex md:flex-col md:items-end md:col-start-2 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
           {/* filter */}
           <div className="bg-black opacity-70 absolute top-50 left-0 w-full h-[55%] md:hidden"></div>
@@ -36,7 +36,7 @@ const Event = ({
               fill
               alt="Event image"
             ></Image>
-            <div className="absolute top-0 left-[-1%] w-full h-full hidden md:block">
+            <div className="absolute top-0 left-[-2rem] w-full h-full hidden md:block">
               {["w-[16%]", "w-[8%]", "w-[16%]", "w-[0]", "w-[24%]"].map(
                 (elem, index) => (
                   <div
