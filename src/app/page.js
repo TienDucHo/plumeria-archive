@@ -1,206 +1,194 @@
-import MyCarousel from "@/components/MyCarousel";
-import NewsCard from "@/components/NewsCard";
-import OrgDisplay from "@/components/OrgDisplay";
-import Event from "@/components/Event";
-import FadedLink from "@/utils/FadedLink";
-import FadedText from "@/utils/FadedText";
+import { PiNewspaperClipping } from "react-icons/pi";
 
-export default function Home() {
-  const organizations = [
-    {
-      orgName: "Harmonica",
-      orgPic: "/pic3.jpg",
-    },
-    {
-      orgName: "TPT",
-      orgPic: "/pic1.jpg",
-    },
-    {
-      orgName: "Just Media",
-      orgPic: "/pic2.jpg",
-    },
-  ];
+// components
+import Hero from "@/components/Hero/Hero";
+import EventCarousel from "@/components/MyCarousel/EventCarousel";
+import Event from "@/components/Event/Event";
+import NewsCard from "@/components/NewsCard/NewsCard";
 
-  let events = [
+// utils
+import GradientLink from "@/utils/GradientLink/GradientLink";
+import OrgCarousel from "@/components/MyCarousel/OrgCarousel";
+
+const Page = () => {
+  // IMPORTANT: Newsest information should be added to the beginning of the array (unshift)
+  const eventsInfo = [
     {
       title: "Lorem ipsum dolor sit amet consectetur.",
       subTitle:
         "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
-      date: "05",
-      month: "January",
-      clubName: "Harmonica PTNK Club",
-      location: "825 34 Ave Street",
-      time: "9:00",
-      sourcePicture: "/pic1.jpg",
-    },
-
-    {
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      subTitle:
-        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
-      date: "25",
-      month: "January",
-      clubName: "TPT",
-      location: "1234 56 Ave Street",
+      club: "Harmonica PTNK Club",
       time: "17:00",
-      sourcePicture: "/pic2.jpg",
+      date: "25",
+      month: "December",
+      location: "125 Nguyen Chi Thanh",
+      imgSource: "/pic1.jpg",
     },
-
     {
       title: "Lorem ipsum dolor sit amet consectetur.",
       subTitle:
         "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
-      date: "25",
-      month: "June",
-      clubName: "Just Media",
-      location: "1234 56 Ave Street",
+      club: "TPT",
       time: "20:00",
-      sourcePicture: "/pic3.jpg",
+      date: "20",
+      month: "November",
+      location: "125 Nguyen Chi Thanh",
+      imgSource: "/pic2.jpg",
+    },
+    {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      subTitle:
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "FZone",
+      time: "14:00",
+      date: "16",
+      month: "May",
+      location: "125 Nguyen Chi Thanh",
+      imgSource: "/pic3.jpg",
     },
   ];
 
-  let news = [
+  const newsInfo = [
     {
-      writer: "MIB",
       title: "Lorem ipsum dolor sit amet consectetur.",
       subTitle:
-        "Lorem ipsum dolor sit amet consectetur. Ut viverra faucibus lobortis turpis nullam dignissim in arcu magna.",
-      imageSource: "/pic2.jpg",
-      createdAt: new Date("2023-08-02T21:40:25.051+07:00"),
-      newsLink: "/",
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "Harmonica PTNK Club",
+      time: "10 minutes ago",
+      imgSource: "/pic1.jpg",
     },
     {
-      writer: "Just Media",
       title: "Lorem ipsum dolor sit amet consectetur.",
       subTitle:
-        "Lorem ipsum dolor sit amet consectetur. Ut viverra faucibus lobortis turpis nullam dignissim in arcu magna.",
-      imageSource: "/pic3.jpg",
-      createdAt: new Date("2023-08-02T21:40:25.051+07:00"),
-      newsLink: "/",
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "MIB",
+      time: "1 hour ago",
+      imgSource: "/pic2.jpg",
     },
     {
-      writer: "TPT",
       title: "Lorem ipsum dolor sit amet consectetur.",
       subTitle:
-        "Lorem ipsum dolor sit amet consectetur. Ut viverra faucibus lobortis turpis nullam dignissim in arcu magna.",
-      imageSource: "/pic4.jpg",
-      createdAt: new Date("2023-08-02T21:40:25.051+07:00"),
-      newsLink: "/",
+        "Lorem ipsum dolor sit amet consectetur. Tincidunt platea vulputate egestas eu.",
+      club: "Doi Van Nghe",
+      time: "3 days ago",
+      imgSource: "/pic3.jpg",
     },
   ];
 
-  let latestNews = news.slice(news.length - 3, news.length + 1);
-  let latestEvents = events.slice(events.length - 3, events.length + 1);
+  const orgInfo = [
+    { club: "Harmonica PTNK Club", imgSource: "/pic1.jPg" },
+    { club: "TPT", imgSource: "/pic2.jpg" },
+    { club: "Define Magic Club", imgSource: "/pic3.jpg" },
+  ];
 
-  return (
-    <main className="grid grid-rows-auto grid-cols-1 mx-16 gap-y-56 mt-16 mb-52">
-      {/* Event Section */}
-      <section id="home-event-section">
-        <MyCarousel
-          indicator={true}
-          fade={false}
-          stopOnHover={true}
-          items={latestEvents.map((elem, index) => {
-            return (
-              <Event
-                key={index}
-                title={elem.title}
-                subTitle={elem.subTitle}
-                date={elem.date}
-                month={elem.month}
-                clubName={elem.clubName}
-                location={elem.location}
-                time={elem.time}
-                sourcePicture={elem.sourcePicture}
-              ></Event>
-            );
-          })}
-        ></MyCarousel>
-      </section>
+  const eventCasesHandler = () => {
+    switch (eventsInfo.length) {
+      default:
+        return <EventCarousel items={eventsInfo}></EventCarousel>;
+      case 0:
+        return <div></div>;
+      case 1:
+        return (
+          <Event
+            title={eventsInfo[0].title}
+            subTitle={eventsInfo[0].subTitle}
+            club={eventsInfo[0].club}
+            time={eventsInfo[0].time}
+            date={eventsInfo[0].date}
+            month={eventsInfo[0].month}
+            location={eventsInfo[0].location}
+            imgSource={eventsInfo[0].imgSource}
+          />
+        );
+    }
+  };
 
-      {/* News Section */}
-      <section id="home-news-section">
-        <div className="grid grid-cols-2">
-          <FadedText
-            text="Latest News"
-            styling="font-playfair text-4xl font-semibold text-left mb-8"
-          ></FadedText>
-          <div className="self-center flex justify-end items-center gap-x-0.5">
-            <FadedLink
-              link="/pages/events"
-              content="See more"
-              icon={true}
-              customId="text-gradient"
-            ></FadedLink>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 self-center gap-x-14">
-          {latestNews.map((elem, index) => {
-            return (
-              <NewsCard
-                key={index}
-                writer={elem.writer}
-                title={elem.title}
-                subTitle={elem.subTitle}
-                imageSource={elem.imageSource}
-                createdAt={elem.createdAt}
-                newsLink={elem.newsLink}
-              ></NewsCard>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Organization Section */}
-      <section id="home-organizations-section">
-        <div className="relative">
-          <MyCarousel
-            indicator={false}
-            fade={true}
-            stopOnHover={false}
-            items={organizations.map((elem, index) => {
-              return (
-                <OrgDisplay
-                  key={index}
-                  orgName={elem.orgName}
-                  orgPic={elem.orgPic}
-                ></OrgDisplay>
-              );
-            })}
-          ></MyCarousel>
-          <div className="absolute w-1/2 top-0 right-0 pl-16">
-            <FadedText
-              text="Choose Your Organization"
-              styling="font-playfair text-4xl font-semibold text-left"
-            ></FadedText>
-            <div className="absolute top-48">
-              <FadedText
-                text="With over 20 organizations, there are endless possibilities for
-                you to find the best environment to grow and become yourself."
-                styling="opacity-70 w-2/3 text-lg mb-8"
-              ></FadedText>
-              <div className="grid grid-cols-2 w-3/4">
-                <FadedLink
-                  customId="find-org-button"
-                  content="Find your Organizations"
-                  link="/pages/organizations"
-                  linkStyling="bg-celestialBlue text-white text-xl font-semibold px-4 py-2 text-center"
-                ></FadedLink>
-                <div className="justify-self-center self-center pl-8">
-                  <div className="flex items-center">
-                    <FadedLink
-                      link="/pages/organizations"
-                      content="View all"
-                      icon={true}
-                      customId="text-gradient"
-                    ></FadedLink>
-                  </div>
-                </div>
-              </div>
+  const newsCasesHandler = () => {
+    switch (newsInfo.length) {
+      case 0:
+        return (
+          <div className="flex flex-col justify-center items-center opacity-70">
+            <PiNewspaperClipping className="text-5xl md:text-7xl" />
+            <div className="text-2xl md:text-3xl">No news yet</div>
+            <div className="text-lg md:text-xl">
+              It seems that we are having a lot of exams going on...
             </div>
           </div>
+        );
+      case 1:
+      case 2:
+        return newsInfo.slice(0, newsInfo.length).map((elem, index) => {
+          return (
+            <NewsCard
+              key={index}
+              className="news-card"
+              title={elem.title}
+              subTitle={elem.subTitle}
+              club={elem.club}
+              time={elem.time}
+              imgSource={elem.imgSource}
+            />
+          );
+        });
+      default:
+        return newsInfo.slice(0, 3).map((elem, index) => {
+          return (
+            <NewsCard
+              key={index}
+              className="news-card"
+              title={elem.title}
+              subTitle={elem.subTitle}
+              club={elem.club}
+              time={elem.time}
+              imgSource={elem.imgSource}
+            />
+          );
+        });
+    }
+  };
+
+  return (
+    <div className="flex flex-col justify-between gap-y-8 mb-32">
+      {/* hero section */}
+      <section id="hero-section">
+        <Hero />
+      </section>
+
+      {/* event section */}
+      <section
+        id="events-section"
+        className="flex flex-col mb-20"
+      >
+        {eventCasesHandler()}
+      </section>
+
+      {/* news section */}
+      <section id="news-section">
+        <div className="flex items-end justify-between mx-4 mb-4 sm:mx-8 lg:mx-12">
+          <h1 className="text-3xl font-semibold font-playfair md:text-4xl md:text-left">
+            Latest News
+          </h1>
+          <GradientLink className="text-celestialBlue">More news</GradientLink>
+        </div>
+        <div
+          className={
+            newsInfo.length > 0
+              ? "flex flex-col gap-y-4 mx-4 sm:mx-8 md:gap-x-4 lg:mx-12 lg:flex-row"
+              : "mx-4 mt-16 sm:mx-8 md:mt-12 lg:mx-12"
+          }
+        >
+          {newsCasesHandler()}
         </div>
       </section>
-    </main>
+
+      <section
+        id="org-section"
+        className="mt-12 md:mt-24 lg:mt-44"
+      >
+        <OrgCarousel items={orgInfo} />
+      </section>
+    </div>
   );
-}
+};
+
+export default Page;

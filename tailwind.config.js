@@ -18,6 +18,7 @@ module.exports = {
         white: "rgb(var(--white))",
         black: "rgb(var(--black))",
         celestialBlue: "rgb(var(--celestial-blue))",
+        celestialBlue70: "rgb(var(--celestial-blue), 0.7)",
         aetroBlue: "rgb(var(--aetro-blue))",
         saffronYellow: "rgb(var(--saffron-yellow))",
       },
@@ -26,6 +27,38 @@ module.exports = {
     fontFamily: {
       playfair: ["Playfair Display"],
     },
+
+    screens: {
+      sm: "640px",
+      md: "800px",
+      lg: "1024px",
+      xl: "1280px",
+    },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#058ED9",
+
+          secondary: "#EABF53",
+
+          accent: "#40BBDA",
+
+          neutral: "#080F0F",
+
+          "base-100": "#FBFCFF",
+
+          info: "#81b8df",
+
+          success: "#16988b",
+
+          warning: "#f2bc07",
+
+          error: "#ed4835",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };
