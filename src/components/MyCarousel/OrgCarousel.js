@@ -34,7 +34,7 @@ const OrgCarousel = ({ items }) => {
           >
             Find your Organization
           </button>
-          <GradientLink className="absolute top-[10%] right-0 text-celestialBlue mx-4 sm:mx-8 md:m-0 md:static">
+          <GradientLink className="absolute top-[7%] right-0 text-celestialBlue mx-4 sm:mx-8 md:m-0 md:static">
             View all
           </GradientLink>
         </div>
