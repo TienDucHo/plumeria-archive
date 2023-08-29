@@ -78,7 +78,8 @@
     left: 100%;
   }
 
-  #register-button-1 {
+  #register-button-1,
+  #choose-org-button-1 {
     background: var(--gradient-blue-45);
   }
 

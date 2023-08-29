@@ -183,7 +183,7 @@ const Page = () => {
 
       <section
         id="org-section"
-        className="mt-44"
+        className="mt-12 md:mt-24 lg:mt-44"
       >
         <OrgCarousel items={orgInfo} />
       </section>

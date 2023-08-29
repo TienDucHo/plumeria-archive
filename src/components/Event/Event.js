@@ -37,7 +37,7 @@ const Event = ({
               alt="Event image"
             ></Image>
             <div className="absolute top-0 left-[-2rem] w-full h-full hidden md:block">
-              {["w-[16%]", "w-[8%]", "w-[16%]", "w-[0]", "w-[24%]"].map(
+              {["w-[16%]", "w-[8%]", "w-[16%]", "w-[4%]", "w-[24%]"].map(
                 (elem, index) => (
                   <div
                     className={`bg-white h-1/5 ${elem}`}
