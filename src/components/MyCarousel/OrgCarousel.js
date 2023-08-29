@@ -18,6 +18,27 @@ import GradientLink from "@/utils/GradientLink/GradientLink";
 const OrgCarousel = ({ items }) => {
   return (
     <div className="relative">
+      <div className="md:absolute md:top-0 md:left-0 md:w-full md:grid md:grid-cols-2 md:grid-rows-4 md:gap-x-8 md:min-h-[260px] lg:min-h-[310px]">
+        <div className="md:row-start-1 md:row-span-4">&nbsp;</div>
+        <h1 className="font-playfair font-semibold text-3xl mx-4 mb-4 sm:mx-8 md:m-0 md:col-start-2 md:row-start-1 lg:text-4xl">
+          Choose your Organization
+        </h1>
+        <p className="flex items-center text-base opacity-80 mx-4 mb-4 sm:mx-8 md:m-0 md:row-span-2 md:col-start-2 md:row-start-2 md:mt-12 lg:text-xl">
+          With over 20 organizations, there are endless possibilities for you to
+          find the best environment to grow and become yourself.
+        </p>
+        <div className="z-10 md:col-start-2 md:row-start-4 md:gap-x-16 md:items-end md:flex">
+          <button
+            id="choose-org-button"
+            className="hidden btn btn-primary rounded-none border-none capitalize text-white md:block md:px-4 md:text-base lg:py-2 lg:px-12 lg:text-xl"
+          >
+            Find your Organization
+          </button>
+          <GradientLink className="absolute top-[10%] right-0 text-celestialBlue mx-4 sm:mx-8 md:m-0 md:static">
+            View all
+          </GradientLink>
+        </div>
+      </div>
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -39,26 +60,6 @@ const OrgCarousel = ({ items }) => {
           );
         })}
       </Swiper>
-
-      <div className="absolute top-0 left-0 w-full grid grid-cols-2 grid-rows-4 gap-x-8 md:min-h-[260px] lg:min-h-[310px]">
-        <div className="row-start-1 row-span-4">&nbsp;</div>
-        <h1 className="col-start-2 row-start-1 font-playfair font-semibold text-3xl lg:text-4xl">
-          Choose your Organization
-        </h1>
-        <p className="col-start-2 row-start-2 flex items-center mt-12 row-span-2 text-base opacity-80 lg:text-xl">
-          With over 20 organizations, there are endless possibilities for you to
-          find the best environment to grow and become yourself.
-        </p>
-        <div className="col-start-2 row-start-4 flex gap-x-16 items-end z-10">
-          <button
-            id="choose-org-button"
-            className="btn btn-primary rounded-none border-none capitalize text-white md:px-4 md:text-base lg:py-2 lg:px-12 lg:text-xl"
-          >
-            Find your Organization
-          </button>
-          <GradientLink className="text-celestialBlue">View all</GradientLink>
-        </div>
-      </div>
     </div>
   );
 };
