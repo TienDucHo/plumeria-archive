@@ -58,7 +58,7 @@ const NavBar = () => {
         )}
       ></div>
       {/* Navigation bar styling for desktop */}
-      <div className="mt-8 items-center hidden lg:flex lg:gap-x-16 lg:text-base md:flex md:gap-x-8 md:text-sm md:mr-8 lg:mr-12">
+      <div className="mt-8 items-center hidden lg:gap-x-12 lg:text-base md:flex md:gap-x-8 md:text-sm md:mr-8 lg:mr-12">
         {myNavList}
       </div>
       {/* Navigation bar styling for mobile */}
@@ -72,7 +72,7 @@ const NavBar = () => {
       </button>
       <div
         className={twMerge(
-          "absolute top-0 right-0 block z-40 transition ease-linear duration-750 w-[16rem] pr-12 h-[100vh] bg-white  md:hidden",
+          "absolute top-0 right-0 block z-40 transition ease-linear duration-750 w-[16rem] pr-12 h-[100vh] bg-white md:hidden",
           displayMenu ? "translate-x-0 fixed" : "translate-x-full fixed"
         )}
       >

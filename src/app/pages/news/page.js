@@ -50,7 +50,7 @@ const News = () => {
   return (
     <div className="flex flex-col mb-16 mx-4 sm:mx-8 lg:mx-12">
       <div className="grid gap-y-4 md:gap-x-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:gap-x-4">
-        <SpecialNewsCard className="hidden md:grid row-span-2 lg:col-span-2" />
+        <SpecialNewsCard className="hidden md:flex row-span-2 lg:col-span-2" />
         <SideNews className="hidden lg:grid col-start-2 lg:col-start-3 lg:col-span-2" />
         <SideNews className="hidden lg:grid col-start-2 row-start-2 lg:col-start-3 lg:col-span-2" />
         <NewsCard

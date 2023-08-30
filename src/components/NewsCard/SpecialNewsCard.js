@@ -22,7 +22,7 @@ const SpecialNewsCard = ({ className }) => {
           alt="Special News Image"
         />
       </div>
-      <div className="text-white bg-black max-w-[24rem] px-4 py-4 flex flex-col">
+      <div className="text-white bg-black max-w-[24rem] px-4 py-4">
         <NewsBasic
           club="Harmonica"
           time="20 mintues ago"
