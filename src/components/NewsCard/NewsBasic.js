@@ -12,7 +12,7 @@ const NewsBasic = ({ club, time, title, subTitle, className }) => {
       <h1 className="font-playfair font-semibold md:text-xl lg:text-2xl">
         {title}
       </h1>
-      <p className="opacity-70 text-sm">{subTitle}</p>
+      <p className="opacity-70 md:text-sm">{subTitle}</p>
     </div>
   );
 };
