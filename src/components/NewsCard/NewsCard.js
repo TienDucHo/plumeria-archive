@@ -5,6 +5,9 @@ import { Fade } from "react-awesome-reveal";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 
+// local components
+import NewsBasic from "./NewsBasic";
+
 const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
   return (
     <Fade
@@ -26,18 +29,12 @@ const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
           alt="News Image"
           fill
         ></Image>
-        <div className="z-10 flex flex-col gap-y-2">
-          <div className="relative gap-x-2">
-            <p className="text-aetroBlue font-semibold self-center">{club}</p>
-            <p className="absolute top-0 right-0 opacity-60 text-sm justify-self-end">
-              {time}
-            </p>
-          </div>
-          <h1 className="font-playfair font-semibold md:text-xl lg:text-2xl">
-            {title}
-          </h1>
-          <p className="opacity-70 text-sm">{subTitle}</p>
-        </div>
+        <NewsBasic
+          club={club}
+          time={time}
+          title={title}
+          subTitle={subTitle}
+        />
       </Link>
     </Fade>
   );
