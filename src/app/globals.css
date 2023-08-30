@@ -132,6 +132,10 @@
   .news-card:hover {
     transform: translateY(0.75rem);
   }
+
+  #asa {
+    grid-template-columns: min-content auto;
+  }
 }
 
 @layer utilities {

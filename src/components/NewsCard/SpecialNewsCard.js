@@ -1,14 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowForwardIos } from "react-icons/md";
+import { twMerge } from "tailwind-merge";
 
 // local components
 import NewsBasic from "./NewsBasic";
 
-const SpecialNewsCard = () => {
+const SpecialNewsCard = ({ className }) => {
   return (
-    <div className="relative pt-32 max-w-md lg:mx-12">
-      <div className="absolute w-full h-full bottom-[-8%] left-[8%]">
+    <div
+      className={twMerge(
+        "relative pt-32 pb-8 mr-[11%] min-w-[28rem]",
+        className
+      )}
+    >
+      <div className="absolute w-full h-full bottom-0 left-[12%]">
         <Image
           className="object-cover z-[-1]"
           src="/pic1.jpg"
