@@ -15,7 +15,7 @@ const SideNews = ({ className }) => {
     >
       <Link
         href="/pages/news"
-        className="grid gap-x-4 grid-cols-2"
+        className="grid gap-x-4 grid-cols-2 group"
       >
         <div className="relative">
           <Image
@@ -27,6 +27,7 @@ const SideNews = ({ className }) => {
         </div>
         <NewsBasic
           className="col-start-2"
+          side={true}
           club="Harmonica"
           time="20 mintues ago"
           title="Lorem ipsum dolor sit amet consectetur."

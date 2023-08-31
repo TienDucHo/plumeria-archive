@@ -25,7 +25,7 @@ const NewsCard = ({
       <Link
         href="/pages/news"
         className={twMerge(
-          "relative flex flex-col min-w-[18rem] text-white px-4 pt-32 pb-4",
+          "relative flex flex-col min-w-[18rem] text-white px-4 pt-32 pb-4 group",
           className
         )}
       >
