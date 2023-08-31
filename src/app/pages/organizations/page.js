@@ -1,5 +1,12 @@
+// components
+import OrgCard from "@/components/Organization/OrgCard";
+
 const Organizations = () => {
-  return <div>organizations</div>;
+  return (
+    <div>
+      <OrgCard />
+    </div>
+  );
 };
 
 export default Organizations;
