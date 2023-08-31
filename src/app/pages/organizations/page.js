@@ -1,5 +1,5 @@
 // components
-import OrgCard from "@/components/Organization/OrgCard";
+import OrgCardList from "@/components/Organization/OrgCardList";
 
 const Organizations = () => {
   const orgInfo = [
@@ -46,18 +46,15 @@ const Organizations = () => {
   ];
   return (
     <div className="mx-4 mb-16 grid gap-y-[2rem] sm:mx-8 sm:gap-x-[2%] sm:grid-cols-2 sm:gap-y-[4rem] lg:gap-y-[8rem] lg:mx-12 lg:grid-cols-3">
-      {orgInfo.map((elem, index) => {
-        return (
-          <OrgCard
-            key={index}
-            club={elem.club}
-            content={elem.content}
-            imgSource={elem.imgSource}
-            char1={elem.char1}
-            char2={elem.char2}
-          />
-        );
-      })}
+      <OrgCardList
+        className="hidden sm:flex"
+        items={orgInfo}
+      />
+      <OrgCardList
+        className="flex sm:hidden"
+        items={orgInfo}
+        mobile={true}
+      />
     </div>
   );
 };

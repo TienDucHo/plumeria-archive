@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
   return (
-    <div className="flex flex-col items-center w-full gap-y-2">
+    <Link
+      href="/pages/organizations"
+      className="flex flex-col items-center w-full gap-y-2 group"
+    >
       <div className="relative w-full pt-[60%] lg:pt-[80%]">
         <Image
           className="object-cover"
@@ -11,7 +15,7 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
           fill
         ></Image>
       </div>
-      <h1 className="font-playfair text-xl md:text-2xl font-semibold">
+      <h1 className="font-playfair text-xl md:text-2xl font-semibold group-hover:text-aetroBlue transition ease-in-out">
         {club}
       </h1>
       <div className="flex gap-x-8 items-center">
@@ -23,7 +27,7 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
         </p>
       </div>
       <p className="text-center text-sm md:text-base">{content}</p>
-    </div>
+    </Link>
   );
 };
 
