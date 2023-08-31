@@ -5,9 +5,9 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
   return (
     <Link
       href="/pages/organizations"
-      className="flex flex-col items-center w-full gap-y-2 group"
+      className="flex flex-col items-center w-full gap-y-2 md:gap-y-4 group"
     >
-      <div className="relative w-full pt-[60%] lg:pt-[80%]">
+      <div className="relative w-full aspect-square">
         <Image
           className="object-cover"
           src={imgSource}
@@ -15,7 +15,7 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
           fill
         ></Image>
       </div>
-      <h1 className="font-playfair text-xl md:text-2xl font-semibold group-hover:text-aetroBlue transition ease-in-out">
+      <h1 className="font-playfair text-lg md:text-xl font-semibold group-hover:text-aetroBlue transition ease-in-out">
         {club}
       </h1>
       <div className="flex gap-x-8 items-center">

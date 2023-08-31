@@ -7,8 +7,7 @@ const Organizations = () => {
       club: "Harmonica PTNK Club",
       char1: "Music",
       char2: "Instrument",
-      content:
-        "Lorem ipsum dolor sit amet consectetur. Condimentum phasellus eleifend diam viverra ornare metus id eleifend. Eget facilisi fusce",
+      content: "Lorem ipsum dolor!",
       imgSource: "/pic1.jPg",
     },
     {
@@ -45,7 +44,7 @@ const Organizations = () => {
     },
   ];
   return (
-    <div className="mx-4 mb-16 grid gap-y-[2rem] sm:mx-8 sm:gap-x-[2%] sm:grid-cols-2 sm:gap-y-[4rem] lg:gap-y-[8rem] lg:mx-12 lg:grid-cols-3">
+    <div className="transition ease-in-out mx-4 mb-16 grid gap-y-[2rem] grid-cols-1 gap-x-[4%] sm:mx-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-y-[4rem] lg:gap-y-[8rem] lg:mx-12 lg:grid-cols-4">
       <OrgCardList
         className="hidden sm:flex"
         items={orgInfo}
