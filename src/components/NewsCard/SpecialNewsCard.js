@@ -8,7 +8,7 @@ import { Fade } from "react-awesome-reveal";
 // local components
 import NewsBasic from "./NewsBasic";
 
-const SpecialNewsCard = ({ className }) => {
+const SpecialNewsCard = ({ className, club, time, title, subTitle }) => {
   return (
     <Fade
       triggerOnce
@@ -30,10 +30,10 @@ const SpecialNewsCard = ({ className }) => {
           <NewsBasic
             spec={true}
             className="py-4"
-            club="Harmonica"
-            time="20 mintues ago"
-            title="Lorem ipsum dolor sit amet consectetur."
-            subTitle="Lorem ipsum dolor sit amet consectetur. Pretium laoreet est vel aliquet mauris senectus sed. Lorem ipsum dolor sit amet consectetur."
+            club={club}
+            time={time}
+            title={title}
+            subTitle={subTitle}
           />
         </div>
       </Link>

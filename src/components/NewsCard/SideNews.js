@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 // local components
 import NewsBasic from "./NewsBasic";
 
-const SideNews = ({ className }) => {
+const SideNews = ({ className, club, time, title, subTitle }) => {
   return (
     <Fade
       className={className}
@@ -28,10 +28,10 @@ const SideNews = ({ className }) => {
         <NewsBasic
           className="col-start-2"
           side={true}
-          club="Harmonica"
-          time="20 mintues ago"
-          title="Lorem ipsum dolor sit amet consectetur."
-          subTitle="Lorem ipsum dolor sit amet consectetur. Pretium laoreet est vel aliquet mauris senectus sed. Lorem ipsum dolor sit amet consectetur."
+          club={club}
+          time={time}
+          title={title}
+          subTitle={subTitle}
         />
       </Link>
     </Fade>
