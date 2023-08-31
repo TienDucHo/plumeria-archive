@@ -39,7 +39,7 @@ const Events = () => {
   ];
 
   return (
-    <div className="flex flex-col mb-16 gap-y-12 lg:gap-y-24">
+    <div className="flex flex-col mb-16 gap-y-12 md:gap-y-24 lg:gap-y-32">
       {eventsInfo.map((elem, index) => {
         return index % 2 === 0 ? (
           <RotatedEvent
