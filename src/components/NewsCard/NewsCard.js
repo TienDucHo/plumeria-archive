@@ -8,11 +8,19 @@ import Link from "next/link";
 // local components
 import NewsBasic from "./NewsBasic";
 
-const NewsCard = ({ className, title, subTitle, club, time, imgSource }) => {
+const NewsCard = ({
+  className,
+  title,
+  subTitle,
+  club,
+  time,
+  imgSource,
+  wobble,
+}) => {
   return (
     <Fade
       triggerOnce
-      className="flex-grow w-full"
+      className={wobble ? "flex-grow w-full news-card" : "flex-grow w-full"}
     >
       <Link
         href="/pages/news"

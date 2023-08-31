@@ -120,8 +120,8 @@ const Page = () => {
         return newsInfo.slice(0, newsInfo.length).map((elem, index) => {
           return (
             <NewsCard
-              key={index}
               className="news-card"
+              key={index}
               title={elem.title}
               subTitle={elem.subTitle}
               club={elem.club}
@@ -134,8 +134,8 @@ const Page = () => {
         return newsInfo.slice(0, 3).map((elem, index) => {
           return (
             <NewsCard
-              key={index}
               className="news-card"
+              key={index}
               title={elem.title}
               subTitle={elem.subTitle}
               club={elem.club}
