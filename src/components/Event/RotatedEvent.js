@@ -8,9 +8,9 @@ import Calendar from "./Calendar";
 
 // utils
 import GradientLink from "@/utils/GradientLink/GradientLink";
+import { twMerge } from "tailwind-merge";
 
 const RotatedEvent = ({
-  className,
   title,
   subTitle,
   club,
@@ -19,14 +19,22 @@ const RotatedEvent = ({
   month,
   location,
   imgSource,
+  inEventPage = false,
 }) => {
   return (
     <Fade triggerOnce>
       <div className="relative flex flex-col justify-center pt-32 mx-4 sm:mx-8 md:pt-0 md:grid md:grid-cols-2 md:gap-x-8 lg:mx-12">
-        <div className="md:flex md:flex-col md:items-end md:col-start-1 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
+        <div className="md:flex md:flex-col md:items-start md:col-start-1 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
           {/* filter */}
           <div className="bg-black opacity-70 absolute top-50 left-0 w-full h-[55%] md:hidden"></div>
-
+          <GradientLink
+            className={twMerge(
+              "text-aetroBlue text-sm absolute bottom-[48%] right-1 z-[11] mb-2 md:static md:text-celestialBlue lg:text-base",
+              inEventPage === true ? "hidden" : ""
+            )}
+          >
+            More events
+          </GradientLink>
           {/* picture styling */}
           <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px] lg:max-w-4xl">
             <Image
@@ -48,7 +56,7 @@ const RotatedEvent = ({
           </div>
         </div>
         {/* text styling */}
-        <div className="flex flex-col gap-y-2 z-10 md:col-start-2 lg:max-w-4xl">
+        <div className="flex flex-col gap-y-2 z-10 justify-self-end md:col-start-2 lg:max-w-4xl">
           <h1 className="font-playfair font-semibold text-xl text-white mt-2 mx-4 md:mt-0 md:mx-0 md:text-black md:text-3xl lg:text-5xl">
             {title}
           </h1>
