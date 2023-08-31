@@ -55,6 +55,7 @@ const Events = () => {
           />
         ) : (
           <Event
+            inEventPage={true}
             key={index}
             title={elem.title}
             subTitle={elem.subTitle}
