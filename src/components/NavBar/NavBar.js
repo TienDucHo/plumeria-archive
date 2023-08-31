@@ -63,8 +63,8 @@ const NavBar = () => {
       </div>
       {/* Navigation bar styling for mobile */}
       <button
-        className={`bottom-2 right-0 z-50 mr-4 sm:mr-8 md:hidden ${
-          displayMenu ? "flex fixed" : "absolute"
+        className={`z-50 mr-4 sm:mr-8 md:hidden ${
+          displayMenu ? "fixed top-10 right-0" : "bottom-2 right-0 absolute"
         }`}
         onClick={() => setDisplayMenu(!displayMenu)}
       >
