@@ -27,14 +27,6 @@ const RotatedEvent = ({
         <div className="md:flex md:flex-col md:items-start md:col-start-1 md:row-start-1 md:min-h-[260px] lg:min-h-[310px]">
           {/* filter */}
           <div className="bg-black opacity-70 absolute top-50 left-0 w-full h-[55%] md:hidden"></div>
-          <GradientLink
-            className={twMerge(
-              "text-aetroBlue text-sm absolute bottom-[48%] right-1 z-[11] mb-2 md:static md:text-celestialBlue lg:text-base",
-              inEventPage === true ? "hidden" : ""
-            )}
-          >
-            More events
-          </GradientLink>
           {/* picture styling */}
           <div className="md:relative md:w-full md:h-full md:min-h-[260px] lg:min-h-[310px] lg:max-w-4xl">
             <Image
