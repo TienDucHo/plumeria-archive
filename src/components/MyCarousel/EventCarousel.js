@@ -17,10 +17,7 @@ const EventCarousel = ({ items }) => {
   const [swiperRef, setSwiperRef] = useState();
   const [curIndex, setCurIndex] = useState(0);
   return (
-    <Fade
-      triggerOnce
-      delay={3000}
-    >
+    <Fade triggerOnce>
       <div>
         <Swiper
           onSwiper={(swiper) => setSwiperRef(swiper)}
