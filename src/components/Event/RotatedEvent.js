@@ -5,11 +5,6 @@ import { Fade } from "react-awesome-reveal";
 
 // local components
 import Calendar from "./Calendar";
-
-// utils
-import GradientLink from "@/utils/GradientLink/GradientLink";
-import { twMerge } from "tailwind-merge";
-
 const RotatedEvent = ({
   title,
   subTitle,
@@ -19,7 +14,6 @@ const RotatedEvent = ({
   month,
   location,
   imgSource,
-  inEventPage = false,
 }) => {
   return (
     <Fade triggerOnce>

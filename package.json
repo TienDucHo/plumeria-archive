@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.15",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "lottie-react": "^2.4.0",
     "moment": "^2.29.4",
     "next": "^13.4.12",
     "postcss": "^8.4.28",
