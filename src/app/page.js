@@ -157,7 +157,7 @@ const Page = () => {
       {/* event section */}
       <section
         id="events-section"
-        className="flex flex-col mb-20"
+        className="flex flex-col mb-20 pt-16"
       >
         {eventCasesHandler()}
       </section>
