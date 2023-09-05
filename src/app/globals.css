@@ -45,19 +45,23 @@
   }
 
   #register-button,
-  #choose-org-button {
+  #choose-org-button,
+  #lightened-button {
     background: rgb(var(--celestial-blue));
     position: relative;
     overflow: hidden;
+    border: none;
   }
 
   #register-button:hover,
-  #choose-org-button:hover {
+  #choose-org-button:hover,
+  #lightened-button:hover {
     background: var(--gradient-blue-45);
   }
 
   #register-button::before,
-  #choose-org-button::before {
+  #choose-org-button::before,
+  #lightened-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -74,7 +78,8 @@
   }
 
   #register-button:hover::before,
-  #choose-org-button:hover::before {
+  #choose-org-button:hover::before,
+  #lightened-button:hover::before {
     left: 100%;
   }
 

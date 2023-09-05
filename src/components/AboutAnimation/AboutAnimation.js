@@ -7,14 +7,9 @@ const AboutAnimation = ({ className }) => {
   return (
     <div className={className}>
       <div className="flex flex-col items-center gap-y-8 md:gap-y-16 mx-4 mb-16 sm:mx-8 lg:mx-12">
-        <div id="about-text">
-          <span className="font-playfair text-celestialBlue text-3xl sm:text-4xl md:text-5xl">
-            About Us
-          </span>
-        </div>
-        <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full">
+        <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full mb-16">
           <Fade
-            delay={1000}
+            delay={500}
             duration={2000}
             triggerOnce
           >
@@ -28,7 +23,7 @@ const AboutAnimation = ({ className }) => {
             </div>
           </Fade>
           <Fade
-            delay={1800}
+            delay={1300}
             duration={2000}
             triggerOnce
           >
@@ -40,7 +35,7 @@ const AboutAnimation = ({ className }) => {
             </p>
           </Fade>
           <Fade
-            delay={2200}
+            delay={1700}
             duration={2000}
             triggerOnce
           >
@@ -53,7 +48,7 @@ const AboutAnimation = ({ className }) => {
           </Fade>
           <Fade
             className="row-start-3 md:row-start-2 md:col-start-2"
-            delay={1400}
+            delay={900}
             duration={2000}
             triggerOnce
           >

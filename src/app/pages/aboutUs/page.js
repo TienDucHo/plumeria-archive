@@ -10,20 +10,15 @@ const AboutUs = () => {
   return (
     <div>
       <div className="sm:hidden flex flex-col items-center gap-y-8 md:gap-y-16 mx-4 mb-16 sm:mx-8 lg:mx-12">
-        <div id="about-text">
-          <span className="font-playfair text-celestialBlue text-3xl sm:text-4xl md:text-5xl">
-            About Us
-          </span>
-        </div>
         <Fade
-          delay={2000}
+          delay={500}
           triggerOnce
         >
           <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full">
             <div className="relative w-full h-full pt-64">
               <Image
                 className="object-cover row-start-1 col-start-1"
-                src="/pic5.png"
+                src="/pic5.svg"
                 alt="About Image 1"
                 fill
               />
@@ -43,7 +38,7 @@ const AboutUs = () => {
             <div className="relative w-full h-full pt-64 row-start-3 md:row-start-2 md:col-start-2">
               <Image
                 className="object-cover"
-                src="/pic6.png"
+                src="/pic6.svg"
                 alt="About Image 1"
                 fill
               />
@@ -51,7 +46,21 @@ const AboutUs = () => {
           </div>
         </Fade>
       </div>
-      <AboutAnimation className="sm:hidden md:block" />
+      <AboutAnimation className="hidden md:block" />
+      <Fade
+        duration={2000}
+        cascade
+        className="w-full flex flex-col items-center mb-4 md:mb-12"
+      >
+        <p className="sm:text-xl opacity-70">Now...</p>
+        <p className="sm:text-xl opacity-70">How about...</p>
+        <button
+          id="lightened-button"
+          className="btn btn-primary capitalize sm:text-lg md:text-xl flex px-[20%]"
+        >
+          Buy Us A Coffee?
+        </button>
+      </Fade>
     </div>
   );
 };
