@@ -15,8 +15,8 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
           fill
         ></Image>
       </div>
-      <div className="row-span-2 h-full sm:h-auto relative flex flex-col w-full self-start sm:items-center gap-y-2 transition ease-in-out">
-        <h1 className="font-playfair text-lg md:text-xl font-semibold group-hover:text-aetroBlue">
+      <div className="row-span-2 h-full sm:h-auto relative flex flex-col w-full self-start sm:items-center gap-y-2">
+        <h1 className="font-playfair text-lg md:text-xl font-semibold group-hover:text-aetroBlue transition ease-in-out">
           {club}
         </h1>
         <p className="sm:hidden text-sm md:text-base">{content}</p>
