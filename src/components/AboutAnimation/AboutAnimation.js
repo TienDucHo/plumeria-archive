@@ -1,22 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import Image from "next/image";
 
-// components
-import AboutAnimation from "@/components/AboutAnimation/AboutAnimation";
-
-const AboutUs = () => {
+const AboutAnimation = ({ className }) => {
   return (
-    <div>
-      <div className="sm:hidden flex flex-col items-center gap-y-8 md:gap-y-16 mx-4 mb-16 sm:mx-8 lg:mx-12">
+    <div className={className}>
+      <div className="flex flex-col items-center gap-y-8 md:gap-y-16 mx-4 mb-16 sm:mx-8 lg:mx-12">
         <div id="about-text">
           <span className="font-playfair text-celestialBlue text-3xl sm:text-4xl md:text-5xl">
             About Us
           </span>
         </div>
-        <Fade delay={2000}>
-          <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full">
+        <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full">
+          <Fade
+            delay={1000}
+            duration={2000}
+            triggerOnce
+          >
             <div className="relative w-full h-full pt-64">
               <Image
                 className="object-cover row-start-1 col-start-1"
@@ -25,19 +26,38 @@ const AboutUs = () => {
                 fill
               />
             </div>
+          </Fade>
+          <Fade
+            delay={1800}
+            duration={2000}
+            triggerOnce
+          >
             <p className="text-sm mt-4 mb-24 text-center sm:my-0 sm:text-start sm:row-start-1 sm:col-start-2 sm:pl-4 md:text-base">
               Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
               sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
               adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
               Porttitor curabitur ipsum donec natoque feugiat vitae integer.
             </p>
+          </Fade>
+          <Fade
+            delay={2200}
+            duration={2000}
+            triggerOnce
+          >
             <p className="text-sm mt-4 mb-24 text-center sm:my-0 sm:text-start row-start-4 sm:row-start-2 sm:col-start-1 sm:pr-4 md:text-base">
               Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
               sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
               adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
               Porttitor curabitur ipsum donec natoque feugiat vitae integer.
             </p>
-            <div className="relative w-full h-full pt-64 row-start-3 md:row-start-2 md:col-start-2">
+          </Fade>
+          <Fade
+            className="row-start-3 md:row-start-2 md:col-start-2"
+            delay={1400}
+            duration={2000}
+            triggerOnce
+          >
+            <div className="relative w-full h-full pt-64">
               <Image
                 className="object-cover"
                 src="/pic6.png"
@@ -45,12 +65,11 @@ const AboutUs = () => {
                 fill
               />
             </div>
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </div>
-      <AboutAnimation className="sm:hidden md:block" />
     </div>
   );
 };
 
-export default AboutUs;
+export default AboutAnimation;

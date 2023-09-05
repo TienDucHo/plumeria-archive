@@ -94,6 +94,18 @@
     filter: blur(4px);
   }
 
+  #about-text {
+    transform: scale(0.75);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  #about-text span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 2s 0s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
   #hero-section-text span:nth-child(1) {
     animation: fade-in 0.4s 2s forwards cubic-bezier(0.11, 0, 0.5, 0);
   }
