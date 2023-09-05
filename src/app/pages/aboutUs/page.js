@@ -23,13 +23,13 @@ const AboutUs = () => {
                 fill
               />
             </div>
-            <p className="text-sm mt-4 mb-24 text-center md:my-0 md:text-start md:row-start-1 md:col-start-2 md:pl-4 md:text-base">
+            <p className="text-sm mt-4 mb-12 md:mb-24 text-center md:my-0 md:text-start md:row-start-1 md:col-start-2 md:pl-4 md:text-base">
               Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
               sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
               adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
               Porttitor curabitur ipsum donec natoque feugiat vitae integer.
             </p>
-            <p className="text-sm mt-4 mb-24 text-center md:my-0 md:text-start row-start-4 md:row-start-2 md:col-start-1 md:pr-4 md:text-base">
+            <p className="text-sm mt-4 mb-12 md:mb-24 text-center md:my-0 md:text-start row-start-4 md:row-start-2 md:col-start-1 md:pr-4 md:text-base">
               Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
               sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
               adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
@@ -39,7 +39,7 @@ const AboutUs = () => {
               <Image
                 className="object-cover"
                 src="/pic6.svg"
-                alt="About Image 1"
+                alt="About Image 2"
                 fill
               />
             </div>
@@ -51,7 +51,7 @@ const AboutUs = () => {
         triggerOnce
         duration={2000}
         cascade
-        className="w-full flex flex-col items-center mb-4 md:mb-12"
+        className="w-full flex flex-col items-center mb-8 md:mb-12"
       >
         <p className="sm:text-xl opacity-70">Now...</p>
         <p className="sm:text-xl opacity-70">How about...</p>
