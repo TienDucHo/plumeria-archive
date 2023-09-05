@@ -15,7 +15,10 @@ const AboutUs = () => {
             About Us
           </span>
         </div>
-        <Fade delay={2000}>
+        <Fade
+          delay={2000}
+          triggerOnce
+        >
           <div className="grid items-center grid-rows-auto grid-cols-1 sm:grid-cols-2 w-full">
             <div className="relative w-full h-full pt-64">
               <Image
