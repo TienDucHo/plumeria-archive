@@ -1,3 +1,8 @@
+"use client";
+import Lottie from "lottie-react";
+import * as sick from "/public/sick.json";
+
+// components
 import Event from "@/components/Event/Event";
 import RotatedEvent from "@/components/Event/RotatedEvent";
 
@@ -39,35 +44,47 @@ const Events = () => {
   ];
 
   return (
-    <div className="flex flex-col mb-16 gap-y-12 md:gap-y-24 lg:gap-y-32">
-      {eventsInfo.map((elem, index) => {
-        return index % 2 === 0 ? (
-          <RotatedEvent
-            key={index}
-            title={elem.title}
-            subTitle={elem.subTitle}
-            club={elem.club}
-            time={elem.time}
-            date={elem.date}
-            month={elem.month}
-            location={elem.location}
-            imgSource={elem.imgSource}
-          />
-        ) : (
-          <Event
-            inEventPage={true}
-            key={index}
-            title={elem.title}
-            subTitle={elem.subTitle}
-            club={elem.club}
-            time={elem.time}
-            date={elem.date}
-            month={elem.month}
-            location={elem.location}
-            imgSource={elem.imgSource}
-          />
-        );
-      })}
+    <div className="flex flex-col mb-16 gap-y-12 md:gap-y-24 lg:gap-y-52">
+      {eventsInfo.length > 0 ? (
+        eventsInfo.map((elem, index) => {
+          return index % 2 === 0 ? (
+            <RotatedEvent
+              key={index}
+              title={elem.title}
+              subTitle={elem.subTitle}
+              club={elem.club}
+              time={elem.time}
+              date={elem.date}
+              month={elem.month}
+              location={elem.location}
+              imgSource={elem.imgSource}
+            />
+          ) : (
+            <Event
+              inEventPage={true}
+              key={index}
+              title={elem.title}
+              subTitle={elem.subTitle}
+              club={elem.club}
+              time={elem.time}
+              date={elem.date}
+              month={elem.month}
+              location={elem.location}
+              imgSource={elem.imgSource}
+            />
+          );
+        })
+      ) : (
+        <div className="relative flex flex-col items-center font-semibold text-2xl opacity-70">
+          <div className="w-[24rem]">
+            <Lottie
+              animationData={sick}
+              loop={true}
+            />
+          </div>
+          <p className="absolute bottom-10">Nothing is going on...</p>
+        </div>
+      )}
     </div>
   );
 };
