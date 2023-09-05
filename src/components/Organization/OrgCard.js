@@ -9,7 +9,7 @@ const OrgCard = ({ club, content, imgSource, char1, char2 }) => {
     >
       <div className="relative w-full aspect-square row-span-2">
         <Image
-          className="object-cover"
+          className="object-cover md:grayscale md:group-hover:grayscale-0 md:transition md:ease-in-out md:duration-500"
           src={imgSource}
           alt="Organization Image"
           fill
