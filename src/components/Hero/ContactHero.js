@@ -66,8 +66,7 @@ const ContactHero = () => {
           className="py-12 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
         >
           <span className="text-white font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Get in touch with{" "}
-            <span className="text-saffronYellow pl-2 md:pl-4">us</span>
+            Get in touch with us
           </span>
 
           <span
