@@ -1,7 +1,7 @@
 import { PiNewspaperClipping } from "react-icons/pi";
 
 // components
-import Hero from "@/components/Hero/Hero";
+import HomeHero from "@/components/Hero/HomeHero";
 import EventCarousel from "@/components/MyCarousel/EventCarousel";
 import Event from "@/components/Event/Event";
 import NewsCard from "@/components/NewsCard/NewsCard";
@@ -151,7 +151,7 @@ const Page = () => {
     <div className="flex flex-col justify-between gap-y-8 mb-32">
       {/* hero section */}
       <section id="hero-section">
-        <Hero />
+        <HomeHero />
       </section>
 
       {/* event section */}

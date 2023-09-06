@@ -89,7 +89,8 @@
   }
 
   #hero-section-text span {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     opacity: 0;
     filter: blur(4px);
   }
@@ -132,8 +133,42 @@
     transform: translateY(0.75rem);
   }
 
-  #asa {
-    grid-template-columns: min-content auto;
+  .custom-input {
+    border-width: 0px 0px 1px;
+    margin-bottom: 4px;
+    border-color: rgb(var(--celestial-blue));
+    text-align: left;
+    background-color: rgb(var(--white));
+    outline: none;
+    line-height: 1rem;
+  }
+
+  .input-fields {
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
+
+  #contact-button {
+    transition: 0.1s;
+  }
+
+  #message {
+    margin-top: -2.8rem;
+    outline: none;
+    background-attachment: local;
+    background: none;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) 4rem,
+      rgb(var(--white)) 4rem
+    );
+    line-height: 4rem;
+    padding: 1rem 0rem;
+    overflow: hidden;
+    resize: none;
   }
 }
 
