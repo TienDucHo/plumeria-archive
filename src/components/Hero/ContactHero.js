@@ -8,6 +8,7 @@ import {
   AiOutlineLinkedin,
   AiOutlineGithub,
 } from "react-icons/ai";
+import { useEffect } from "react";
 
 const ContactHero = () => {
   // list of contact icons
@@ -31,22 +32,24 @@ const ContactHero = () => {
   ];
 
   // add magnetic effect for buttons
-  const button = document.querySelectorAll("#contact-button");
-  for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener("mousemove", (e) => {
-      let x = e.offsetX;
-      let y = e.offsetY;
-      let btnWidth = button[i].clientWidth;
-      let btnHeight = button[i].clientHeight;
-      button[i].style.transform = `translateX(${
-        x - btnWidth / 10
-      }px) translateY(${y - btnHeight / 10}px)`;
-    });
+  useEffect(() => {
+    const button = document.querySelectorAll("#contact-button");
+    for (let i = 0; i < button.length; i++) {
+      button[i].addEventListener("mousemove", (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let btnWidth = button[i].clientWidth;
+        let btnHeight = button[i].clientHeight;
+        button[i].style.transform = `translateX(${
+          x - btnWidth / 10
+        }px) translateY(${y - btnHeight / 10}px)`;
+      });
 
-    button[i].addEventListener("mouseout", () => {
-      button[i].style.transform = "";
-    });
-  }
+      button[i].addEventListener("mouseout", () => {
+        button[i].style.transform = "";
+      });
+    }
+  }, []);
 
   return (
     <div>
