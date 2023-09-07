@@ -46,21 +46,22 @@
 
   #register-button,
   #choose-org-button,
-  #form-button {
+  #lightened-button {
     background: rgb(var(--celestial-blue));
     position: relative;
     overflow: hidden;
+    border: none;
   }
 
   #register-button:hover,
   #choose-org-button:hover,
-  #form-button:hover {
+  #lightened-button:hover {
     background: var(--gradient-blue-45);
   }
 
   #register-button::before,
   #choose-org-button::before,
-  #form-button::before {
+  #lightened-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -78,7 +79,7 @@
 
   #register-button:hover::before,
   #choose-org-button:hover::before,
-  #form-button:hover::before {
+  #lightened-button:hover::before {
     left: 100%;
   }
 
@@ -97,6 +98,18 @@
     justify-content: center;
     opacity: 0;
     filter: blur(4px);
+  }
+
+  #about-text {
+    transform: scale(0.75);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  #about-text span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 2s 0s forwards cubic-bezier(0.11, 0, 0.5, 0);
   }
 
   #hero-section-text span:nth-child(1) {

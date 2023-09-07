@@ -58,7 +58,7 @@ const Contact = () => {
               rows={2}
             />
             <button
-              id="form-button"
+              id="lightened-button"
               onClick={() => alert("Submitted")}
               className="btn btn-primary rounded-none capitalize text-lg md:text-xl text-white border-none"
             >
