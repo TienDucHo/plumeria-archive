@@ -132,8 +132,8 @@
     transform: translateY(0.75rem);
   }
 
-  #asa {
-    grid-template-columns: min-content auto;
+  .filter-background {
+    background: linear-gradient(0deg, rgb(var(--black), 0.7), transparent 100%);
   }
 }
 
