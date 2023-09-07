@@ -32,7 +32,7 @@ const NewsBasic = ({
         
         ${
           relevant === true
-            ? "min-h-[8rem] lg:text-xl"
+            ? "min-h-[8rem] md:text-xl"
             : "md:text-xl lg:text-2xl"
         }  `}
       >

@@ -8,9 +8,9 @@ const page = () => {
   return (
     <div className="mx-4 sm:mx-8 lg:mx-12 mb-16">
       <NewsDetails />
-      <div className="flex gap-x-8 mt-16 mb-8">
-        <div className="flex flex-col gap-y-8">
-          <p className="text-xl">
+      <div className="flex flex-col lg:flex-row gap-x-8 mt-8 md:mt-16 mb-8 gap-y-24 md:gap-y-32">
+        <div className="flex flex-col gap-y-4 md:gap-y-8">
+          <p className="text-base md:text-xl">
             Lorem ipsum dolor sit amet consectetur. Malesuada aliquet velit in
             habitant fermentum porttitor. Enim scelerisque condimentum sodales
             tellus ultrices amet ullamcorper lectus mi. Augue a dui montes id
@@ -32,7 +32,7 @@ const page = () => {
               fill
             />
           </div>
-          <p className="text-xl">
+          <p className="text-base md:text-xl">
             Lorem ipsum dolor sit amet consectetur. Malesuada aliquet velit in
             habitant fermentum porttitor. Enim scelerisque condimentum sodales
             tellus ultrices amet ullamcorper lectus mi. Augue a dui montes id
@@ -47,7 +47,10 @@ const page = () => {
             amet id non donec.
           </p>
         </div>
-        <div className="md:min-w-[36rem] flex flex-col gap-y-8">
+        <div className="md:min-w-[28rem] lg:min-w-[36rem] flex flex-col gap-y-8">
+          <p className="font-playfair text-xl md:text-2xl font-semibold">
+            Relevant News
+          </p>
           <SideNews
             relevant={true}
             club="TPT"

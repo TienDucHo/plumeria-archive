@@ -33,7 +33,7 @@ const NewsDetails = ({ newsImgSource, clubImgSource, club, time, title }) => {
           <p className="text-celestialBlue">10 minutes ago</p>
           <Link
             href="/"
-            className="md:text-lg lg:text-xl text-white absolute bottom-1 right-4 md:right-8 hover:text-saffronYellow transition ease-in-out"
+            className="md:text-lg lg:text-xl text-white absolute bottom-2 right-0 md:right-8 hover:text-saffronYellow transition ease-in-out"
           >
             <BsFillShareFill />
           </Link>
