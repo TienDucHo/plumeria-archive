@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import SideNews from "@/components/NewsCard/SideNews";
+import { Fade } from "react-awesome-reveal";
 
 // components
 import NewsDetails from "@/components/NewsCard/NewsDetail";
+import SideNews from "@/components/NewsCard/SideNews";
 
 const page = () => {
   let newsInfo = {
@@ -37,53 +40,57 @@ const page = () => {
   ];
 
   return (
-    <div className="mx-4 sm:mx-8 lg:mx-12 mb-16">
-      {/* The details of the news */}
-      <NewsDetails
-        newsImgSource={newsInfo.newsImgSource}
-        clubImgSource={newsInfo.clubImgSource}
-        club={newsInfo.club}
-        time={newsInfo.time}
-        title={newsInfo.title}
-      />
-      <div className="flex flex-col lg:flex-row gap-x-8 mt-8 md:mt-16 mb-8 gap-y-24 md:gap-y-32">
-        <div className="flex flex-col gap-y-4 md:gap-y-8">
-          <p className="text-base md:text-xl">{newsInfo.paragraphs[0]}</p>
-          {newsInfo.extraImg != "" ? (
-            <div className="relative w-full pt-80">
-              <Image
-                className="object-cover"
-                src={newsInfo.extraImg}
-                alt="News Image"
-                fill
-              />
-            </div>
-          ) : (
-            <></>
-          )}
-          <p className="text-base md:text-xl">{newsInfo.paragraphs[1]}</p>
-        </div>
-
-        {/* Relevant news section  */}
-        <div className="md:min-w-[28rem] lg:min-w-[36rem] flex flex-col gap-y-8">
-          <p className="font-playfair text-xl md:text-2xl font-semibold">
-            Relevant News
-          </p>
-          {relevantNews.map((elem, index) => {
-            return (
-              <SideNews
-                key={index}
-                relevant={true}
-                club={elem.club}
-                time={elem.time}
-                title={elem.title}
-                imgSource={elem.imgSource}
-              />
-            );
-          })}
+    <Fade
+      duration={1000}
+      triggerOnce
+    >
+      <div className="mx-4 sm:mx-8 lg:mx-12 mb-16">
+        {/* The details of the news */}
+        <NewsDetails
+          newsImgSource={newsInfo.newsImgSource}
+          clubImgSource={newsInfo.clubImgSource}
+          club={newsInfo.club}
+          time={newsInfo.time}
+          title={newsInfo.title}
+        />
+        <div className="flex flex-col lg:flex-row gap-x-8 mt-8 md:mt-16 mb-8 gap-y-24 md:gap-y-32">
+          <div className="flex flex-col gap-y-4 md:gap-y-8">
+            <p className="text-base md:text-xl">{newsInfo.paragraphs[0]}</p>
+            {newsInfo.extraImg != "" ? (
+              <div className="relative w-full pt-80">
+                <Image
+                  className="object-cover"
+                  src={newsInfo.extraImg}
+                  alt="News Image"
+                  fill
+                />
+              </div>
+            ) : (
+              <></>
+            )}
+            <p className="text-base md:text-xl">{newsInfo.paragraphs[1]}</p>
+          </div>
+          {/* Relevant news section  */}
+          <div className="md:min-w-[28rem] lg:min-w-[36rem] flex flex-col gap-y-8">
+            <p className="font-playfair text-xl md:text-2xl font-semibold">
+              Relevant News
+            </p>
+            {relevantNews.map((elem, index) => {
+              return (
+                <SideNews
+                  key={index}
+                  relevant={true}
+                  club={elem.club}
+                  time={elem.time}
+                  title={elem.title}
+                  imgSource={elem.imgSource}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 
