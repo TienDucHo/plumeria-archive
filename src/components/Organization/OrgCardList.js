@@ -8,6 +8,7 @@ import OrgCard from "./OrgCard";
 const OrgCardList = ({ items, className, mobile = false }) => {
   return (
     <Fade
+      triggerOnce
       className={className}
       cascade={mobile === true ? false : true}
       delay={10}

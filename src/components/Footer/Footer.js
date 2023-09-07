@@ -38,7 +38,7 @@ const Footer = () => {
           className="hover:text-saffronYellow transition ease-in-out duration-300"
           href="/pages/contact"
         >
-          Contact
+          Contact Us
         </Link>
       </div>
     </div>

@@ -45,19 +45,23 @@
   }
 
   #register-button,
-  #choose-org-button {
+  #choose-org-button,
+  #lightened-button {
     background: rgb(var(--celestial-blue));
     position: relative;
     overflow: hidden;
+    border: none;
   }
 
   #register-button:hover,
-  #choose-org-button:hover {
+  #choose-org-button:hover,
+  #lightened-button:hover {
     background: var(--gradient-blue-45);
   }
 
   #register-button::before,
-  #choose-org-button::before {
+  #choose-org-button::before,
+  #lightened-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -74,7 +78,8 @@
   }
 
   #register-button:hover::before,
-  #choose-org-button:hover::before {
+  #choose-org-button:hover::before,
+  #lightened-button:hover::before {
     left: 100%;
   }
 
@@ -89,9 +94,22 @@
   }
 
   #hero-section-text span {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    filter: blur(4px);
+  }
+
+  #about-text {
+    transform: scale(0.75);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  #about-text span {
     display: inline-block;
     opacity: 0;
     filter: blur(4px);
+    animation: fade-in 2s 0s forwards cubic-bezier(0.11, 0, 0.5, 0);
   }
 
   #hero-section-text span:nth-child(1) {
@@ -134,6 +152,44 @@
 
   .filter-background {
     background: linear-gradient(0deg, rgb(var(--black), 0.7), transparent 100%);
+  }
+
+  .custom-input {
+    border-width: 0px 0px 1px;
+    margin-bottom: 4px;
+    border-color: rgb(var(--celestial-blue));
+    text-align: left;
+    background-color: rgb(var(--white));
+    outline: none;
+    line-height: 1rem;
+  }
+
+  .input-fields {
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
+
+  #contact-button {
+    transition: 0.1s;
+  }
+
+  #message {
+    margin-top: -2.8rem;
+    outline: none;
+    background-attachment: local;
+    background: none;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) 4rem,
+      rgb(var(--white)) 4rem
+    );
+    line-height: 4rem;
+    padding: 1rem 0rem;
+    overflow: hidden;
+    resize: none;
   }
 }
 
