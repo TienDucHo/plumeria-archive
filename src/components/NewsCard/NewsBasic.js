@@ -8,6 +8,7 @@ const NewsBasic = ({
   className,
   spec = false,
   side = false,
+  relevant = false,
 }) => {
   return (
     <div className={twMerge("z-10 flex flex-col gap-y-2 group", className)}>
@@ -18,7 +19,7 @@ const NewsBasic = ({
         </p>
       </div>
       <h1
-        className={`font-playfair font-semibold md:text-xl lg:text-2xl ${
+        className={`font-playfair font-semibold ${
           spec === true
             ? "transition ease-in-out group-hover:text-saffronYellow"
             : ""
@@ -27,7 +28,13 @@ const NewsBasic = ({
           side === true
             ? "transition ease-in-out group-hover:text-aetroBlue"
             : ""
-        }`}
+        }
+        
+        ${
+          relevant === true
+            ? "min-h-[8rem] lg:text-xl"
+            : "md:text-xl lg:text-2xl"
+        }  `}
       >
         {title}
       </h1>

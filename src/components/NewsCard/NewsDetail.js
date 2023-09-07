@@ -11,8 +11,8 @@ const NewsDetails = ({ newsImgSource, clubImgSource, club, time, title }) => {
       <div className="absolute top-0 left-0 w-full h-full z-[-1] filter-background"></div>
       <Image
         className="object-cover z-[-2]"
-        src="/pic2.jpg"
-        alt="Club Image"
+        src="/pic1.jpg"
+        alt="News Image"
         fill
       />
 
