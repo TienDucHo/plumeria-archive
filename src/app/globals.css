@@ -45,19 +45,22 @@
   }
 
   #register-button,
-  #choose-org-button {
+  #choose-org-button,
+  #form-button {
     background: rgb(var(--celestial-blue));
     position: relative;
     overflow: hidden;
   }
 
   #register-button:hover,
-  #choose-org-button:hover {
+  #choose-org-button:hover,
+  #form-button:hover {
     background: var(--gradient-blue-45);
   }
 
   #register-button::before,
-  #choose-org-button::before {
+  #choose-org-button::before,
+  #form-button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -74,7 +77,8 @@
   }
 
   #register-button:hover::before,
-  #choose-org-button:hover::before {
+  #choose-org-button:hover::before,
+  #form-button:hover::before {
     left: 100%;
   }
 
