@@ -66,7 +66,7 @@ const ContactHero = () => {
         ></Image>
         <div
           id="hero-section-text"
-          className="py-12 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
+          className="py-12 text-center flex flex-col gap-y-4 md:gap-y-8 sm:py-24 md:py-32"
         >
           <span className="text-white font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Get in touch with us
