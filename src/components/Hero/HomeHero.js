@@ -6,7 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 // uitls
 import GradientIcon from "@/utils/GradientIcon/GradientIcon";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <div>
       <div
@@ -25,7 +25,8 @@ const Hero = () => {
           className="py-12 text-center flex flex-col gap-y-8  sm:py-24 md:py-32"
         >
           <span className="text-white font-playfair font-bold italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Plumeria <span className="text-saffronYellow">Archive</span>
+            Plumeria{" "}
+            <span className="text-saffronYellow pl-2 lg:pl-4"> Archive</span>
           </span>
 
           <span className="text-white opacity-80 text-lg sm:text-xl md:text-2xl lg:text-4xl">
@@ -49,4 +50,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

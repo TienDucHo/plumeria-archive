@@ -57,7 +57,7 @@ const AboutUs = () => {
         <p className="sm:text-xl opacity-70">How about...</p>
         <button
           id="lightened-button"
-          className="btn btn-primary text-white capitalize sm:text-lg md:text-xl flex px-[20%]"
+          className="btn btn-primary text-white capitalize sm:text-lg md:text-xl flex px-[20%] rounded-none"
         >
           Buy Us A Coffee?
         </button>
