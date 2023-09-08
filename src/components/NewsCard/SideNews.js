@@ -7,7 +7,15 @@ import { Fade } from "react-awesome-reveal";
 // local components
 import NewsBasic from "./NewsBasic";
 
-const SideNews = ({ className, club, time, title, subTitle }) => {
+const SideNews = ({
+  className,
+  club,
+  time,
+  title,
+  subTitle,
+  relevant,
+  imgSource,
+}) => {
   return (
     <Fade
       className={className}
@@ -20,12 +28,13 @@ const SideNews = ({ className, club, time, title, subTitle }) => {
         <div className="relative">
           <Image
             className="object-cover"
-            src="/pic1.jpg"
+            src={imgSource}
             alt="Side News Image"
             fill
           />
         </div>
         <NewsBasic
+          relevant={relevant}
           className="col-start-2"
           side={true}
           club={club}

@@ -73,6 +73,7 @@ const News = () => {
               time={elem.time}
               title={elem.title}
               subTitle={elem.subTitle}
+              imgSource={elem.imgSource}
             />
           );
         })}
