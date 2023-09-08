@@ -7,10 +7,14 @@ export const GOOGLE_SCOPES = [
 
 const { google } = require("googleapis");
 
+export const authToken = null;
+
 export async function getAuthToken() {
   if (typeof window !== "undefined") {
     throw new Error("NO SECRETS ON CLIENT!");
   }
+
+  if (authToken) return authToken;
 
   const { privateKey } = JSON.parse(
     process.env.GOOGLE_PRIVATE_KEY || "{ privateKey: null }"
@@ -24,6 +28,6 @@ export async function getAuthToken() {
       client_email: process.env.GOOGLE_CLIENT_EMAIL,
     },
   });
-  const authToken = await auth.getClient();
+  authToken = await auth.getClient();
   return authToken;
 }
