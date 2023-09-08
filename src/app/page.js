@@ -76,7 +76,7 @@ const Page = () => {
   ];
 
   const orgInfo = [
-    { club: "Harmonica PTNK Club", imgSource: "/pic1.jPg" },
+    { club: "Harmonica PTNK Club", imgSource: "/pic1.jpg" },
     { club: "TPT", imgSource: "/pic2.jpg" },
     { club: "Define Magic Club", imgSource: "/pic3.jpg" },
   ];
@@ -117,19 +117,21 @@ const Page = () => {
         );
       case 1:
       case 2:
-        return newsInfo.slice(0, newsInfo.length).map((elem, index) => {
-          return (
-            <NewsCard
-              className="news-card"
-              key={index}
-              title={elem.title}
-              subTitle={elem.subTitle}
-              club={elem.club}
-              time={elem.time}
-              imgSource={elem.imgSource}
-            />
-          );
-        });
+        return newsInfo
+          .slice(0, newsInfo.length)
+          .map((elem, index) => {
+            return (
+              <NewsCard
+                className="news-card"
+                key={index}
+                title={elem.title}
+                subTitle={elem.subTitle}
+                club={elem.club}
+                time={elem.time}
+                imgSource={elem.imgSource}
+              />
+            );
+          });
       default:
         return newsInfo.slice(0, 3).map((elem, index) => {
           return (
@@ -168,7 +170,9 @@ const Page = () => {
           <h1 className="text-3xl font-semibold font-playfair md:text-4xl md:text-left">
             Latest News
           </h1>
-          <GradientLink className="text-celestialBlue">More news</GradientLink>
+          <GradientLink className="text-celestialBlue">
+            More news
+          </GradientLink>
         </div>
         <div
           className={
@@ -181,10 +185,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section
-        id="org-section"
-        className="mt-12 md:mt-24 lg:mt-44"
-      >
+      <section id="org-section" className="mt-12 md:mt-24 lg:mt-44">
         <OrgCarousel items={orgInfo} />
       </section>
     </div>
