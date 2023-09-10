@@ -47,16 +47,10 @@
   #register-button,
   #choose-org-button,
   #lightened-button {
-    background: rgb(var(--celestial-blue));
+    background: var(--gradient-blue-45);
     position: relative;
     overflow: hidden;
     border: none;
-  }
-
-  #register-button:hover,
-  #choose-org-button:hover,
-  #lightened-button:hover {
-    background: var(--gradient-blue-45);
   }
 
   #register-button::before,
