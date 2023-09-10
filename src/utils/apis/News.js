@@ -1,37 +1,47 @@
+import { getDrive } from "./Googles";
 const { google } = require("googleapis");
+import { getAllFoldersFromURL } from "./Googles";
 
 export async function getAllNewsIDs() {
-  let authToken = await getAuthToken();
-  const urls = JSON.parse(process.env.FOLDER_URLS);
-  const drive = google.drive({
-    version: "v3",
-    auth: authToken,
-  });
+  const drive = getDrive();
   try {
-    let folderQuery = `"${urls.news}" in parents and mimeType = 'application/vnd.google-apps.folder'`;
-    let res = await drive.files.list({
-      q: folderQuery,
-      orderBy: "modifiedTime",
-    });
-    let orgs = res.data.files;
-    let customQueries = [];
-    for (const org of orgs) {
-      customQueries.push(`"${org.id}" in parents`);
-    }
-    let customQuery =
-      customQueries.join(" or ") +
-      ` and mimeType = 'application/vnd.google-apps.document'`;
-    let news = await drive.files.list({
-      q: customQuery,
-      orderBy: "modifiedTime desc",
-    });
-    /**
-     * News will be listed in this array follows these convention [{kind, mimeType, id, name}]
-     */
-    return news.data.files;
+    const urls = JSON.parse(process.env.FOLDER_URLS);
+    const res = await getAllFoldersFromURL({ url: urls.news });
+    return res;
   } catch (err) {
     throw err;
   }
+  // let authToken = await getAuthToken();
+  // const urls = JSON.parse(process.env.FOLDER_URLS);
+  // const drive = google.drive({
+  //   version: "v3",
+  //   auth: authToken,
+  // });
+  // try {
+  //   let folderQuery = `"${urls.news}" in parents and mimeType = 'application/vnd.google-apps.folder'`;
+  //   let res = await drive.files.list({
+  //     q: folderQuery,
+  //     orderBy: "modifiedTime",
+  //   });
+  //   let orgs = res.data.files;
+  //   let customQueries = [];
+  //   for (const org of orgs) {
+  //     customQueries.push(`"${org.id}" in parents`);
+  //   }
+  //   let customQuery =
+  //     customQueries.join(" or ") +
+  //     ` and mimeType = 'application/vnd.google-apps.document'`;
+  //   let news = await drive.files.list({
+  //     q: customQuery,
+  //     orderBy: "modifiedTime desc",
+  //   });
+  //   /**
+  //    * News will be listed in this array follows these convention [{kind, mimeType, id, name}]
+  //    */
+  //   return news.data.files;
+  // } catch (err) {
+  //   throw err;
+  // }
 }
 
 export async function getAllNewsFromIDs() {}

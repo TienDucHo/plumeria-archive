@@ -24,8 +24,8 @@ export async function GET(request) {
   const orgName = searchParams.get("org");
   let result = null;
   result = orgName
-    ? getAllNewsIDsFromOrganization(orgName)
-    : getAllNewsIDs();
+    ? await getAllNewsIDsFromOrganization(orgName)
+    : await getAllNewsIDs();
   return NextResponse.json({
     message: "OK",
     result: result,

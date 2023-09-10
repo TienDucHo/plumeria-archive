@@ -7,7 +7,7 @@ export const GOOGLE_SCOPES = [
 
 const { google } = require("googleapis");
 
-export const authToken = null;
+export let authToken = null;
 
 export async function getAuthToken() {
   if (typeof window !== "undefined") {
