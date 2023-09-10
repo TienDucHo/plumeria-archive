@@ -160,7 +160,7 @@
 
   .input-fields {
     display: flex;
-    align-items: :flex-end;
+    align-items: flex-end;
     text-align: flex-end;
   }
 
