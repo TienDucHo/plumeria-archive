@@ -1,6 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { getDocumentFromId } from "@/utils/Googles";
+import { getCleanDocs } from "@/utils/Docs";
 
 const { google } = require("googleapis");
 /**
@@ -17,7 +18,9 @@ export async function GET(request, { params }) {
   const id = params.id; // id of the file
   try {
     const res = await getDocumentFromId({ id: id });
-    return NextResponse.json({ message: "OK", result: res });
+    const cleanDoc = getCleanDocs({ document: res });
+
+    return NextResponse.json({ message: "OK", result: cleanDoc });
   } catch (err) {
     return NextResponse.json({ message: err.errors });
   }
