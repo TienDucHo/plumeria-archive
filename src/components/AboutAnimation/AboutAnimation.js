@@ -16,7 +16,7 @@ const AboutAnimation = ({ className }) => {
             <div className="relative w-full h-full pt-64">
               <Image
                 className="object-cover row-start-1 col-start-1"
-                src="/pic5.png"
+                src="/pic5.svg"
                 alt="About Image 1"
                 fill
               />
@@ -55,7 +55,7 @@ const AboutAnimation = ({ className }) => {
             <div className="relative w-full h-full pt-64">
               <Image
                 className="object-cover"
-                src="/pic6.png"
+                src="/pic6.svg"
                 alt="About Image 1"
                 fill
               />

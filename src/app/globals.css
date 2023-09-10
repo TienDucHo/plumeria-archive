@@ -160,8 +160,8 @@
 
   .input-fields {
     display: flex;
-    align-items: end;
-    text-align: end;
+    align-items: :flex-end;
+    text-align: flex-end;
   }
 
   #contact-button {
