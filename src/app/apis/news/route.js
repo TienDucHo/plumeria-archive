@@ -1,10 +1,6 @@
-import { getAuthToken } from "@/utils/ServicesConfig";
-import {
-  getAllNewsFromOrganization,
-  getAllNewsIDs,
-} from "@/utils/apis/News";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
+import { getAllFiles } from "@/utils/Googles";
 
 const { google } = require("googleapis");
 /**
@@ -22,12 +18,18 @@ export async function GET(request) {
   revalidatePath(path);
   const { searchParams } = new URL(request.url);
   const orgName = searchParams.get("org");
+  const ids = JSON.parse(process.env.FOLDER_IDS);
   let result = null;
-  result = orgName
-    ? await getAllNewsIDsFromOrganization(orgName)
-    : await getAllNewsIDs();
-  return NextResponse.json({
-    message: "OK",
-    result: result,
-  });
+  try {
+    result = await getAllFiles({ id: ids.news, name: orgName });
+    return NextResponse.json({
+      message: "OK",
+      result: result,
+    });
+  } catch (err) {
+    return NextResponse.json({
+      message: "Not OK",
+      errors: err.errors,
+    });
+  }
 }

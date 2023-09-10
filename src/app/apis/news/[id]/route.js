@@ -1,6 +1,6 @@
-import { getAuthToken } from "@/utils/ServicesConfig";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
+import { getDocumentFromId } from "@/utils/Googles";
 
 const { google } = require("googleapis");
 /**
@@ -15,24 +15,10 @@ export async function GET(request, { params }) {
   const path = request.nextUrl.searchParams.get("path");
   revalidatePath(path);
   const id = params.id; // id of the file
-  let authToken = await getAuthToken();
-  const docs = google.docs({
-    version: "v1",
-    auth: authToken,
-  });
-  /**
-   *
-   */
   try {
-    console.log(id);
-    let news = await docs.documents.get({
-      documentId: id,
-    });
-    return NextResponse.json({
-      message: "OK",
-      news: news.data,
-    });
+    const res = await getDocumentFromId({ id: id });
+    return NextResponse.json({ message: "OK", result: res });
   } catch (err) {
-    return NextResponse.json({ message: err });
+    return NextResponse.json({ message: err.errors });
   }
 }
