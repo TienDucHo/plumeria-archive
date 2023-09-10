@@ -13,105 +13,227 @@
     rgb(var(--celestial-blue)),
     rgb(var(--aetro-blue))
   );
+  background-color: rgb(var(--white));
   font-size: 16px;
-}
-
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
-
-@media screen and (max-width: 900px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-body {
-  @apply text-black;
-  background: rgb(var(--white));
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @layer components {
-  #event-component {
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: auto 1fr 2fr 1fr;
-    grid-column-gap: 4rem;
-    grid-row-gap: 1rem;
-    padding: 1rem;
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-image: var(--gradient-blue-45);
+    transition: width 0.25s ease-out;
   }
 
-  #indicator-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-top: 1rem;
-    grid-column-gap: 4rem;
-    padding: 0 1rem;
+  .nav-link:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
   }
 
-  #news-card {
-    height: 20rem;
-    transition: 0.2s ease-in;
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.2rem;
   }
 
-  #news-card:hover {
-    transform: scale(1.02);
+  #register-button,
+  #choose-org-button,
+  #lightened-button {
+    background: rgb(var(--celestial-blue));
+    position: relative;
+    overflow: hidden;
+    border: none;
   }
 
-  #org-display-component {
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: 2fr;
-    grid-column-gap: 4rem;
-    grid-row-gap: 1rem;
-    margin: 0 1rem;
+  #register-button:hover,
+  #choose-org-button:hover,
+  #lightened-button:hover {
+    background: var(--gradient-blue-45);
   }
 
-  #event-register-button,
-  #find-org-button {
-    transition: 0.2s ease-in;
+  #register-button::before,
+  #choose-org-button::before,
+  #lightened-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--white), 0.6),
+      transparent
+    );
+    transition: 1.2s;
   }
 
-  #event-register-button:hover,
-  #find-org-button:hover {
-    background: rgb(var(--saffron-yellow), 0.8);
-    color: rgb(var(--black), 0.8);
+  #register-button:hover::before,
+  #choose-org-button:hover::before,
+  #lightened-button:hover::before {
+    left: 100%;
   }
 
-  .carousel-indicator {
-    min-height: 0.5rem;
-    opacity: 70%;
-    transition-delay: 0.75s;
-    cursor: pointer;
+  #register-button-1,
+  #choose-org-button-1 {
+    background: var(--gradient-blue-45);
+  }
+
+  #hero-section-text {
+    transform: scale(0.75);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  #hero-section-text span {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    filter: blur(4px);
+  }
+
+  #about-text {
+    transform: scale(0.75);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  #about-text span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 2s 0s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  #hero-section-text span:nth-child(1) {
+    animation: fade-in 0.4s 2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  #hero-section-text span:nth-child(2) {
+    animation: fade-in 0.4s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  #hero-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero-image-container #hero-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    opacity: 0;
+    animation: fade-left 1s 1000ms ease-in-out forwards;
+  }
+
+  #scroll-button {
+    opacity: 0;
+    position: absolute;
+    animation: fade-in 1s 3s ease-in-out forwards,
+      scroll-effect 1s 5s ease-in-out infinite;
+  }
+
+  .news-card {
+    transition: 0.2s ease-in-out;
+  }
+
+  .news-card:hover {
+    transform: translateY(0.75rem);
+  }
+
+  .filter-background {
+    background: linear-gradient(0deg, rgb(var(--black), 0.7), transparent 100%);
+  }
+
+  .custom-input {
+    border-width: 0px 0px 1px;
+    margin-bottom: 4px;
+    border-color: rgb(var(--celestial-blue));
+    text-align: left;
+    background-color: rgb(var(--white));
+    outline: none;
+    line-height: 1rem;
+  }
+
+  .input-fields {
+    display: flex;
+    align-items: end;
+    text-align: end;
+  }
+
+  #contact-button {
+    transition: 0.1s;
+  }
+
+  #message {
+    margin-top: -2.8rem;
+    outline: none;
+    background-attachment: local;
+    background: none;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) calc(4rem - 0.5px),
+      rgb(var(--celestial-blue)) 4rem,
+      rgb(var(--white)) 4rem
+    );
+    line-height: 4rem;
+    padding: 1rem 0rem;
+    overflow: hidden;
+    resize: none;
   }
 }
 
 @layer utilities {
-  #text-gradient {
-    background: linear-gradient(
-      45deg,
-      rgb(var(--celestial-blue)),
-      rgb(var(--aetro-blue))
-    );
+  .shiny-link:hover,
+  .gradient-text {
+    background: var(--gradient-blue-45);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
 
-  .masked-box {
-    background: rgb(var(--white));
-    height: 16.67%;
+/* effect */
+@keyframes scale {
+  100% {
+    transform: scale(1);
   }
+}
 
-  .masked-filter {
-    position: absolute;
+@keyframes scroll-effect {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 0.25rem;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgb(var(--white), 0),
-      rgb(var(--black))
-    );
   }
 }
