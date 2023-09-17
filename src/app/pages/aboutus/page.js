@@ -10,10 +10,7 @@ const AboutUs = () => {
   return (
     <div>
       <div className="md:hidden flex flex-col items-center gap-y-8 md:gap-y-16 mx-4 mb-16 sm:mx-8 lg:mx-12">
-        <Fade
-          delay={500}
-          triggerOnce
-        >
+        <Fade delay={500} triggerOnce>
           <div className="grid items-center grid-rows-auto grid-cols-1 md:grid-cols-2 w-full">
             <div className="relative w-full h-full pt-64">
               <Image
@@ -24,16 +21,18 @@ const AboutUs = () => {
               />
             </div>
             <p className="text-sm mt-4 mb-12 md:mb-24 text-center md:my-0 md:text-start md:row-start-1 md:col-start-2 md:pl-4 md:text-base">
-              Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
-              sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
-              adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
-              Porttitor curabitur ipsum donec natoque feugiat vitae integer.
+              Lorem ipsum dolor sit amet consectetur. Pulvinar posuere
+              sagittis sed convallis nibh. Suspendisse pulvinar morbi
+              pulvinar elementum adipiscing. Egestas elit aenean et
+              eget sed bibendum vitae tempor. Porttitor curabitur
+              ipsum donec natoque feugiat vitae integer.
             </p>
             <p className="text-sm mt-4 mb-12 md:mb-24 text-center md:my-0 md:text-start row-start-4 md:row-start-2 md:col-start-1 md:pr-4 md:text-base">
-              Lorem ipsum dolor sit amet consectetur. Pulvinar posuere sagittis
-              sed convallis nibh. Suspendisse pulvinar morbi pulvinar elementum
-              adipiscing. Egestas elit aenean et eget sed bibendum vitae tempor.
-              Porttitor curabitur ipsum donec natoque feugiat vitae integer.
+              Lorem ipsum dolor sit amet consectetur. Pulvinar posuere
+              sagittis sed convallis nibh. Suspendisse pulvinar morbi
+              pulvinar elementum adipiscing. Egestas elit aenean et
+              eget sed bibendum vitae tempor. Porttitor curabitur
+              ipsum donec natoque feugiat vitae integer.
             </p>
             <div className="relative w-full h-full pt-64 row-start-3 md:row-start-2 md:col-start-2">
               <Image
